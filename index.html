@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +8,11 @@
 <title>Shorya | My World</title>
 
 <style>
+
+/* =====================================================
+   BASIC
+===================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -26,9 +31,10 @@ body {
     overflow-x: hidden;
 }
 
-/* =========================
+
+/* =====================================================
    HOLOGRAM BACKGROUND
-========================= */
+===================================================== */
 
 .holo-background {
     position: fixed;
@@ -37,8 +43,16 @@ body {
     overflow: hidden;
 
     background:
-        radial-gradient(circle at 20% 20%, rgba(108,99,255,.18), transparent 30%),
-        radial-gradient(circle at 80% 80%, rgba(0,229,255,.13), transparent 35%),
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(108,99,255,.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(0,229,255,.13),
+            transparent 35%
+        ),
         #030305;
 }
 
@@ -65,6 +79,7 @@ body {
         );
 
     filter: blur(110px);
+
     opacity: .18;
 
     transition: transform .15s ease-out;
@@ -72,11 +87,19 @@ body {
 
 .holo-grid {
     position: absolute;
+
     inset: -50%;
 
     background-image:
-        linear-gradient(rgba(100,150,255,.13) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(100,150,255,.13) 1px, transparent 1px);
+        linear-gradient(
+            rgba(100,150,255,.13) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(100,150,255,.13) 1px,
+            transparent 1px
+        );
 
     background-size: 55px 55px;
 
@@ -92,6 +115,7 @@ body {
 
 .scanlines {
     position: absolute;
+
     inset: 0;
 
     background:
@@ -127,15 +151,18 @@ body {
     z-index: -5;
 }
 
-/* =========================
+
+/* =====================================================
    PARTICLES
-========================= */
+===================================================== */
 
 #particles {
     position: fixed;
+
     inset: 0;
 
     pointer-events: none;
+
     z-index: -4;
 }
 
@@ -162,24 +189,33 @@ body {
 }
 
 @keyframes particleFloat {
+
     from {
         transform: translate(0,0);
     }
 
     to {
-        transform: translate(var(--x),var(--y));
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            );
     }
 }
 
-/* =========================
+
+/* =====================================================
    LOGIN
-========================= */
+===================================================== */
 
 #loginScreen {
+
     min-height: 100vh;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     padding: 20px;
@@ -188,90 +224,128 @@ body {
 }
 
 .login-card {
-    width: min(430px,95vw);
 
-    padding: 45px 35px;
+    width:
+        min(430px,95vw);
 
-    border: 1px solid rgba(255,255,255,.18);
+    padding:
+        45px 35px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
 
     border-radius: 28px;
 
-    background: rgba(10,10,20,.65);
+    background:
+        rgba(10,10,20,.65);
 
-    backdrop-filter: blur(25px);
+    backdrop-filter:
+        blur(25px);
 
     box-shadow:
-        0 30px 100px rgba(0,0,0,.7),
-        0 0 50px rgba(0,229,255,.05);
+        0 30px 100px
+        rgba(0,0,0,.7),
+
+        0 0 50px
+        rgba(0,229,255,.05);
 
     text-align: center;
 
-    animation: cardIn 1s ease;
+    animation:
+        cardIn 1s ease;
 
-    transition: transform .15s ease-out;
+    transition:
+        transform .15s ease-out;
 }
 
 @keyframes cardIn {
+
     from {
         opacity: 0;
-        transform: translateY(40px) scale(.95);
+
+        transform:
+            translateY(40px)
+            scale(.95);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
     }
 }
 
 .logo {
+
     width: 75px;
     height: 75px;
 
-    margin: 0 auto 20px;
+    margin:
+        0 auto 20px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     border-radius: 22px;
 
-    background: linear-gradient(135deg,#fff,#777);
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #777
+        );
 
     color: #000;
 
     font-size: 30px;
+
     font-weight: 900;
 
     box-shadow:
-        0 0 40px rgba(0,229,255,.25);
+        0 0 40px
+        rgba(0,229,255,.25);
 }
 
 .login-card h1 {
+
     font-size: 34px;
+
     margin-bottom: 8px;
 }
 
 .subtitle {
+
     color: #999;
+
     margin-bottom: 32px;
 }
 
 .input-box {
+
     margin-bottom: 18px;
 }
 
 input {
+
     width: 100%;
 
-    padding: 16px 18px;
+    padding:
+        16px 18px;
 
-    border: 1px solid #333;
+    border:
+        1px solid #333;
 
     border-radius: 14px;
 
     outline: none;
 
-    background: rgba(255,255,255,.06);
+    background:
+        rgba(255,255,255,.06);
 
     color: white;
 
@@ -281,7 +355,9 @@ input {
 }
 
 input:focus {
-    border-color: #00e5ff;
+
+    border-color:
+        #00e5ff;
 
     box-shadow:
         0 0 25px
@@ -289,6 +365,7 @@ input:focus {
 }
 
 .login-button {
+
     width: 100%;
 
     padding: 16px;
@@ -302,6 +379,7 @@ input:focus {
     color: black;
 
     font-size: 17px;
+
     font-weight: bold;
 
     cursor: pointer;
@@ -310,7 +388,9 @@ input:focus {
 }
 
 .login-button:hover {
-    transform: translateY(-3px);
+
+    transform:
+        translateY(-3px);
 
     box-shadow:
         0 12px 35px
@@ -318,7 +398,9 @@ input:focus {
 }
 
 .error {
-    color: #ff6b6b;
+
+    color:
+        #ff6b6b;
 
     margin-top: 15px;
 
@@ -328,6 +410,7 @@ input:focus {
 }
 
 .security {
+
     margin-top: 25px;
 
     color: #666;
@@ -335,52 +418,71 @@ input:focus {
     font-size: 12px;
 }
 
-/* =========================
+
+/* =====================================================
    WEBSITE
-========================= */
+===================================================== */
 
 #website {
+
     display: none;
 
     min-height: 100vh;
 
-    padding: 40px 8%;
+    padding:
+        40px 8%;
 
-    animation: websiteIn 1s ease;
+    animation:
+        websiteIn 1s ease;
 }
 
 @keyframes websiteIn {
+
     from {
         opacity: 0;
-        transform: scale(1.04);
+
+        transform:
+            scale(1.04);
     }
 
     to {
         opacity: 1;
-        transform: scale(1);
+
+        transform:
+            scale(1);
     }
 }
 
-/* =========================
+
+/* =====================================================
    NAVBAR
-========================= */
+===================================================== */
 
 .navbar {
+
     display: flex;
 
-    justify-content: space-between;
-    align-items: center;
+    justify-content:
+        space-between;
 
-    margin-bottom: 100px;
+    align-items:
+        center;
+
+    margin-bottom:
+        100px;
 }
 
 .brand {
+
     font-size: 24px;
+
     font-weight: 900;
+
     letter-spacing: 1px;
 }
 
 .nav-right {
+
     display: flex;
 
     align-items: center;
@@ -389,29 +491,38 @@ input:focus {
 }
 
 .status {
+
     color: #aaa;
+
     font-size: 14px;
 }
 
-/* =========================
+
+/* =====================================================
    AI TOGGLE
-========================= */
+===================================================== */
 
 .ai-toggle {
+
     width: auto !important;
 
     display: flex;
+
     align-items: center;
 
     gap: 10px;
 
-    padding: 10px 15px !important;
+    padding:
+        10px 15px !important;
 
-    border: 1px solid #333 !important;
+    border:
+        1px solid #333 !important;
 
-    border-radius: 30px !important;
+    border-radius:
+        30px !important;
 
-    background: rgba(15,15,25,.85) !important;
+    background:
+        rgba(15,15,25,.85) !important;
 
     color: white !important;
 
@@ -421,15 +532,19 @@ input:focus {
 
     cursor: pointer;
 
-    backdrop-filter: blur(15px);
+    backdrop-filter:
+        blur(15px);
 
     transition: .3s;
 }
 
 .ai-toggle:hover {
-    transform: translateY(-2px);
 
-    border-color: #00e5ff !important;
+    transform:
+        translateY(-2px);
+
+    border-color:
+        #00e5ff !important;
 
     box-shadow:
         0 0 25px
@@ -437,7 +552,9 @@ input:focus {
 }
 
 .toggle-switch {
+
     width: 40px;
+
     height: 22px;
 
     padding: 3px;
@@ -447,13 +564,16 @@ input:focus {
     background: #333;
 
     display: flex;
+
     align-items: center;
 
     transition: .3s;
 }
 
 .toggle-dot {
+
     width: 16px;
+
     height: 16px;
 
     border-radius: 50%;
@@ -463,17 +583,22 @@ input:focus {
     transition: .3s;
 }
 
-/* =========================
+
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero {
-    max-width: 950px;
 
-    padding-bottom: 100px;
+    max-width:
+        950px;
+
+    padding-bottom:
+        100px;
 }
 
 .welcome {
+
     color: #aaa;
 
     font-size: 18px;
@@ -482,7 +607,13 @@ input:focus {
 }
 
 .hero h2 {
-    font-size: clamp(50px,9vw,110px);
+
+    font-size:
+        clamp(
+            50px,
+            9vw,
+            110px
+        );
 
     line-height: .95;
 
@@ -490,6 +621,7 @@ input:focus {
 }
 
 .hero h2 span {
+
     background:
         linear-gradient(
             90deg,
@@ -500,22 +632,28 @@ input:focus {
 
     background-size: 200%;
 
-    -webkit-background-clip: text;
+    -webkit-background-clip:
+        text;
 
     color: transparent;
 
     animation:
-        shine 4s linear infinite;
+        shine 4s
+        linear infinite;
 }
 
 @keyframes shine {
+
     to {
-        background-position: 200%;
+        background-position:
+            200%;
     }
 }
 
 .hero > p {
-    max-width: 700px;
+
+    max-width:
+        700px;
 
     color: #aaa;
 
@@ -524,11 +662,13 @@ input:focus {
     line-height: 1.7;
 }
 
-/* =========================
+
+/* =====================================================
    CARDS
-========================= */
+===================================================== */
 
 .cards {
+
     display: flex;
 
     gap: 15px;
@@ -539,23 +679,32 @@ input:focus {
 }
 
 .card {
-    padding: 20px 25px;
 
-    border: 1px solid #222;
+    padding:
+        20px 25px;
 
-    border-radius: 18px;
+    border:
+        1px solid #222;
 
-    background: rgba(255,255,255,.04);
+    border-radius:
+        18px;
 
-    backdrop-filter: blur(10px);
+    background:
+        rgba(255,255,255,.04);
+
+    backdrop-filter:
+        blur(10px);
 
     transition: .3s;
 }
 
 .card:hover {
-    transform: translateY(-6px);
 
-    border-color: #555;
+    transform:
+        translateY(-6px);
+
+    border-color:
+        #555;
 
     box-shadow:
         0 10px 30px
@@ -563,6 +712,7 @@ input:focus {
 }
 
 .card strong {
+
     display: block;
 
     font-size: 20px;
@@ -571,20 +721,26 @@ input:focus {
 }
 
 .card small {
+
     color: #777;
 }
 
-/* =========================
+
+/* =====================================================
    ABOUT
-========================= */
+===================================================== */
 
 .about {
-    padding: 100px 0;
 
-    border-top: 1px solid #171717;
+    padding:
+        100px 0;
+
+    border-top:
+        1px solid #171717;
 }
 
 .section-tag {
+
     color: #777;
 
     letter-spacing: 5px;
@@ -597,13 +753,21 @@ input:focus {
 }
 
 .about h2,
-.socials h2 {
-    font-size: clamp(45px,7vw,75px);
+.socials h2,
+.featured-video h2 {
+
+    font-size:
+        clamp(
+            45px,
+            7vw,
+            75px
+        );
 
     margin-bottom: 25px;
 }
 
 .gradient-text {
+
     background:
         linear-gradient(
             90deg,
@@ -611,13 +775,16 @@ input:focus {
             #777
         );
 
-    -webkit-background-clip: text;
+    -webkit-background-clip:
+        text;
 
     color: transparent;
 }
 
 .about-text {
-    max-width: 800px;
+
+    max-width:
+        800px;
 
     color: #aaa;
 
@@ -626,11 +793,13 @@ input:focus {
     line-height: 1.8;
 }
 
-/* =========================
+
+/* =====================================================
    INFO
-========================= */
+===================================================== */
 
 .info-grid {
+
     display: grid;
 
     grid-template-columns:
@@ -642,39 +811,49 @@ input:focus {
 }
 
 .info-card {
+
     padding: 25px;
 
-    border: 1px solid #222;
+    border:
+        1px solid #222;
 
     border-radius: 20px;
 
     background:
         rgba(255,255,255,.04);
 
-    backdrop-filter: blur(10px);
+    backdrop-filter:
+        blur(10px);
 
     transition: .3s;
 }
 
 .info-card:hover {
-    transform: translateY(-5px);
 
-    border-color: #555;
+    transform:
+        translateY(-5px);
+
+    border-color:
+        #555;
 }
 
 .info-card h3 {
+
     margin-bottom: 8px;
 }
 
 .info-card p {
+
     color: #888;
 }
 
-/* =========================
+
+/* =====================================================
    LIKES
-========================= */
+===================================================== */
 
 .likes-title {
+
     margin-top: 55px;
 
     margin-bottom: 20px;
@@ -683,6 +862,7 @@ input:focus {
 }
 
 .likes {
+
     display: flex;
 
     flex-wrap: wrap;
@@ -691,11 +871,15 @@ input:focus {
 }
 
 .likes span {
-    padding: 12px 18px;
 
-    border-radius: 30px;
+    padding:
+        12px 18px;
 
-    border: 1px solid #292929;
+    border-radius:
+        30px;
+
+    border:
+        1px solid #292929;
 
     background: #111;
 
@@ -703,23 +887,149 @@ input:focus {
 }
 
 .likes span:hover {
-    transform: scale(1.05);
 
-    background: #1c1c1c;
+    transform:
+        scale(1.05);
+
+    background:
+        #1c1c1c;
 }
 
-/* =========================
+
+/* =====================================================
+   FEATURED VIDEO
+===================================================== */
+
+.featured-video {
+
+    padding:
+        100px 0;
+
+    border-top:
+        1px solid #171717;
+}
+
+.video-card {
+
+    max-width:
+        1000px;
+
+    padding: 15px;
+
+    border:
+        1px solid #252525;
+
+    border-radius:
+        25px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.35);
+
+    transition: .3s;
+}
+
+.video-card:hover {
+
+    border-color:
+        #444;
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,229,255,.08);
+}
+
+.video-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio:
+        16 / 9;
+
+    overflow: hidden;
+
+    border-radius:
+        17px;
+
+    background: #000;
+}
+
+.video-wrapper iframe {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    border: 0;
+}
+
+.video-credit {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    gap: 15px;
+
+    padding:
+        16px 5px 3px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.video-credit a {
+
+    color: #aaa;
+
+    text-decoration:
+        none;
+
+    transition: .2s;
+}
+
+.video-credit a:hover {
+
+    color: white;
+}
+
+
+/* =====================================================
    SOCIALS
-========================= */
+===================================================== */
 
 .socials {
-    padding: 100px 0;
 
-    border-top: 1px solid #171717;
+    padding:
+        100px 0;
+
+    border-top:
+        1px solid #171717;
 }
 
 .social-grid {
-    max-width: 900px;
+
+    max-width:
+        900px;
 
     display: grid;
 
@@ -727,68 +1037,87 @@ input:focus {
 }
 
 .social-card {
+
     display: flex;
 
-    align-items: center;
+    align-items:
+        center;
 
     gap: 20px;
 
     padding: 22px;
 
-    border: 1px solid #222;
+    border:
+        1px solid #222;
 
-    border-radius: 20px;
+    border-radius:
+        20px;
 
     background:
         rgba(255,255,255,.04);
 
-    backdrop-filter: blur(12px);
+    backdrop-filter:
+        blur(12px);
 
     color: white;
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
     transition: .3s;
 }
 
 .social-card:hover {
-    transform: translateX(8px);
 
-    border-color: #555;
+    transform:
+        translateX(8px);
+
+    border-color:
+        #555;
 
     background:
         rgba(255,255,255,.07);
 }
 
 .social-card .icon {
+
     width: 55px;
+
     height: 55px;
 
     display: flex;
 
-    align-items: center;
-    justify-content: center;
+    align-items:
+        center;
 
-    border-radius: 15px;
+    justify-content:
+        center;
 
-    background: #181818;
+    border-radius:
+        15px;
+
+    background:
+        #181818;
 
     font-size: 25px;
 }
 
 .social-card h3 {
+
     margin-bottom: 5px;
 
     font-size: 20px;
 }
 
 .social-card p {
+
     color: #777;
 
     margin: 0;
 }
 
 .social-card b {
+
     margin-left: auto;
 
     font-size: 25px;
@@ -796,32 +1125,107 @@ input:focus {
     color: #777;
 }
 
-/* =========================
-   FOOTER
-========================= */
 
-footer {
-    padding: 50px 0 30px;
+/* =====================================================
+   CREDITS
+===================================================== */
 
-    text-align: center;
+.credits-section {
+
+    padding:
+        30px 0 10px;
+
+    border-top:
+        1px solid #171717;
+
+    text-align:
+        center;
+}
+
+.credits {
+
+    display: flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
 
     color: #555;
 
-    border-top: 1px solid #171717;
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.credits a {
+
+    color: #777;
+
+    text-decoration:
+        none;
+
+    transition: .2s;
+}
+
+.credits a:hover {
+
+    color: white;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    padding:
+        35px 0 30px;
+
+    text-align:
+        center;
+
+    color: #555;
 }
 
 footer strong {
+
     color: #888;
 }
 
-/* =========================
+
+/* =====================================================
+   HIDDEN SECOND VIDEO
+===================================================== */
+
+/*
+   The second YouTube video is intentionally invisible.
+   The source is still credited above.
+*/
+
+.hidden-media {
+
+    display: none;
+
+}
+
+
+/* =====================================================
    AI WINDOW
-========================= */
+===================================================== */
 
 #aiBox {
+
     position: fixed;
 
     right: 25px;
+
     top: 95px;
 
     width: 390px;
@@ -833,16 +1237,18 @@ footer strong {
 
     display: none;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
     border:
         1px solid
         rgba(255,255,255,.15);
 
-    border-radius: 22px;
+    border-radius:
+        22px;
 
     background:
-        rgba(8,8,15,.94);
+        rgba(8,8,15,.96);
 
     backdrop-filter:
         blur(25px);
@@ -863,7 +1269,9 @@ footer strong {
 }
 
 @keyframes aiOpen {
+
     from {
+
         opacity: 0;
 
         transform:
@@ -872,6 +1280,7 @@ footer strong {
     }
 
     to {
+
         opacity: 1;
 
         transform:
@@ -880,52 +1289,59 @@ footer strong {
     }
 }
 
-/* AI HEADER */
-
 .aiHeader {
+
     display: flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
     padding: 18px;
 
-    border-bottom: 1px solid #222;
+    border-bottom:
+        1px solid #222;
 }
 
 .aiHeader strong {
+
     display: block;
 
     font-size: 18px;
 }
 
 .aiHeader small {
+
     color: #777;
 }
 
 .aiClose {
+
     width: 35px !important;
+
     height: 35px;
 
     padding: 0 !important;
 
     border: none !important;
 
-    background: #222 !important;
+    background:
+        #222 !important;
 
     color: white !important;
 
-    border-radius: 10px !important;
+    border-radius:
+        10px !important;
 
     font-size: 22px !important;
 
     cursor: pointer;
 }
 
-/* AI MESSAGES */
-
 #aiMessages {
+
     flex: 1;
 
     padding: 18px;
@@ -934,55 +1350,66 @@ footer strong {
 
     display: flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
     gap: 12px;
 }
 
 .aiMessage {
+
     max-width: 88%;
 
     padding:
         12px 15px;
 
-    border-radius: 15px;
+    border-radius:
+        15px;
 
     font-size: 14px;
 
     line-height: 1.5;
 
-    white-space: pre-line;
+    white-space:
+        pre-line;
 }
 
 .aiMessage.bot {
-    align-self: flex-start;
 
-    background: #181818;
+    align-self:
+        flex-start;
+
+    background:
+        #181818;
 
     color: #ddd;
 }
 
 .aiMessage.user {
-    align-self: flex-end;
 
-    background: white;
+    align-self:
+        flex-end;
+
+    background:
+        white;
 
     color: black;
 }
 
-/* AI INPUT */
-
 .aiInput {
+
     display: flex;
 
     gap: 8px;
 
     padding: 12px;
 
-    border-top: 1px solid #222;
+    border-top:
+        1px solid #222;
 }
 
 .aiInput input {
+
     flex: 1;
 
     min-width: 0;
@@ -992,9 +1419,11 @@ footer strong {
     border:
         1px solid #333;
 
-    border-radius: 12px;
+    border-radius:
+        12px;
 
-    background: #111;
+    background:
+        #111;
 
     color: white;
 
@@ -1002,41 +1431,51 @@ footer strong {
 }
 
 .aiSend {
+
     width: 48px !important;
 
     padding: 0 !important;
 
-    border-radius: 12px !important;
+    border-radius:
+        12px !important;
 
-    background: white !important;
+    background:
+        white !important;
 
-    color: black !important;
+    color:
+        black !important;
 }
 
-/* AI QUICK BUTTONS */
-
 .quickQuestions {
+
     display: flex;
 
     flex-wrap: wrap;
 
     gap: 7px;
 
-    padding: 0 18px 12px;
+    padding:
+        0 18px 12px;
 }
 
 .quickQuestions button {
+
     width: auto;
 
-    padding: 7px 10px;
+    padding:
+        7px 10px;
 
-    border: 1px solid #333;
+    border:
+        1px solid #333;
 
-    border-radius: 20px;
+    border-radius:
+        20px;
 
-    background: #111;
+    background:
+        #111;
 
-    color: #aaa;
+    color:
+        #aaa;
 
     font-size: 11px;
 
@@ -1046,65 +1485,109 @@ footer strong {
 }
 
 .quickQuestions button:hover {
+
     color: white;
 
-    border-color: #00e5ff;
+    border-color:
+        #00e5ff;
 }
 
-/* MOBILE */
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media (max-width:600px) {
 
     #website {
-        padding: 30px 6%;
+
+        padding:
+            30px 6%;
     }
 
     .navbar {
-        align-items: flex-start;
 
-        margin-bottom: 70px;
+        align-items:
+            flex-start;
+
+        margin-bottom:
+            70px;
     }
 
     .nav-right {
+
         gap: 8px;
 
-        flex-direction: column;
+        flex-direction:
+            column;
 
-        align-items: flex-end;
+        align-items:
+            flex-end;
     }
 
     .status {
+
         font-size: 12px;
     }
 
     .info-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
     }
 
     .login-card {
-        padding: 35px 25px;
+
+        padding:
+            35px 25px;
     }
 
     .hero > p {
+
         font-size: 17px;
     }
 
     #aiBox {
+
         right: 15px;
+
         top: 85px;
 
         width:
             calc(100vw - 30px);
 
-        height: 65vh;
+        height:
+            65vh;
+    }
+
+    .video-card {
+
+        padding: 10px;
+
+        border-radius:
+            20px;
+    }
+
+    .video-credit {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
     }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- HOLOGRAM -->
+
+<!-- =====================================================
+     HOLOGRAM
+===================================================== -->
 
 <div class="holo-background">
 
@@ -1130,9 +1613,9 @@ footer strong {
 <div id="particles"></div>
 
 
-<!-- =========================
+<!-- =====================================================
      LOGIN
-========================= -->
+===================================================== -->
 
 <div id="loginScreen">
 
@@ -1158,8 +1641,7 @@ footer strong {
                 type="text"
                 id="name"
                 placeholder="Your name"
-                autocomplete="off"
-            >
+                autocomplete="off">
 
         </div>
 
@@ -1169,8 +1651,7 @@ footer strong {
                 type="password"
                 id="password"
                 placeholder="Website password"
-                autocomplete="off"
-            >
+                autocomplete="off">
 
         </div>
 
@@ -1188,7 +1669,9 @@ footer strong {
         </div>
 
         <div class="security">
+
             🔒 Personal website • Access required
+
         </div>
 
     </div>
@@ -1196,11 +1679,12 @@ footer strong {
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      MAIN WEBSITE
-========================= -->
+===================================================== -->
 
 <div id="website">
+
 
     <!-- NAVBAR -->
 
@@ -1271,6 +1755,7 @@ footer strong {
 
         </p>
 
+
         <div class="cards">
 
             <div class="card">
@@ -1285,6 +1770,7 @@ footer strong {
 
             </div>
 
+
             <div class="card">
 
                 <strong>
@@ -1297,6 +1783,7 @@ footer strong {
 
             </div>
 
+
             <div class="card">
 
                 <strong>
@@ -1308,6 +1795,7 @@ footer strong {
                 </small>
 
             </div>
+
 
             <div class="card">
 
@@ -1326,7 +1814,9 @@ footer strong {
     </section>
 
 
-    <!-- ABOUT -->
+    <!-- =================================================
+         ABOUT ME
+    ================================================== -->
 
     <section class="about">
 
@@ -1364,6 +1854,7 @@ footer strong {
 
         <div class="info-grid">
 
+
             <div class="info-card">
 
                 <h3>
@@ -1375,6 +1866,7 @@ footer strong {
                 </p>
 
             </div>
+
 
             <div class="info-card">
 
@@ -1388,6 +1880,7 @@ footer strong {
 
             </div>
 
+
             <div class="info-card">
 
                 <h3>
@@ -1399,6 +1892,7 @@ footer strong {
                 </p>
 
             </div>
+
 
             <div class="info-card">
 
@@ -1419,21 +1913,99 @@ footer strong {
             ⚡ Things I Like
         </h3>
 
+
         <div class="likes">
 
-            <span>💻 Coding</span>
-            <span>🌐 Websites</span>
-            <span>🎮 Gaming</span>
-            <span>🚀 Technology</span>
-            <span>🧪 Experimenting</span>
-            <span>🎨 Creating</span>
+            <span>
+                💻 Coding
+            </span>
+
+            <span>
+                🌐 Websites
+            </span>
+
+            <span>
+                🎮 Gaming
+            </span>
+
+            <span>
+                🚀 Technology
+            </span>
+
+            <span>
+                🧪 Experimenting
+            </span>
+
+            <span>
+                🎨 Creating
+            </span>
 
         </div>
 
     </section>
 
 
-    <!-- SOCIALS -->
+    <!-- =================================================
+         FEATURED VIDEO
+    ================================================== -->
+
+    <section class="featured-video">
+
+        <div class="section-tag">
+            FEATURED VIDEO
+        </div>
+
+        <h2>
+
+            Watch
+
+            <span class="gradient-text">
+                this 🎬
+            </span>
+
+        </h2>
+
+
+        <div class="video-card">
+
+            <div class="video-wrapper">
+
+                <iframe
+                    src="https://www.youtube.com/embed/uV13Myyoee0"
+                    title="Featured YouTube video"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+
+            <div class="video-credit">
+
+                <span>
+                    🎬 Embedded from YouTube
+                </span>
+
+                <a
+                    href="https://www.youtube.com/watch?v=uV13Myyoee0"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Original video ↗
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         SOCIAL LINKS
+    ================================================== -->
 
     <section class="socials">
 
@@ -1453,6 +2025,9 @@ footer strong {
 
 
         <div class="social-grid">
+
+
+            <!-- YOUTUBE -->
 
             <a
                 href="https://www.youtube.com/@yourskui-b7t"
@@ -1483,6 +2058,8 @@ footer strong {
             </a>
 
 
+            <!-- ROBLOX -->
+
             <a
                 href="https://www.roblox.com/users/9674387216/profile"
                 target="_blank"
@@ -1512,6 +2089,8 @@ footer strong {
             </a>
 
 
+            <!-- DISCORD -->
+
             <div class="social-card">
 
                 <div class="icon">
@@ -1536,10 +2115,71 @@ footer strong {
 
             </div>
 
+
         </div>
 
     </section>
 
+
+    <!-- =================================================
+         CREDITS
+    ================================================== -->
+
+    <section class="credits-section">
+
+        <div class="credits">
+
+            <span>
+                © 2026 Shorya
+            </span>
+
+            <span>
+                •
+            </span>
+
+            <span>
+                🎬 Video credit:
+                <a
+                    href="https://www.youtube.com/watch?v=ZvVAPboLLVM"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Original YouTube video
+
+                </a>
+            </span>
+
+            <span>
+                •
+            </span>
+
+            <span>
+                🌐 Website created by Shorya
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         HIDDEN VIDEO
+    ================================================== -->
+
+    <section class="hidden-media">
+
+        <iframe
+            src="https://www.youtube.com/embed/ZvVAPboLLVM"
+            title="YouTube video">
+
+        </iframe>
+
+    </section>
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
 
     <footer>
 
@@ -1561,14 +2201,16 @@ footer strong {
 
     </footer>
 
+
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      AI WINDOW
-========================= -->
+===================================================== -->
 
 <div id="aiBox">
+
 
     <div class="aiHeader">
 
@@ -1583,6 +2225,7 @@ footer strong {
             </small>
 
         </div>
+
 
         <button
             class="aiClose"
@@ -1600,16 +2243,21 @@ footer strong {
 
         <div class="aiMessage bot">
 
-            Heyyy! 👋 I'm Shorya AI!
+Heyyy! 👋 I'm Shorya AI!
 
-            You don't have to type perfectly.
-            Try stuff like:
+You don't have to type perfectly.
 
-            "whut iz todys dateeee"
-            "wht ur nammmmm"
-            "heyyyyyyyy"
-            "who iz shorya"
-            "wat time iz it"
+Try:
+
+"whut iz todys dateeee"
+
+"wht ur nammmmm"
+
+"heyyyyyyyy"
+
+"who iz shorya"
+
+"wat time iz it"
 
         </div>
 
@@ -1618,24 +2266,43 @@ footer strong {
 
     <div class="quickQuestions">
 
-        <button onclick="quickAsk('what is today date')">
+        <button
+            onclick="quickAsk('what is today date')">
+
             📅 Date
+
         </button>
 
-        <button onclick="quickAsk('what time is it')">
+
+        <button
+            onclick="quickAsk('what time is it')">
+
             ⏰ Time
+
         </button>
 
-        <button onclick="quickAsk('who are you')">
+
+        <button
+            onclick="quickAsk('who are you')">
+
             🤖 You?
+
         </button>
 
-        <button onclick="quickAsk('who is shorya')">
+
+        <button
+            onclick="quickAsk('who is shorya')">
+
             👦 Shorya
+
         </button>
 
-        <button onclick="quickAsk('tell me a joke')">
+
+        <button
+            onclick="quickAsk('tell me a joke')">
+
             😂 Joke
+
         </button>
 
     </div>
@@ -1647,8 +2314,8 @@ footer strong {
             id="aiInput"
             type="text"
             placeholder="Ask me anything..."
-            autocomplete="off"
-        >
+            autocomplete="off">
+
 
         <button
             class="aiSend"
@@ -1671,7 +2338,10 @@ footer strong {
 ===================================================== */
 
 const particleContainer =
-    document.getElementById("particles");
+    document.getElementById(
+        "particles"
+    );
+
 
 for (
     let i = 0;
@@ -1680,7 +2350,9 @@ for (
 ) {
 
     const particle =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
     particle.className =
         "particle";
@@ -1693,17 +2365,26 @@ for (
 
     particle.style.setProperty(
         "--x",
-        (Math.random() * 180 - 90) + "px"
+        (
+            Math.random() * 180 -
+            90
+        ) + "px"
     );
 
     particle.style.setProperty(
         "--y",
-        (Math.random() * 180 - 90) + "px"
+        (
+            Math.random() * 180 -
+            90
+        ) + "px"
     );
 
     particle.style.setProperty(
         "--time",
-        (4 + Math.random() * 8) + "s"
+        (
+            4 +
+            Math.random() * 8
+        ) + "s"
     );
 
     particleContainer.appendChild(
@@ -1713,20 +2394,28 @@ for (
 
 
 /* =====================================================
-   HOLOGRAM MOUSE
+   MOUSE HOLOGRAM
 ===================================================== */
 
 const holoGlow =
-    document.getElementById("holoGlow");
+    document.getElementById(
+        "holoGlow"
+    );
 
 const holoGrid =
-    document.getElementById("holoGrid");
+    document.getElementById(
+        "holoGrid"
+    );
 
 const cursorGlow =
-    document.getElementById("cursorGlow");
+    document.getElementById(
+        "cursorGlow"
+    );
 
 const loginCard =
-    document.getElementById("loginCard");
+    document.getElementById(
+        "loginCard"
+    );
 
 
 document.addEventListener(
@@ -1790,20 +2479,20 @@ function login() {
 
     const name =
         document
-        .getElementById("name")
-        .value
-        .trim();
+            .getElementById("name")
+            .value
+            .trim();
 
 
     const password =
         document
-        .getElementById("password")
-        .value;
+            .getElementById("password")
+            .value;
 
 
     const error =
         document
-        .getElementById("error");
+            .getElementById("error");
 
 
     const correctPassword =
@@ -1819,7 +2508,10 @@ function login() {
     }
 
 
-    if (password !== correctPassword) {
+    if (
+        password !==
+        correctPassword
+    ) {
 
         error.textContent =
             "❌ Wrong password. Try again.";
@@ -1829,13 +2521,17 @@ function login() {
 
 
     document
-        .getElementById("visitorName")
+        .getElementById(
+            "visitorName"
+        )
         .textContent =
         name;
 
 
     document
-        .getElementById("loginScreen")
+        .getElementById(
+            "loginScreen"
+        )
         .style.opacity =
         "0";
 
@@ -1844,13 +2540,17 @@ function login() {
         function() {
 
             document
-                .getElementById("loginScreen")
+                .getElementById(
+                    "loginScreen"
+                )
                 .style.display =
                 "none";
 
 
             document
-                .getElementById("website")
+                .getElementById(
+                    "website"
+                )
                 .style.display =
                 "block";
 
@@ -1859,7 +2559,10 @@ function login() {
                 "auto";
 
 
-            window.scrollTo(0,0);
+            window.scrollTo(
+                0,
+                0
+            );
 
         },
         700
@@ -1874,13 +2577,20 @@ function login() {
 function toggleAI() {
 
     const box =
-        document.getElementById("aiBox");
+        document.getElementById(
+            "aiBox"
+        );
 
     const dot =
-        document.getElementById("toggleDot");
+        document.getElementById(
+            "toggleDot"
+        );
 
 
-    if (box.style.display === "flex") {
+    if (
+        box.style.display ===
+        "flex"
+    ) {
 
         box.style.display =
             "none";
@@ -1905,33 +2615,26 @@ function toggleAI() {
             "#00e5ff";
 
         document
-            .getElementById("aiInput")
+            .getElementById(
+                "aiInput"
+            )
             .focus();
+
     }
 }
 
 
 /* =====================================================
-   TEXT NORMALIZER
-   THIS IS WHAT MAKES THE AI UNDERSTAND
-   MESSY TYPING
+   SMART TEXT NORMALIZER
 ===================================================== */
 
 function normalizeText(text) {
 
     let t =
         text
-        .toLowerCase()
-        .trim();
+            .toLowerCase()
+            .trim();
 
-
-    /* Remove accents */
-
-    t = t.normalize("NFD")
-         .replace(/[\u0300-\u036f]/g,"");
-
-
-    /* Common chat shortcuts */
 
     const replacements = {
 
@@ -1939,6 +2642,7 @@ function normalizeText(text) {
         "ur": "your",
         "r": "are",
         "ya": "you",
+
         "wat": "what",
         "wht": "what",
         "whut": "what",
@@ -1949,6 +2653,7 @@ function normalizeText(text) {
 
         "da": "the",
         "dat": "that",
+
         "todai": "today",
         "tody": "today",
         "tod": "today",
@@ -1971,58 +2676,48 @@ function normalizeText(text) {
 
         "frm": "from",
 
-        "whts": "whats",
-        "whats": "what is",
-
         "hru": "how are you"
 
     };
 
 
-    t = t
+    t =
+        t
         .split(/\s+/)
-        .map(word => {
-
-            return replacements[word] || word;
-
-        })
+        .map(
+            word =>
+                replacements[word] ||
+                word
+        )
         .join(" ");
 
 
     /*
-       Convert repeated letters.
+       Remove extreme repeated letters.
 
-       heyyyyyyyy
-       becomes
-       hey
-
-       dateeeeeee
-       becomes
-       date
+       heyyyyyyy -> hey
+       dateeeee -> date
     */
 
-    t = t.replace(
-        /([a-z])\1{2,}/g,
-        "$1"
-    );
+    t =
+        t.replace(
+            /([a-z])\1{2,}/g,
+            "$1"
+        );
 
 
-    /*
-       Remove extra punctuation
-    */
-
-    t = t.replace(
-        /[^\w\s?]/g,
-        " "
-    );
+    t =
+        t.replace(
+            /[^\w\s?]/g,
+            " "
+        );
 
 
-    /*
-       Clean spaces
-    */
-
-    t = t
-        .replace(/\s+/g," ")
+    t =
+        t.replace(
+            /\s+/g,
+            " "
+        )
         .trim();
 
 
@@ -2031,10 +2726,13 @@ function normalizeText(text) {
 
 
 /* =====================================================
-   WORD MATCHING
+   WORD CHECK
 ===================================================== */
 
-function hasAny(text, words) {
+function hasAny(
+    text,
+    words
+) {
 
     return words.some(
         word =>
@@ -2044,22 +2742,24 @@ function hasAny(text, words) {
 
 
 /* =====================================================
-   SMART INTENT DETECTION
+   AI BRAIN
 ===================================================== */
 
-function getAIResponse(original) {
+function getAIResponse(
+    original
+) {
 
     const q =
-        normalizeText(original);
+        normalizeText(
+            original
+        );
 
 
     const now =
         new Date();
 
 
-    /* =====================
-       GREETINGS
-    ===================== */
+    /* GREETING */
 
     if (
         hasAny(
@@ -2078,22 +2778,28 @@ function getAIResponse(original) {
         )
     ) {
 
-        return [
+        const greetings = [
+
             "Heyyyy! 👋",
+
             "Yo! 😎 What's up?",
+
             "Hey! Welcome to Shorya AI 🤖",
+
             "Helloooo 😂"
-        ][
+
+        ];
+
+        return greetings[
             Math.floor(
-                Math.random() * 4
+                Math.random() *
+                greetings.length
             )
         ];
     }
 
 
-    /* =====================
-       NAME
-    ===================== */
+    /* NAME */
 
     if (
         hasAny(
@@ -2109,14 +2815,13 @@ function getAIResponse(original) {
 
         return (
             "I'm Shorya AI 🤖 — " +
-            "the offline assistant on this website!"
+            "the offline assistant on " +
+            "this website!"
         );
     }
 
 
-    /* =====================
-       CREATOR
-    ===================== */
+    /* CREATOR */
 
     if (
         hasAny(
@@ -2137,9 +2842,7 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       DATE
-    ===================== */
+    /* DATE */
 
     if (
         hasAny(
@@ -2172,9 +2875,7 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       DAY
-    ===================== */
+    /* DAY */
 
     if (
         hasAny(
@@ -2201,9 +2902,7 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       TIME
-    ===================== */
+    /* TIME */
 
     if (
         hasAny(
@@ -2233,9 +2932,7 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       SPECIAL TODAY
-    ===================== */
+    /* SPECIAL TODAY */
 
     if (
         hasAny(
@@ -2261,7 +2958,10 @@ function getAIResponse(original) {
             month === 1 &&
             day === 1
         ) {
-            return "It's New Year's Day! 🎆";
+
+            return (
+                "It's New Year's Day! 🎆"
+            );
         }
 
 
@@ -2269,7 +2969,10 @@ function getAIResponse(original) {
             month === 2 &&
             day === 14
         ) {
-            return "It's Valentine's Day! ❤️";
+
+            return (
+                "It's Valentine's Day! ❤️"
+            );
         }
 
 
@@ -2277,7 +2980,10 @@ function getAIResponse(original) {
             month === 8 &&
             day === 15
         ) {
-            return "It's India's Independence Day! 🇮🇳";
+
+            return (
+                "It's India's Independence Day! 🇮🇳"
+            );
         }
 
 
@@ -2285,7 +2991,10 @@ function getAIResponse(original) {
             month === 10 &&
             day === 31
         ) {
-            return "It's Halloween! 🎃";
+
+            return (
+                "It's Halloween! 🎃"
+            );
         }
 
 
@@ -2293,7 +3002,10 @@ function getAIResponse(original) {
             month === 12 &&
             day === 25
         ) {
-            return "It's Christmas! 🎄";
+
+            return (
+                "It's Christmas! 🎄"
+            );
         }
 
 
@@ -2304,9 +3016,7 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       SHORYA
-    ===================== */
+    /* SHORYA */
 
     if (
         hasAny(
@@ -2329,9 +3039,7 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       AGE
-    ===================== */
+    /* AGE */
 
     if (
         hasAny(
@@ -2351,9 +3059,7 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       LOCATION
-    ===================== */
+    /* LOCATION */
 
     if (
         hasAny(
@@ -2374,9 +3080,7 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       YOUTUBE
-    ===================== */
+    /* YOUTUBE */
 
     if (
         hasAny(
@@ -2396,9 +3100,7 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       ROBLOX
-    ===================== */
+    /* ROBLOX */
 
     if (
         hasAny(
@@ -2417,9 +3119,7 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       CODING
-    ===================== */
+    /* CODING */
 
     if (
         hasAny(
@@ -2440,9 +3140,7 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       GAMING
-    ===================== */
+    /* GAMING */
 
     if (
         hasAny(
@@ -2461,9 +3159,7 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       WEBSITE
-    ===================== */
+    /* WEBSITE */
 
     if (
         hasAny(
@@ -2484,9 +3180,7 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       JOKES
-    ===================== */
+    /* JOKES */
 
     if (
         hasAny(
@@ -2520,16 +3214,13 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       HOW ARE YOU
-    ===================== */
+    /* HOW ARE YOU */
 
     if (
         hasAny(
             q,
             [
                 "how are you",
-                "how r you",
                 "how you doing",
                 "how are u"
             ]
@@ -2543,9 +3234,7 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       THANKS
-    ===================== */
+    /* THANKS */
 
     if (
         hasAny(
@@ -2564,9 +3253,7 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       HELP
-    ===================== */
+    /* HELP */
 
     if (
         hasAny(
@@ -2581,7 +3268,9 @@ function getAIResponse(original) {
 
         return (
             "I can understand messy typing too! 😎\n\n" +
+
             "Try asking me about:\n" +
+
             "📅 Today's date\n" +
             "📆 The day\n" +
             "⏰ The time\n" +
@@ -2594,9 +3283,7 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       BYE
-    ===================== */
+    /* BYE */
 
     if (
         hasAny(
@@ -2615,13 +3302,13 @@ function getAIResponse(original) {
     }
 
 
-    /* =====================
-       DEFAULT
-    ===================== */
+    /* DEFAULT */
 
     return (
         "Hmmmm 🤔 I didn't understand that yet.\n\n" +
+
         "Try typing something like:\n" +
+
         "• whut iz todys dateeee\n" +
         "• wht ur nammmmm\n" +
         "• wat time iz it\n" +
@@ -2632,7 +3319,7 @@ function getAIResponse(original) {
 
 
 /* =====================================================
-   ADD MESSAGE
+   ADD AI MESSAGE
 ===================================================== */
 
 function addMessage(
@@ -2653,7 +3340,8 @@ function addMessage(
 
 
     message.className =
-        "aiMessage " + type;
+        "aiMessage " +
+        type;
 
 
     message.textContent =
@@ -2689,6 +3377,7 @@ function sendAI() {
     if (
         question === ""
     ) {
+
         return;
     }
 
@@ -2726,7 +3415,9 @@ function sendAI() {
    QUICK QUESTIONS
 ===================================================== */
 
-function quickAsk(question) {
+function quickAsk(
+    question
+) {
 
     const input =
         document.getElementById(
@@ -2743,7 +3434,7 @@ function quickAsk(question) {
 
 
 /* =====================================================
-   ENTER = SEND
+   ENTER = SEND AI
 ===================================================== */
 
 document
