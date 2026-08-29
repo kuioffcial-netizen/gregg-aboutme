@@ -1,83 +1,442 @@
-<section id="about" class="about">
-  <h2>About Me</h2>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div class="about-box">
-    <h3>Hi, I'm Shorya! 👋</h3>
-
-    <p>
-      I'm a young developer from India who loves technology,
-      programming, and creating cool projects.
-    </p>
-
-    <p>
-      I enjoy learning <b>HTML, CSS, JavaScript, C, C++</b>
-      and exploring new technologies.
-    </p>
-
-    <p>
-      I'm currently working on improving my coding skills and
-      building websites, apps, and other awesome projects. 🚀
-    </p>
-
-    <h3>What I Like 💻</h3>
-
-    <div class="skills">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>C</span>
-      <span>C++</span>
-      <span>Web Development</span>
-    </div>
-  </div>
-</section>
+<title>Shorya | Welcome</title>
 
 <style>
-.about {
-  padding: 80px 10%;
-  text-align: center;
-  background: #111;
-  color: white;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.about h2 {
-  font-size: 40px;
-  margin-bottom: 30px;
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050505;
+    color: white;
+    overflow: hidden;
 }
 
-.about-box {
-  max-width: 800px;
-  margin: auto;
-  padding: 30px;
-  background: #1c1c1c;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+/* Animated background */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 20% 20%, #252525 0%, transparent 30%),
+        radial-gradient(circle at 80% 80%, #181818 0%, transparent 35%),
+        #050505;
 }
 
-.about-box p {
-  font-size: 18px;
-  line-height: 1.7;
-  color: #ccc;
+.orb {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: .35;
+    animation: float 10s infinite alternate ease-in-out;
 }
 
-.skills {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
+.orb.one {
+    background: #6c63ff;
+    left: -100px;
+    top: 10%;
 }
 
-.skills span {
-  background: #333;
-  padding: 10px 18px;
-  border-radius: 20px;
-  transition: 0.3s;
+.orb.two {
+    background: #00e5ff;
+    right: -100px;
+    bottom: 5%;
+    animation-delay: 2s;
 }
 
-.skills span:hover {
-  background: white;
-  color: black;
-  transform: scale(1.1);
+@keyframes float {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+    to {
+        transform: translate(100px, -70px) scale(1.3);
+    }
+}
+
+/* Login */
+
+#loginScreen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: .8s;
+}
+
+.login-card {
+    width: min(430px, 95vw);
+    padding: 45px 35px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 28px;
+    background: rgba(20,20,20,.65);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 30px 80px rgba(0,0,0,.6);
+    text-align: center;
+    animation: cardIn 1s ease;
+}
+
+@keyframes cardIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #ffffff, #777);
+    color: #000;
+    font-size: 30px;
+    font-weight: 900;
+    box-shadow: 0 0 35px rgba(255,255,255,.2);
+}
+
+h1 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #999;
+    margin-bottom: 32px;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+input {
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid #333;
+    border-radius: 14px;
+    outline: none;
+    background: rgba(255,255,255,.06);
+    color: white;
+    font-size: 16px;
+    transition: .3s;
+}
+
+input:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 20px rgba(255,255,255,.08);
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 14px;
+    background: white;
+    color: black;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255,255,255,.15);
+}
+
+.error {
+    color: #ff6b6b;
+    margin-top: 15px;
+    min-height: 20px;
+    font-size: 14px;
+}
+
+.security {
+    margin-top: 25px;
+    color: #666;
+    font-size: 12px;
+}
+
+/* Main website */
+
+#website {
+    display: none;
+    min-height: 100vh;
+    padding: 40px 8%;
+    animation: websiteIn 1s ease;
+}
+
+@keyframes websiteIn {
+    from {
+        opacity: 0;
+        transform: scale(1.04);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.status {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.hero {
+    max-width: 900px;
+}
+
+.welcome {
+    color: #aaa;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.hero h2 {
+    font-size: clamp(50px, 9vw, 110px);
+    line-height: .95;
+    margin-bottom: 30px;
+}
+
+.hero h2 span {
+    background: linear-gradient(90deg, #fff, #777, #fff);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200%;
+    }
+}
+
+.hero p {
+    max-width: 650px;
+    color: #aaa;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.cards {
+    display: flex;
+    gap: 15px;
+    margin-top: 45px;
+    flex-wrap: wrap;
+}
+
+.card {
+    padding: 20px 25px;
+    border: 1px solid #222;
+    border-radius: 18px;
+    background: rgba(255,255,255,.04);
+}
+
+.card strong {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.card small {
+    color: #777;
 }
 </style>
+</head>
+
+<body>
+
+<div class="background">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+</div>
+
+<!-- LOGIN SCREEN -->
+
+<div id="loginScreen">
+
+    <div class="login-card">
+
+        <div class="logo">S</div>
+
+        <h1>Welcome</h1>
+
+        <p class="subtitle">
+            Enter your name to access the website
+        </p>
+
+        <div class="input-box">
+            <input
+                type="text"
+                id="name"
+                placeholder="Your name"
+                autocomplete="off"
+            >
+        </div>
+
+        <div class="input-box">
+            <input
+                type="password"
+                id="password"
+                placeholder="Website password"
+                autocomplete="off"
+            >
+        </div>
+
+        <button onclick="login()">
+            Enter Website →
+        </button>
+
+        <div class="error" id="error"></div>
+
+        <div class="security">
+            🔒 Personal website • Access required
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- WEBSITE AFTER LOGIN -->
+
+<div id="website">
+
+    <div class="navbar">
+        <div class="brand">SHORYA.</div>
+
+        <div class="status">
+            ● ONLINE
+        </div>
+    </div>
+
+    <div class="hero">
+
+        <div class="welcome">
+            Welcome back, <span id="visitorName"></span> 👋
+        </div>
+
+        <h2>
+            This is<br>
+            <span>my world.</span>
+        </h2>
+
+        <p>
+            I'm Shorya — a developer, creator and technology enthusiast.
+            This website is a little place on the internet where I can
+            showcase who I am, what I build and what I'm learning.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <strong>💻 Coding</strong>
+                <small>Building cool projects</small>
+            </div>
+
+            <div class="card">
+                <strong>🚀 Projects</strong>
+                <small>Always creating something</small>
+            </div>
+
+            <div class="card">
+                <strong>🌐 Web</strong>
+                <small>Exploring the internet</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function login() {
+
+    const name = document.getElementById("name").value.trim();
+    const password = document.getElementById("password").value;
+    const error = document.getElementById("error");
+
+    // Website password
+    const correctPassword = "GAGISBEST";
+
+    if (name === "") {
+        error.textContent = "⚠️ Please enter your name.";
+        return;
+    }
+
+    if (password !== correctPassword) {
+        error.textContent = "❌ Wrong password. Try again.";
+        return;
+    }
+
+    // Successful login
+
+    document.getElementById("visitorName").textContent = name;
+
+    document.getElementById("loginScreen").style.opacity = "0";
+
+    setTimeout(() => {
+
+        document.getElementById("loginScreen").style.display = "none";
+
+        document.getElementById("website").style.display = "block";
+
+        document.body.style.overflow = "auto";
+
+    }, 700);
+}
+
+
+// Press Enter to login
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+        login();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
+```
