@@ -1,17 +1,26 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Shorya | Welcome</title>
+<title>Shorya | My World</title>
 
 <style>
+
+/* =========================
+   GLOBAL
+========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -19,19 +28,31 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #050505;
     color: white;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
-/* Animated background */
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
 
 .background {
     position: fixed;
     inset: 0;
     overflow: hidden;
     z-index: -1;
+
     background:
-        radial-gradient(circle at 20% 20%, #252525 0%, transparent 30%),
-        radial-gradient(circle at 80% 80%, #181818 0%, transparent 35%),
+        radial-gradient(
+            circle at 20% 20%,
+            #252525 0%,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            #181818 0%,
+            transparent 35%
+        ),
         #050505;
 }
 
@@ -42,7 +63,9 @@ body {
     border-radius: 50%;
     filter: blur(90px);
     opacity: .35;
-    animation: float 10s infinite alternate ease-in-out;
+
+    animation:
+        float 10s infinite alternate ease-in-out;
 }
 
 .orb.one {
@@ -59,273 +82,800 @@ body {
 }
 
 @keyframes float {
+
     from {
         transform: translate(0, 0) scale(1);
     }
+
     to {
         transform: translate(100px, -70px) scale(1.3);
     }
 }
 
-/* Login */
+
+/* =========================
+   LOGIN SCREEN
+========================= */
 
 #loginScreen {
+
     min-height: 100vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     padding: 20px;
+
     transition: .8s;
 }
 
 .login-card {
+
     width: min(430px, 95vw);
+
     padding: 45px 35px;
+
     border: 1px solid rgba(255,255,255,.15);
+
     border-radius: 28px;
+
     background: rgba(20,20,20,.65);
+
     backdrop-filter: blur(20px);
-    box-shadow: 0 30px 80px rgba(0,0,0,.6);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.6);
+
     text-align: center;
+
     animation: cardIn 1s ease;
 }
 
 @keyframes cardIn {
+
     from {
         opacity: 0;
-        transform: translateY(40px) scale(.95);
+        transform:
+            translateY(40px)
+            scale(.95);
     }
+
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform:
+            translateY(0)
+            scale(1);
     }
 }
 
 .logo {
+
     width: 75px;
     height: 75px;
+
     margin: 0 auto 20px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     border-radius: 22px;
-    background: linear-gradient(135deg, #ffffff, #777);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #777
+        );
+
     color: #000;
+
     font-size: 30px;
+
     font-weight: 900;
-    box-shadow: 0 0 35px rgba(255,255,255,.2);
+
+    box-shadow:
+        0 0 35px rgba(255,255,255,.2);
 }
 
-h1 {
+.login-card h1 {
+
     font-size: 34px;
+
     margin-bottom: 8px;
 }
 
 .subtitle {
+
     color: #999;
+
     margin-bottom: 32px;
 }
 
 .input-box {
+
     position: relative;
+
     margin-bottom: 18px;
 }
 
 input {
+
     width: 100%;
+
     padding: 16px 18px;
+
     border: 1px solid #333;
+
     border-radius: 14px;
+
     outline: none;
-    background: rgba(255,255,255,.06);
+
+    background:
+        rgba(255,255,255,.06);
+
     color: white;
+
     font-size: 16px;
+
     transition: .3s;
 }
 
 input:focus {
+
     border-color: #aaa;
-    box-shadow: 0 0 20px rgba(255,255,255,.08);
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,.08);
 }
 
 button {
+
     width: 100%;
+
     padding: 16px;
+
     border: none;
+
     border-radius: 14px;
+
     background: white;
+
     color: black;
+
     font-size: 17px;
+
     font-weight: bold;
+
     cursor: pointer;
+
     transition: .3s;
 }
 
 button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(255,255,255,.15);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(255,255,255,.15);
 }
 
 .error {
+
     color: #ff6b6b;
+
     margin-top: 15px;
+
     min-height: 20px;
+
     font-size: 14px;
 }
 
 .security {
+
     margin-top: 25px;
+
     color: #666;
+
     font-size: 12px;
 }
 
-/* Main website */
+
+/* =========================
+   MAIN WEBSITE
+========================= */
 
 #website {
+
     display: none;
+
     min-height: 100vh;
+
     padding: 40px 8%;
-    animation: websiteIn 1s ease;
+
+    animation:
+        websiteIn 1s ease;
 }
 
 @keyframes websiteIn {
+
     from {
+
         opacity: 0;
-        transform: scale(1.04);
+
+        transform:
+            scale(1.04);
     }
+
     to {
+
         opacity: 1;
-        transform: scale(1);
+
+        transform:
+            scale(1);
     }
 }
 
+
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
+
     display: flex;
-    justify-content: space-between;
+
+    justify-content:
+        space-between;
+
     align-items: center;
+
     margin-bottom: 100px;
 }
 
 .brand {
+
     font-size: 24px;
+
     font-weight: 900;
 }
 
 .status {
+
     color: #aaa;
+
     font-size: 14px;
 }
 
+
+/* =========================
+   HERO
+========================= */
+
 .hero {
+
     max-width: 900px;
+
+    padding-bottom: 100px;
 }
 
 .welcome {
+
     color: #aaa;
+
     font-size: 18px;
+
     margin-bottom: 12px;
 }
 
 .hero h2 {
-    font-size: clamp(50px, 9vw, 110px);
+
+    font-size:
+        clamp(50px, 9vw, 110px);
+
     line-height: .95;
+
     margin-bottom: 30px;
 }
 
 .hero h2 span {
-    background: linear-gradient(90deg, #fff, #777, #fff);
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #777,
+            #fff
+        );
+
     background-size: 200%;
+
     -webkit-background-clip: text;
+
     color: transparent;
-    animation: shine 4s linear infinite;
+
+    animation:
+        shine 4s linear infinite;
 }
 
 @keyframes shine {
+
     to {
         background-position: 200%;
     }
 }
 
-.hero p {
+.hero > p {
+
     max-width: 650px;
+
     color: #aaa;
+
     font-size: 19px;
+
     line-height: 1.7;
 }
 
+
+/* =========================
+   QUICK CARDS
+========================= */
+
 .cards {
+
     display: flex;
+
     gap: 15px;
+
     margin-top: 45px;
+
     flex-wrap: wrap;
 }
 
 .card {
+
     padding: 20px 25px;
+
     border: 1px solid #222;
+
     border-radius: 18px;
-    background: rgba(255,255,255,.04);
+
+    background:
+        rgba(255,255,255,.04);
+
+    transition: .3s;
+}
+
+.card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color: #555;
 }
 
 .card strong {
+
     display: block;
+
     font-size: 20px;
+
     margin-bottom: 5px;
 }
 
 .card small {
+
     color: #777;
 }
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+
+    padding:
+        100px 0;
+
+    border-top:
+        1px solid #171717;
+}
+
+.section-tag {
+
+    color: #777;
+
+    letter-spacing: 5px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.about h2,
+.socials h2 {
+
+    font-size:
+        clamp(45px, 7vw, 75px);
+
+    margin-bottom: 25px;
+}
+
+.gradient-text {
+
+    background:
+        linear-gradient(
+            90deg,
+            white,
+            #777
+        );
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+.about-text {
+
+    max-width: 800px;
+
+    color: #aaa;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   INFO GRID
+========================= */
+
+.info-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 45px;
+}
+
+.info-card {
+
+    padding: 25px;
+
+    border:
+        1px solid #222;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    transition: .3s;
+}
+
+.info-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color: #555;
+}
+
+.info-card h3 {
+
+    margin-bottom: 8px;
+}
+
+.info-card p {
+
+    color: #888;
+}
+
+
+/* =========================
+   THINGS I LIKE
+========================= */
+
+.likes-title {
+
+    margin-top: 55px;
+
+    margin-bottom: 20px;
+
+    font-size: 28px;
+}
+
+.likes {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.likes span {
+
+    padding:
+        12px 18px;
+
+    border-radius: 30px;
+
+    border:
+        1px solid #292929;
+
+    background: #111;
+
+    transition: .3s;
+}
+
+.likes span:hover {
+
+    transform:
+        scale(1.05);
+
+    background: #1c1c1c;
+}
+
+
+/* =========================
+   SOCIALS
+========================= */
+
+.socials {
+
+    padding:
+        100px 0;
+
+    border-top:
+        1px solid #171717;
+}
+
+.social-grid {
+
+    max-width: 900px;
+
+    display: grid;
+
+    gap: 15px;
+}
+
+.social-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 22px;
+
+    border:
+        1px solid #222;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+.social-card:hover {
+
+    transform:
+        translateX(8px);
+
+    border-color: #555;
+
+    background:
+        rgba(255,255,255,.07);
+}
+
+.social-card .icon {
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #181818;
+
+    font-size: 25px;
+}
+
+.social-card h3 {
+
+    margin-bottom: 5px;
+
+    font-size: 20px;
+}
+
+.social-card p {
+
+    color: #777;
+
+    margin: 0;
+}
+
+.social-card b {
+
+    margin-left: auto;
+
+    font-size: 25px;
+
+    color: #777;
+}
+
+.coming {
+
+    cursor: default;
+}
+
+.coming:hover {
+
+    transform: none;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    padding:
+        50px 0 20px;
+
+    text-align: center;
+
+    color: #555;
+
+    border-top:
+        1px solid #171717;
+}
+
+footer strong {
+
+    color: #888;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    #website {
+
+        padding:
+            30px 6%;
+    }
+
+    .navbar {
+
+        margin-bottom: 70px;
+    }
+
+    .info-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .login-card {
+
+        padding:
+            35px 25px;
+    }
+
+    .hero p {
+
+        font-size: 17px;
+    }
+}
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================
+     BACKGROUND
+========================= -->
+
 <div class="background">
+
     <div class="orb one"></div>
+
     <div class="orb two"></div>
+
 </div>
 
-<!-- LOGIN SCREEN -->
+
+<!-- =========================
+     LOGIN
+========================= -->
 
 <div id="loginScreen">
 
     <div class="login-card">
 
-        <div class="logo">S</div>
+        <div class="logo">
+            S
+        </div>
 
-        <h1>Welcome</h1>
+        <h1>
+            Welcome
+        </h1>
 
         <p class="subtitle">
-            Enter your name to access the website
+            Enter your name to access my website
         </p>
 
+
         <div class="input-box">
+
             <input
                 type="text"
                 id="name"
                 placeholder="Your name"
                 autocomplete="off"
             >
+
         </div>
 
+
         <div class="input-box">
+
             <input
                 type="password"
                 id="password"
                 placeholder="Website password"
                 autocomplete="off"
             >
+
         </div>
+
 
         <button onclick="login()">
             Enter Website →
         </button>
 
-        <div class="error" id="error"></div>
+
+        <div
+            class="error"
+            id="error">
+        </div>
+
 
         <div class="security">
-            🔒 Personal website • Access required
+
+            🔒 Personal website
+            • Access required
+
         </div>
 
     </div>
@@ -333,258 +883,530 @@ button:hover {
 </div>
 
 
-<!-- WEBSITE AFTER LOGIN -->
+
+<!-- =========================
+     WEBSITE
+========================= -->
 
 <div id="website">
 
+
+    <!-- NAVBAR -->
+
     <div class="navbar">
-        <div class="brand">SHORYA.</div>
+
+        <div class="brand">
+            SHORYA.
+        </div>
 
         <div class="status">
             ● ONLINE
         </div>
+
     </div>
 
-    <div class="hero">
+
+
+    <!-- HERO -->
+
+    <section class="hero">
 
         <div class="welcome">
-            Welcome back, <span id="visitorName"></span> 👋
+
+            Welcome,
+            <span id="visitorName"></span>
+            👋
+
         </div>
 
+
         <h2>
+
             This is<br>
-            <span>my world.</span>
+
+            <span>
+                my world.
+            </span>
+
         </h2>
 
+
         <p>
-            I'm Shorya — a developer, creator and technology enthusiast.
-            This website is a little place on the internet where I can
-            showcase who I am, what I build and what I'm learning.
+
+            I'm Shorya — an 11-year-old creator
+            from Pune, PCMC, India. I love computers,
+            coding, gaming, websites, and technology.
+
         </p>
+
 
         <div class="cards">
 
-            <div class="card">
-                <strong>💻 Coding</strong>
-                <small>Building cool projects</small>
-            </div>
 
             <div class="card">
-                <strong>🚀 Projects</strong>
-                <small>Always creating something</small>
+
+                <strong>
+                    💻 Coding
+                </strong>
+
+                <small>
+                    Building cool projects
+                </small>
+
             </div>
 
+
             <div class="card">
-                <strong>🌐 Web</strong>
-                <small>Exploring the internet</small>
+
+                <strong>
+                    🎮 Gaming
+                </strong>
+
+                <small>
+                    Playing and creating
+                </small>
+
             </div>
+
+
+            <div class="card">
+
+                <strong>
+                    🚀 Projects
+                </strong>
+
+                <small>
+                    Always creating something
+                </small>
+
+            </div>
+
+
+            <div class="card">
+
+                <strong>
+                    🌐 Web
+                </strong>
+
+                <small>
+                    Exploring the internet
+                </small>
+
+            </div>
+
 
         </div>
 
-    </div>
+    </section>
+
+
+
+    <!-- ABOUT -->
+
+    <section class="about">
+
+        <div class="section-tag">
+            ABOUT ME
+        </div>
+
+
+        <h2>
+
+            Hey, I'm
+            <span class="gradient-text">
+                Shorya.
+            </span>
+
+        </h2>
+
+
+        <p class="about-text">
+
+            I'm an 11-year-old creator from
+            Pune, PCMC, India.
+
+            I'm interested in computers,
+            programming, websites, games,
+            and technology.
+
+            I enjoy experimenting with new
+            ideas and turning them into projects.
+
+            I'm always learning something new
+            and trying to make my projects
+            better. 🚀
+
+        </p>
+
+
+
+        <!-- INFO -->
+
+        <div class="info-grid">
+
+
+            <div class="info-card">
+
+                <h3>
+                    👦 Name
+                </h3>
+
+                <p>
+                    Shorya
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    🎂 Age
+                </h3>
+
+                <p>
+                    11
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    📍 Location
+                </h3>
+
+                <p>
+                    Pune, PCMC
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    🇮🇳 Country
+                </h3>
+
+                <p>
+                    India
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- LIKES -->
+
+        <h3 class="likes-title">
+            ⚡ Things I Like
+        </h3>
+
+
+        <div class="likes">
+
+            <span>
+                💻 Coding
+            </span>
+
+            <span>
+                🌐 Websites
+            </span>
+
+            <span>
+                🎮 Gaming
+            </span>
+
+            <span>
+                🚀 Technology
+            </span>
+
+            <span>
+                🧪 Experimenting
+            </span>
+
+            <span>
+                🎨 Creating
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SOCIAL LINKS -->
+
+    <section class="socials">
+
+        <div class="section-tag">
+            FIND ME ONLINE
+        </div>
+
+
+        <h2>
+
+            My
+            <span class="gradient-text">
+                Links 🌐
+            </span>
+
+        </h2>
+
+
+        <div class="social-grid">
+
+
+            <!-- YOUTUBE -->
+
+            <a
+                href="https://www.youtube.com/@yourskui-b7t"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-card"
+            >
+
+                <div class="icon">
+                    ▶️
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        YouTube
+                    </h3>
+
+                    <p>
+                        @yourskui-b7t
+                    </p>
+
+                </div>
+
+
+                <b>
+                    →
+                </b>
+
+            </a>
+
+
+
+            <!-- ROBLOX -->
+
+            <a
+                href="https://www.roblox.com/users/9674387216/profile"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-card"
+            >
+
+                <div class="icon">
+                    🎮
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Roblox
+                    </h3>
+
+                    <p>
+                        View my Roblox profile
+                    </p>
+
+                </div>
+
+
+                <b>
+                    →
+                </b>
+
+            </a>
+
+
+
+            <!-- DISCORD -->
+
+            <div class="social-card coming">
+
+                <div class="icon">
+                    💬
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Discord
+                    </h3>
+
+                    <p>
+                        Coming soon...
+                    </p>
+
+                </div>
+
+
+                <b>
+                    ⌛
+                </b>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+
+            Made with 💻 by
+            <strong>
+                Shorya
+            </strong>
+
+        </p>
+
+        <p>
+            © 2026 Shorya. All rights reserved.
+        </p>
+
+    </footer>
+
 
 </div>
-    ```html
-<section class="socials">
-
-    <p class="tag">FIND ME ONLINE</p>
-
-    <h2>My <span>Links 🌐</span></h2>
-
-    <div class="social-grid">
-
-        <a href="https://www.youtube.com/@yourskui-b7t"
-           target="_blank"
-           class="social-card">
-
-            <div class="icon">▶️</div>
-
-            <div>
-                <h3>YouTube</h3>
-                <p>@yourskui-b7t</p>
-            </div>
-
-            <b>→</b>
-
-        </a>
 
 
-        <a href="https://www.roblox.com/users/9674387216/profile"
-           target="_blank"
-           class="social-card">
 
-            <div class="icon">🎮</div>
-
-            <div>
-                <h3>Roblox</h3>
-                <p>View my Roblox profile</p>
-            </div>
-
-            <b>→</b>
-
-        </a>
-
-
-        <div class="social-card coming">
-
-            <div class="icon">💬</div>
-
-            <div>
-                <h3>Discord</h3>
-                <p>Coming soon...</p>
-            </div>
-
-            <b>⌛</b>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<style>
-
-.socials {
-    padding: 100px 8%;
-    background: #050505;
-    color: white;
-}
-
-.socials h2 {
-    font-size: clamp(45px, 7vw, 75px);
-    margin: 15px 0 40px;
-}
-
-.socials h2 span {
-    background: linear-gradient(90deg, white, #777);
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.tag {
-    color: #777;
-    letter-spacing: 5px;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.social-grid {
-    max-width: 900px;
-    display: grid;
-    gap: 15px;
-}
-
-.social-card {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 22px;
-    border: 1px solid #222;
-    border-radius: 20px;
-    background: rgba(255,255,255,.04);
-    color: white;
-    text-decoration: none;
-    transition: .3s;
-}
-
-.social-card:hover {
-    transform: translateX(8px);
-    border-color: #555;
-    background: rgba(255,255,255,.07);
-}
-
-.social-card .icon {
-    width: 55px;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 15px;
-    background: #181818;
-    font-size: 25px;
-}
-
-.social-card h3 {
-    margin-bottom: 5px;
-    font-size: 20px;
-}
-
-.social-card p {
-    color: #777;
-    margin: 0;
-}
-
-.social-card b {
-    margin-left: auto;
-    font-size: 25px;
-    color: #777;
-}
-
-.coming {
-    cursor: default;
-}
-
-.coming:hover {
-    transform: none;
-}
-
-</style>
-```
-
-
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
 function login() {
 
-    const name = document.getElementById("name").value.trim();
-    const password = document.getElementById("password").value;
-    const error = document.getElementById("error");
+    const name =
+        document
+        .getElementById("name")
+        .value
+        .trim();
 
-    // Website password
-    const correctPassword = "GAGISBEST";
+
+    const password =
+        document
+        .getElementById("password")
+        .value;
+
+
+    const error =
+        document
+        .getElementById("error");
+
+
+    /*
+       WEBSITE PASSWORD
+    */
+
+    const correctPassword =
+        "GAGISBEST";
+
+
+    /*
+       CHECK NAME
+    */
 
     if (name === "") {
-        error.textContent = "⚠️ Please enter your name.";
+
+        error.textContent =
+            "⚠️ Please enter your name.";
+
         return;
     }
+
+
+    /*
+       CHECK PASSWORD
+    */
 
     if (password !== correctPassword) {
-        error.textContent = "❌ Wrong password. Try again.";
+
+        error.textContent =
+            "❌ Wrong password. Try again.";
+
         return;
     }
 
-    // Successful login
 
-    document.getElementById("visitorName").textContent = name;
+    /*
+       SUCCESSFUL LOGIN
+    */
 
-    document.getElementById("loginScreen").style.opacity = "0";
+    document
+        .getElementById("visitorName")
+        .textContent = name;
 
-    setTimeout(() => {
 
-        document.getElementById("loginScreen").style.display = "none";
+    document
+        .getElementById("loginScreen")
+        .style.opacity = "0";
 
-        document.getElementById("website").style.display = "block";
+
+    setTimeout(function() {
+
+        document
+            .getElementById("loginScreen")
+            .style.display = "none";
+
+
+        document
+            .getElementById("website")
+            .style.display = "block";
+
 
         document.body.style.overflow = "auto";
 
+
+        window.scrollTo(0, 0);
+
     }, 700);
+
 }
 
 
-// Press Enter to login
+/*
+   PRESS ENTER TO LOGIN
+*/
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener(
+    "keydown",
+    function(event) {
 
-    if (event.key === "Enter") {
-        login();
+        if (event.key === "Enter") {
+
+            login();
+
+        }
+
     }
-
-});
+);
 
 </script>
 
+
 </body>
 </html>
-```
+
