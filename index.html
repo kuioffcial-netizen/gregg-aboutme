@@ -1,19 +1,13 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Shorya | My World</title>
 
 <style>
-
-/* =====================================================
-   RESET
-===================================================== */
-
 * {
     margin: 0;
     padding: 0;
@@ -32,10 +26,9 @@ body {
     overflow-x: hidden;
 }
 
-
-/* =====================================================
+/* =========================
    HOLOGRAM BACKGROUND
-===================================================== */
+========================= */
 
 .holo-background {
     position: fixed;
@@ -44,11 +37,8 @@ body {
     overflow: hidden;
 
     background:
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(90,80,255,.15),
-            transparent 45%
-        ),
+        radial-gradient(circle at 20% 20%, rgba(108,99,255,.18), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(0,229,255,.13), transparent 35%),
         #030305;
 }
 
@@ -75,7 +65,6 @@ body {
         );
 
     filter: blur(110px);
-
     opacity: .18;
 
     transition: transform .15s ease-out;
@@ -86,15 +75,8 @@ body {
     inset: -50%;
 
     background-image:
-        linear-gradient(
-            rgba(100,150,255,.13) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(100,150,255,.13) 1px,
-            transparent 1px
-        );
+        linear-gradient(rgba(100,150,255,.13) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100,150,255,.13) 1px, transparent 1px);
 
     background-size: 55px 55px;
 
@@ -143,23 +125,17 @@ body {
     transform: translate(-50%, -50%);
 
     z-index: -5;
-
-    transition:
-        left .06s linear,
-        top .06s linear;
 }
 
-
-/* =====================================================
+/* =========================
    PARTICLES
-===================================================== */
+========================= */
 
 #particles {
     position: fixed;
     inset: 0;
 
     pointer-events: none;
-
     z-index: -4;
 }
 
@@ -186,31 +162,23 @@ body {
 }
 
 @keyframes particleFloat {
-
     from {
         transform: translate(0,0);
     }
 
     to {
-        transform:
-            translate(
-                var(--x),
-                var(--y)
-            );
+        transform: translate(var(--x),var(--y));
     }
 }
 
-
-/* =====================================================
+/* =========================
    LOGIN
-===================================================== */
+========================= */
 
 #loginScreen {
-
     min-height: 100vh;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -220,26 +188,21 @@ body {
 }
 
 .login-card {
-
     width: min(430px,95vw);
 
     padding: 45px 35px;
 
-    border:
-        1px solid
-        rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.18);
 
     border-radius: 28px;
 
-    background:
-        rgba(10,10,20,.62);
+    background: rgba(10,10,20,.65);
 
     backdrop-filter: blur(25px);
 
     box-shadow:
         0 30px 100px rgba(0,0,0,.7),
-        inset 0 0 30px
-        rgba(255,255,255,.03);
+        0 0 50px rgba(0,229,255,.05);
 
     text-align: center;
 
@@ -249,88 +212,66 @@ body {
 }
 
 @keyframes cardIn {
-
     from {
         opacity: 0;
-        transform:
-            translateY(40px)
-            scale(.95);
+        transform: translateY(40px) scale(.95);
     }
 
     to {
         opacity: 1;
-        transform:
-            translateY(0)
-            scale(1);
+        transform: translateY(0) scale(1);
     }
 }
 
 .logo {
-
     width: 75px;
     height: 75px;
 
     margin: 0 auto 20px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     border-radius: 22px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #777
-        );
+    background: linear-gradient(135deg,#fff,#777);
 
-    color: black;
+    color: #000;
 
     font-size: 30px;
-
     font-weight: 900;
 
     box-shadow:
-        0 0 40px
-        rgba(0,229,255,.25);
+        0 0 40px rgba(0,229,255,.25);
 }
 
 .login-card h1 {
-
     font-size: 34px;
-
     margin-bottom: 8px;
 }
 
 .subtitle {
-
     color: #999;
-
     margin-bottom: 32px;
 }
 
 .input-box {
-
     margin-bottom: 18px;
 }
 
 input {
-
     width: 100%;
 
     padding: 16px 18px;
 
-    border:
-        1px solid #333;
+    border: 1px solid #333;
 
     border-radius: 14px;
 
     outline: none;
 
-    background:
-        rgba(255,255,255,.06);
+    background: rgba(255,255,255,.06);
 
     color: white;
 
@@ -340,9 +281,7 @@ input {
 }
 
 input:focus {
-
-    border-color:
-        #00e5ff;
+    border-color: #00e5ff;
 
     box-shadow:
         0 0 25px
@@ -350,7 +289,6 @@ input:focus {
 }
 
 .login-button {
-
     width: 100%;
 
     padding: 16px;
@@ -364,7 +302,6 @@ input:focus {
     color: black;
 
     font-size: 17px;
-
     font-weight: bold;
 
     cursor: pointer;
@@ -373,9 +310,7 @@ input:focus {
 }
 
 .login-button:hover {
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
     box-shadow:
         0 12px 35px
@@ -383,7 +318,6 @@ input:focus {
 }
 
 .error {
-
     color: #ff6b6b;
 
     margin-top: 15px;
@@ -394,7 +328,6 @@ input:focus {
 }
 
 .security {
-
     margin-top: 25px;
 
     color: #666;
@@ -402,13 +335,11 @@ input:focus {
     font-size: 12px;
 }
 
-
-/* =====================================================
+/* =========================
    WEBSITE
-===================================================== */
+========================= */
 
 #website {
-
     display: none;
 
     min-height: 100vh;
@@ -419,7 +350,6 @@ input:focus {
 }
 
 @keyframes websiteIn {
-
     from {
         opacity: 0;
         transform: scale(1.04);
@@ -431,34 +361,26 @@ input:focus {
     }
 }
 
-
-/* =====================================================
+/* =========================
    NAVBAR
-===================================================== */
+========================= */
 
 .navbar {
-
     display: flex;
 
-    justify-content:
-        space-between;
-
+    justify-content: space-between;
     align-items: center;
 
     margin-bottom: 100px;
 }
 
 .brand {
-
     font-size: 24px;
-
     font-weight: 900;
-
     letter-spacing: 1px;
 }
 
 .nav-right {
-
     display: flex;
 
     align-items: center;
@@ -467,37 +389,29 @@ input:focus {
 }
 
 .status {
-
     color: #aaa;
-
     font-size: 14px;
 }
 
-
-/* =====================================================
-   AI TOGGLE AT TOP
-===================================================== */
+/* =========================
+   AI TOGGLE
+========================= */
 
 .ai-toggle {
-
     width: auto !important;
 
     display: flex;
-
     align-items: center;
 
     gap: 10px;
 
-    padding:
-        10px 15px !important;
+    padding: 10px 15px !important;
 
-    border:
-        1px solid #333 !important;
+    border: 1px solid #333 !important;
 
     border-radius: 30px !important;
 
-    background:
-        rgba(15,15,25,.8) !important;
+    background: rgba(15,15,25,.85) !important;
 
     color: white !important;
 
@@ -513,12 +427,9 @@ input:focus {
 }
 
 .ai-toggle:hover {
+    transform: translateY(-2px);
 
-    transform:
-        translateY(-2px);
-
-    border-color:
-        #00e5ff !important;
+    border-color: #00e5ff !important;
 
     box-shadow:
         0 0 25px
@@ -526,7 +437,6 @@ input:focus {
 }
 
 .toggle-switch {
-
     width: 40px;
     height: 22px;
 
@@ -537,14 +447,12 @@ input:focus {
     background: #333;
 
     display: flex;
-
     align-items: center;
 
     transition: .3s;
 }
 
 .toggle-dot {
-
     width: 16px;
     height: 16px;
 
@@ -555,20 +463,17 @@ input:focus {
     transition: .3s;
 }
 
-
-/* =====================================================
+/* =========================
    HERO
-===================================================== */
+========================= */
 
 .hero {
-
     max-width: 950px;
 
     padding-bottom: 100px;
 }
 
 .welcome {
-
     color: #aaa;
 
     font-size: 18px;
@@ -577,13 +482,7 @@ input:focus {
 }
 
 .hero h2 {
-
-    font-size:
-        clamp(
-            50px,
-            9vw,
-            110px
-        );
+    font-size: clamp(50px,9vw,110px);
 
     line-height: .95;
 
@@ -591,7 +490,6 @@ input:focus {
 }
 
 .hero h2 span {
-
     background:
         linear-gradient(
             90deg,
@@ -611,15 +509,12 @@ input:focus {
 }
 
 @keyframes shine {
-
     to {
-        background-position:
-            200%;
+        background-position: 200%;
     }
 }
 
 .hero > p {
-
     max-width: 700px;
 
     color: #aaa;
@@ -629,13 +524,11 @@ input:focus {
     line-height: 1.7;
 }
 
-
-/* =====================================================
+/* =========================
    CARDS
-===================================================== */
+========================= */
 
 .cards {
-
     display: flex;
 
     gap: 15px;
@@ -646,17 +539,13 @@ input:focus {
 }
 
 .card {
+    padding: 20px 25px;
 
-    padding:
-        20px 25px;
-
-    border:
-        1px solid #222;
+    border: 1px solid #222;
 
     border-radius: 18px;
 
-    background:
-        rgba(255,255,255,.04);
+    background: rgba(255,255,255,.04);
 
     backdrop-filter: blur(10px);
 
@@ -664,12 +553,9 @@ input:focus {
 }
 
 .card:hover {
+    transform: translateY(-6px);
 
-    transform:
-        translateY(-6px);
-
-    border-color:
-        #555;
+    border-color: #555;
 
     box-shadow:
         0 10px 30px
@@ -677,7 +563,6 @@ input:focus {
 }
 
 .card strong {
-
     display: block;
 
     font-size: 20px;
@@ -686,26 +571,20 @@ input:focus {
 }
 
 .card small {
-
     color: #777;
 }
 
-
-/* =====================================================
+/* =========================
    ABOUT
-===================================================== */
+========================= */
 
 .about {
+    padding: 100px 0;
 
-    padding:
-        100px 0;
-
-    border-top:
-        1px solid #171717;
+    border-top: 1px solid #171717;
 }
 
 .section-tag {
-
     color: #777;
 
     letter-spacing: 5px;
@@ -719,19 +598,12 @@ input:focus {
 
 .about h2,
 .socials h2 {
-
-    font-size:
-        clamp(
-            45px,
-            7vw,
-            75px
-        );
+    font-size: clamp(45px,7vw,75px);
 
     margin-bottom: 25px;
 }
 
 .gradient-text {
-
     background:
         linear-gradient(
             90deg,
@@ -739,14 +611,12 @@ input:focus {
             #777
         );
 
-    -webkit-background-clip:
-        text;
+    -webkit-background-clip: text;
 
     color: transparent;
 }
 
 .about-text {
-
     max-width: 800px;
 
     color: #aaa;
@@ -756,13 +626,11 @@ input:focus {
     line-height: 1.8;
 }
 
-
-/* =====================================================
+/* =========================
    INFO
-===================================================== */
+========================= */
 
 .info-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -774,49 +642,39 @@ input:focus {
 }
 
 .info-card {
-
     padding: 25px;
 
-    border:
-        1px solid #222;
+    border: 1px solid #222;
 
     border-radius: 20px;
 
     background:
         rgba(255,255,255,.04);
 
-    backdrop-filter:
-        blur(10px);
+    backdrop-filter: blur(10px);
 
     transition: .3s;
 }
 
 .info-card:hover {
+    transform: translateY(-5px);
 
-    transform:
-        translateY(-5px);
-
-    border-color:
-        #555;
+    border-color: #555;
 }
 
 .info-card h3 {
-
     margin-bottom: 8px;
 }
 
 .info-card p {
-
     color: #888;
 }
 
-
-/* =====================================================
+/* =========================
    LIKES
-===================================================== */
+========================= */
 
 .likes-title {
-
     margin-top: 55px;
 
     margin-bottom: 20px;
@@ -825,7 +683,6 @@ input:focus {
 }
 
 .likes {
-
     display: flex;
 
     flex-wrap: wrap;
@@ -834,14 +691,11 @@ input:focus {
 }
 
 .likes span {
-
-    padding:
-        12px 18px;
+    padding: 12px 18px;
 
     border-radius: 30px;
 
-    border:
-        1px solid #292929;
+    border: 1px solid #292929;
 
     background: #111;
 
@@ -849,28 +703,22 @@ input:focus {
 }
 
 .likes span:hover {
-
     transform: scale(1.05);
 
     background: #1c1c1c;
 }
 
-
-/* =====================================================
+/* =========================
    SOCIALS
-===================================================== */
+========================= */
 
 .socials {
+    padding: 100px 0;
 
-    padding:
-        100px 0;
-
-    border-top:
-        1px solid #171717;
+    border-top: 1px solid #171717;
 }
 
 .social-grid {
-
     max-width: 900px;
 
     display: grid;
@@ -879,7 +727,6 @@ input:focus {
 }
 
 .social-card {
-
     display: flex;
 
     align-items: center;
@@ -888,8 +735,7 @@ input:focus {
 
     padding: 22px;
 
-    border:
-        1px solid #222;
+    border: 1px solid #222;
 
     border-radius: 20px;
 
@@ -906,19 +752,15 @@ input:focus {
 }
 
 .social-card:hover {
+    transform: translateX(8px);
 
-    transform:
-        translateX(8px);
-
-    border-color:
-        #555;
+    border-color: #555;
 
     background:
         rgba(255,255,255,.07);
 }
 
 .social-card .icon {
-
     width: 55px;
     height: 55px;
 
@@ -935,21 +777,18 @@ input:focus {
 }
 
 .social-card h3 {
-
     margin-bottom: 5px;
 
     font-size: 20px;
 }
 
 .social-card p {
-
     color: #777;
 
     margin: 0;
 }
 
 .social-card b {
-
     margin-left: auto;
 
     font-size: 25px;
@@ -957,48 +796,40 @@ input:focus {
     color: #777;
 }
 
-
-/* =====================================================
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 
 footer {
-
-    padding:
-        50px 0 30px;
+    padding: 50px 0 30px;
 
     text-align: center;
 
     color: #555;
 
-    border-top:
-        1px solid #171717;
+    border-top: 1px solid #171717;
 }
 
 footer strong {
-
     color: #888;
 }
 
-
-/* =====================================================
+/* =========================
    AI WINDOW
-===================================================== */
+========================= */
 
 #aiBox {
-
     position: fixed;
 
     right: 25px;
-
     top: 95px;
 
-    width: 370px;
+    width: 390px;
 
     max-width:
         calc(100vw - 30px);
 
-    height: 520px;
+    height: 540px;
 
     display: none;
 
@@ -1011,7 +842,7 @@ footer strong {
     border-radius: 22px;
 
     background:
-        rgba(8,8,15,.92);
+        rgba(8,8,15,.94);
 
     backdrop-filter:
         blur(25px);
@@ -1032,60 +863,48 @@ footer strong {
 }
 
 @keyframes aiOpen {
-
     from {
-
         opacity: 0;
 
         transform:
             translateY(-15px)
             scale(.96);
-
     }
 
     to {
-
         opacity: 1;
 
         transform:
             translateY(0)
             scale(1);
-
     }
 }
-
 
 /* AI HEADER */
 
 .aiHeader {
-
     display: flex;
 
     align-items: center;
 
-    justify-content:
-        space-between;
+    justify-content: space-between;
 
     padding: 18px;
 
-    border-bottom:
-        1px solid #222;
+    border-bottom: 1px solid #222;
 }
 
 .aiHeader strong {
-
     display: block;
 
     font-size: 18px;
 }
 
 .aiHeader small {
-
     color: #777;
 }
 
 .aiClose {
-
     width: 35px !important;
     height: 35px;
 
@@ -1104,11 +923,9 @@ footer strong {
     cursor: pointer;
 }
 
-
 /* AI MESSAGES */
 
 #aiMessages {
-
     flex: 1;
 
     padding: 18px;
@@ -1123,8 +940,7 @@ footer strong {
 }
 
 .aiMessage {
-
-    max-width: 85%;
+    max-width: 88%;
 
     padding:
         12px 15px;
@@ -1139,7 +955,6 @@ footer strong {
 }
 
 .aiMessage.bot {
-
     align-self: flex-start;
 
     background: #181818;
@@ -1148,7 +963,6 @@ footer strong {
 }
 
 .aiMessage.user {
-
     align-self: flex-end;
 
     background: white;
@@ -1156,23 +970,19 @@ footer strong {
     color: black;
 }
 
-
 /* AI INPUT */
 
 .aiInput {
-
     display: flex;
 
     gap: 8px;
 
     padding: 12px;
 
-    border-top:
-        1px solid #222;
+    border-top: 1px solid #222;
 }
 
 .aiInput input {
-
     flex: 1;
 
     min-width: 0;
@@ -1192,7 +1002,6 @@ footer strong {
 }
 
 .aiSend {
-
     width: 48px !important;
 
     padding: 0 !important;
@@ -1204,36 +1013,64 @@ footer strong {
     color: black !important;
 }
 
+/* AI QUICK BUTTONS */
 
-/* =====================================================
-   MOBILE
-===================================================== */
+.quickQuestions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    padding: 0 18px 12px;
+}
+
+.quickQuestions button {
+    width: auto;
+
+    padding: 7px 10px;
+
+    border: 1px solid #333;
+
+    border-radius: 20px;
+
+    background: #111;
+
+    color: #aaa;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.quickQuestions button:hover {
+    color: white;
+
+    border-color: #00e5ff;
+}
+
+/* MOBILE */
 
 @media (max-width:600px) {
 
     #website {
-        padding:
-            30px 6%;
+        padding: 30px 6%;
     }
 
     .navbar {
+        align-items: flex-start;
 
-        align-items:
-            flex-start;
-
-        margin-bottom:
-            70px;
+        margin-bottom: 70px;
     }
 
     .nav-right {
-
         gap: 8px;
 
-        flex-direction:
-            column;
+        flex-direction: column;
 
-        align-items:
-            flex-end;
+        align-items: flex-end;
     }
 
     .status {
@@ -1245,44 +1082,29 @@ footer strong {
     }
 
     .login-card {
-        padding:
-            35px 25px;
+        padding: 35px 25px;
     }
 
     .hero > p {
         font-size: 17px;
     }
 
-    .holo-grid {
-        opacity: .08;
-    }
-
     #aiBox {
-
         right: 15px;
-
         top: 85px;
 
         width:
             calc(100vw - 30px);
 
-        height:
-            65vh;
+        height: 65vh;
     }
-
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =====================================================
-     HOLOGRAM
-===================================================== -->
+<!-- HOLOGRAM -->
 
 <div class="holo-background">
 
@@ -1300,19 +1122,17 @@ footer strong {
 
 </div>
 
-
 <div
     class="cursor-glow"
     id="cursorGlow">
 </div>
 
-
 <div id="particles"></div>
 
 
-<!-- =====================================================
+<!-- =========================
      LOGIN
-===================================================== -->
+========================= -->
 
 <div id="loginScreen">
 
@@ -1332,7 +1152,6 @@ footer strong {
             Enter your name to enter Shorya's world
         </p>
 
-
         <div class="input-box">
 
             <input
@@ -1343,7 +1162,6 @@ footer strong {
             >
 
         </div>
-
 
         <div class="input-box">
 
@@ -1356,7 +1174,6 @@ footer strong {
 
         </div>
 
-
         <button
             class="login-button"
             onclick="login()">
@@ -1365,17 +1182,13 @@ footer strong {
 
         </button>
 
-
         <div
             class="error"
             id="error">
         </div>
 
-
         <div class="security">
-
             🔒 Personal website • Access required
-
         </div>
 
     </div>
@@ -1383,13 +1196,11 @@ footer strong {
 </div>
 
 
-
-<!-- =====================================================
-     WEBSITE
-===================================================== -->
+<!-- =========================
+     MAIN WEBSITE
+========================= -->
 
 <div id="website">
-
 
     <!-- NAVBAR -->
 
@@ -1399,15 +1210,11 @@ footer strong {
             SHORYA.
         </div>
 
-
         <div class="nav-right">
 
             <div class="status">
                 ● ONLINE
             </div>
-
-
-            <!-- AI TOGGLE -->
 
             <button
                 class="ai-toggle"
@@ -1432,10 +1239,7 @@ footer strong {
     </div>
 
 
-
-    <!-- =================================================
-         HERO
-    ================================================= -->
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -1447,7 +1251,6 @@ footer strong {
 
         </div>
 
-
         <h2>
 
             This is<br>
@@ -1457,7 +1260,6 @@ footer strong {
             </span>
 
         </h2>
-
 
         <p>
 
@@ -1469,9 +1271,7 @@ footer strong {
 
         </p>
 
-
         <div class="cards">
-
 
             <div class="card">
 
@@ -1485,7 +1285,6 @@ footer strong {
 
             </div>
 
-
             <div class="card">
 
                 <strong>
@@ -1498,7 +1297,6 @@ footer strong {
 
             </div>
 
-
             <div class="card">
 
                 <strong>
@@ -1510,7 +1308,6 @@ footer strong {
                 </small>
 
             </div>
-
 
             <div class="card">
 
@@ -1529,17 +1326,13 @@ footer strong {
     </section>
 
 
-
-    <!-- =================================================
-         ABOUT
-    ================================================= -->
+    <!-- ABOUT -->
 
     <section class="about">
 
         <div class="section-tag">
             ABOUT ME
         </div>
-
 
         <h2>
 
@@ -1550,7 +1343,6 @@ footer strong {
             </span>
 
         </h2>
-
 
         <p class="about-text">
 
@@ -1572,7 +1364,6 @@ footer strong {
 
         <div class="info-grid">
 
-
             <div class="info-card">
 
                 <h3>
@@ -1584,7 +1375,6 @@ footer strong {
                 </p>
 
             </div>
-
 
             <div class="info-card">
 
@@ -1598,7 +1388,6 @@ footer strong {
 
             </div>
 
-
             <div class="info-card">
 
                 <h3>
@@ -1610,7 +1399,6 @@ footer strong {
                 </p>
 
             </div>
-
 
             <div class="info-card">
 
@@ -1631,19 +1419,13 @@ footer strong {
             ⚡ Things I Like
         </h3>
 
-
         <div class="likes">
 
             <span>💻 Coding</span>
-
             <span>🌐 Websites</span>
-
             <span>🎮 Gaming</span>
-
             <span>🚀 Technology</span>
-
             <span>🧪 Experimenting</span>
-
             <span>🎨 Creating</span>
 
         </div>
@@ -1651,17 +1433,13 @@ footer strong {
     </section>
 
 
-
-    <!-- =================================================
-         LINKS
-    ================================================= -->
+    <!-- SOCIALS -->
 
     <section class="socials">
 
         <div class="section-tag">
             FIND ME ONLINE
         </div>
-
 
         <h2>
 
@@ -1675,9 +1453,6 @@ footer strong {
 
 
         <div class="social-grid">
-
-
-            <!-- YOUTUBE -->
 
             <a
                 href="https://www.youtube.com/@yourskui-b7t"
@@ -1708,9 +1483,6 @@ footer strong {
             </a>
 
 
-
-            <!-- ROBLOX -->
-
             <a
                 href="https://www.roblox.com/users/9674387216/profile"
                 target="_blank"
@@ -1740,9 +1512,6 @@ footer strong {
             </a>
 
 
-
-            <!-- DISCORD -->
-
             <div class="social-card">
 
                 <div class="icon">
@@ -1767,14 +1536,10 @@ footer strong {
 
             </div>
 
-
         </div>
 
     </section>
 
-
-
-    <!-- FOOTER -->
 
     <footer>
 
@@ -1796,17 +1561,14 @@ footer strong {
 
     </footer>
 
-
 </div>
 
 
-
-<!-- =====================================================
-     AI CHAT WINDOW
-===================================================== -->
+<!-- =========================
+     AI WINDOW
+========================= -->
 
 <div id="aiBox">
-
 
     <div class="aiHeader">
 
@@ -1817,11 +1579,10 @@ footer strong {
             </strong>
 
             <small>
-                Basic Website Assistant
+                Offline Mini-AI
             </small>
 
         </div>
-
 
         <button
             class="aiClose"
@@ -1839,18 +1600,43 @@ footer strong {
 
         <div class="aiMessage bot">
 
-            Hey! 👋 I'm Shorya AI!
+            Heyyy! 👋 I'm Shorya AI!
 
-            Ask me:
-            • What's today's date?
-            • What day is it?
-            • What time is it?
-            • What's special today?
-            • What's your name?
-            • Who is Shorya?
-            • Tell me a joke!
+            You don't have to type perfectly.
+            Try stuff like:
+
+            "whut iz todys dateeee"
+            "wht ur nammmmm"
+            "heyyyyyyyy"
+            "who iz shorya"
+            "wat time iz it"
 
         </div>
+
+    </div>
+
+
+    <div class="quickQuestions">
+
+        <button onclick="quickAsk('what is today date')">
+            📅 Date
+        </button>
+
+        <button onclick="quickAsk('what time is it')">
+            ⏰ Time
+        </button>
+
+        <button onclick="quickAsk('who are you')">
+            🤖 You?
+        </button>
+
+        <button onclick="quickAsk('who is shorya')">
+            👦 Shorya
+        </button>
+
+        <button onclick="quickAsk('tell me a joke')">
+            😂 Joke
+        </button>
 
     </div>
 
@@ -1860,10 +1646,9 @@ footer strong {
         <input
             id="aiInput"
             type="text"
-            placeholder="Ask me something..."
+            placeholder="Ask me anything..."
             autocomplete="off"
         >
-
 
         <button
             class="aiSend"
@@ -1879,7 +1664,6 @@ footer strong {
 </div>
 
 
-
 <script>
 
 /* =====================================================
@@ -1887,10 +1671,7 @@ footer strong {
 ===================================================== */
 
 const particleContainer =
-    document.getElementById(
-        "particles"
-    );
-
+    document.getElementById("particles");
 
 for (
     let i = 0;
@@ -1899,9 +1680,7 @@ for (
 ) {
 
     const particle =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
     particle.className =
         "particle";
@@ -1914,52 +1693,40 @@ for (
 
     particle.style.setProperty(
         "--x",
-        (Math.random() * 180 - 90)
-        + "px"
+        (Math.random() * 180 - 90) + "px"
     );
 
     particle.style.setProperty(
         "--y",
-        (Math.random() * 180 - 90)
-        + "px"
+        (Math.random() * 180 - 90) + "px"
     );
 
     particle.style.setProperty(
         "--time",
-        (4 + Math.random() * 8)
-        + "s"
+        (4 + Math.random() * 8) + "s"
     );
 
     particleContainer.appendChild(
         particle
     );
-
 }
 
 
 /* =====================================================
-   MOUSE HOLOGRAM
+   HOLOGRAM MOUSE
 ===================================================== */
 
 const holoGlow =
-    document.getElementById(
-        "holoGlow"
-    );
+    document.getElementById("holoGlow");
 
 const holoGrid =
-    document.getElementById(
-        "holoGrid"
-    );
+    document.getElementById("holoGrid");
 
 const cursorGlow =
-    document.getElementById(
-        "cursorGlow"
-    );
+    document.getElementById("cursorGlow");
 
 const loginCard =
-    document.getElementById(
-        "loginCard"
-    );
+    document.getElementById("loginCard");
 
 
 document.addEventListener(
@@ -1988,18 +1755,18 @@ document.addEventListener(
                 calc(-50% + ${(x-.5)*200}px),
                 calc(-50% + ${(y-.5)*200}px)
             )
-            scale(${1 + x * .15})
+            scale(${1 + x*.15})
             `;
 
 
         holoGrid.style.transform =
             `
             perspective(500px)
-            rotateX(${65 + (y-.5)*8}deg)
+            rotateX(${65+(y-.5)*8}deg)
             rotateY(${(x-.5)*10}deg)
             translate(
                 ${(x-.5)*50}px,
-                ${25 + (y-.5)*30}%
+                ${25+(y-.5)*30}%
             )
             `;
 
@@ -2035,9 +1802,8 @@ function login() {
 
 
     const error =
-        document.getElementById(
-            "error"
-        );
+        document
+        .getElementById("error");
 
 
     const correctPassword =
@@ -2053,10 +1819,7 @@ function login() {
     }
 
 
-    if (
-        password !==
-        correctPassword
-    ) {
+    if (password !== correctPassword) {
 
         error.textContent =
             "❌ Wrong password. Try again.";
@@ -2066,17 +1829,13 @@ function login() {
 
 
     document
-        .getElementById(
-            "visitorName"
-        )
+        .getElementById("visitorName")
         .textContent =
         name;
 
 
     document
-        .getElementById(
-            "loginScreen"
-        )
+        .getElementById("loginScreen")
         .style.opacity =
         "0";
 
@@ -2085,17 +1844,13 @@ function login() {
         function() {
 
             document
-                .getElementById(
-                    "loginScreen"
-                )
+                .getElementById("loginScreen")
                 .style.display =
                 "none";
 
 
             document
-                .getElementById(
-                    "website"
-                )
+                .getElementById("website")
                 .style.display =
                 "block";
 
@@ -2104,15 +1859,11 @@ function login() {
                 "auto";
 
 
-            window.scrollTo(
-                0,
-                0
-            );
+            window.scrollTo(0,0);
 
         },
         700
     );
-
 }
 
 
@@ -2123,28 +1874,19 @@ function login() {
 function toggleAI() {
 
     const box =
-        document.getElementById(
-            "aiBox"
-        );
+        document.getElementById("aiBox");
 
     const dot =
-        document.getElementById(
-            "toggleDot"
-        );
+        document.getElementById("toggleDot");
 
 
-    if (
-        box.style.display ===
-        "flex"
-    ) {
+    if (box.style.display === "flex") {
 
         box.style.display =
             "none";
 
-
         dot.style.transform =
             "translateX(0)";
-
 
         dot.style.background =
             "#777";
@@ -2156,28 +1898,741 @@ function toggleAI() {
         box.style.display =
             "flex";
 
-
         dot.style.transform =
             "translateX(18px)";
-
 
         dot.style.background =
             "#00e5ff";
 
-
         document
-            .getElementById(
-                "aiInput"
-            )
+            .getElementById("aiInput")
             .focus();
-
     }
-
 }
 
 
 /* =====================================================
-   ADD AI MESSAGE
+   TEXT NORMALIZER
+   THIS IS WHAT MAKES THE AI UNDERSTAND
+   MESSY TYPING
+===================================================== */
+
+function normalizeText(text) {
+
+    let t =
+        text
+        .toLowerCase()
+        .trim();
+
+
+    /* Remove accents */
+
+    t = t.normalize("NFD")
+         .replace(/[\u0300-\u036f]/g,"");
+
+
+    /* Common chat shortcuts */
+
+    const replacements = {
+
+        "u": "you",
+        "ur": "your",
+        "r": "are",
+        "ya": "you",
+        "wat": "what",
+        "wht": "what",
+        "whut": "what",
+        "wot": "what",
+
+        "iz": "is",
+        "iss": "is",
+
+        "da": "the",
+        "dat": "that",
+        "todai": "today",
+        "tody": "today",
+        "tod": "today",
+
+        "nam": "name",
+        "nme": "name",
+
+        "abt": "about",
+
+        "plz": "please",
+        "pls": "please",
+
+        "hw": "how",
+
+        "yr": "your",
+
+        "nd": "and",
+
+        "cn": "can",
+
+        "frm": "from",
+
+        "whts": "whats",
+        "whats": "what is",
+
+        "hru": "how are you"
+
+    };
+
+
+    t = t
+        .split(/\s+/)
+        .map(word => {
+
+            return replacements[word] || word;
+
+        })
+        .join(" ");
+
+
+    /*
+       Convert repeated letters.
+
+       heyyyyyyyy
+       becomes
+       hey
+
+       dateeeeeee
+       becomes
+       date
+    */
+
+    t = t.replace(
+        /([a-z])\1{2,}/g,
+        "$1"
+    );
+
+
+    /*
+       Remove extra punctuation
+    */
+
+    t = t.replace(
+        /[^\w\s?]/g,
+        " "
+    );
+
+
+    /*
+       Clean spaces
+    */
+
+    t = t
+        .replace(/\s+/g," ")
+        .trim();
+
+
+    return t;
+}
+
+
+/* =====================================================
+   WORD MATCHING
+===================================================== */
+
+function hasAny(text, words) {
+
+    return words.some(
+        word =>
+            text.includes(word)
+    );
+}
+
+
+/* =====================================================
+   SMART INTENT DETECTION
+===================================================== */
+
+function getAIResponse(original) {
+
+    const q =
+        normalizeText(original);
+
+
+    const now =
+        new Date();
+
+
+    /* =====================
+       GREETINGS
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "hello",
+                "hi",
+                "hey",
+                "yo",
+                "sup",
+                "hii",
+                "good morning",
+                "good evening",
+                "good afternoon"
+            ]
+        )
+    ) {
+
+        return [
+            "Heyyyy! 👋",
+            "Yo! 😎 What's up?",
+            "Hey! Welcome to Shorya AI 🤖",
+            "Helloooo 😂"
+        ][
+            Math.floor(
+                Math.random() * 4
+            )
+        ];
+    }
+
+
+    /* =====================
+       NAME
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "your name",
+                "who are you",
+                "what are you called",
+                "name"
+            ]
+        )
+    ) {
+
+        return (
+            "I'm Shorya AI 🤖 — " +
+            "the offline assistant on this website!"
+        );
+    }
+
+
+    /* =====================
+       CREATOR
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "who made you",
+                "who created you",
+                "who built you",
+                "who made this ai"
+            ]
+        )
+    ) {
+
+        return (
+            "I'm the mini-AI built into " +
+            "Shorya's personal website! 🚀"
+        );
+    }
+
+
+    /* =====================
+       DATE
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "what is today date",
+                "what is the date",
+                "what date",
+                "today date",
+                "todays date",
+                "date today",
+                "date"
+            ]
+        )
+    ) {
+
+        return (
+            "Today is " +
+            now.toLocaleDateString(
+                "en-IN",
+                {
+                    weekday: "long",
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                }
+            ) +
+            " 📅"
+        );
+    }
+
+
+    /* =====================
+       DAY
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "what day",
+                "which day",
+                "day is it",
+                "today day"
+            ]
+        )
+    ) {
+
+        return (
+            "Today is " +
+            now.toLocaleDateString(
+                "en-IN",
+                {
+                    weekday: "long"
+                }
+            ) +
+            " 📆"
+        );
+    }
+
+
+    /* =====================
+       TIME
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "what time",
+                "current time",
+                "time is it",
+                "time now",
+                "time"
+            ]
+        )
+    ) {
+
+        return (
+            "The current time is " +
+            now.toLocaleTimeString(
+                "en-IN",
+                {
+                    hour: "numeric",
+                    minute: "2-digit",
+                    second: "2-digit"
+                }
+            ) +
+            " ⏰"
+        );
+    }
+
+
+    /* =====================
+       SPECIAL TODAY
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "special today",
+                "whats special",
+                "what is special",
+                "special about today",
+                "anything special today"
+            ]
+        )
+    ) {
+
+        const month =
+            now.getMonth() + 1;
+
+        const day =
+            now.getDate();
+
+
+        if (
+            month === 1 &&
+            day === 1
+        ) {
+            return "It's New Year's Day! 🎆";
+        }
+
+
+        if (
+            month === 2 &&
+            day === 14
+        ) {
+            return "It's Valentine's Day! ❤️";
+        }
+
+
+        if (
+            month === 8 &&
+            day === 15
+        ) {
+            return "It's India's Independence Day! 🇮🇳";
+        }
+
+
+        if (
+            month === 10 &&
+            day === 31
+        ) {
+            return "It's Halloween! 🎃";
+        }
+
+
+        if (
+            month === 12 &&
+            day === 25
+        ) {
+            return "It's Christmas! 🎄";
+        }
+
+
+        return (
+            "I don't have a special event " +
+            "programmed for today yet 😎"
+        );
+    }
+
+
+    /* =====================
+       SHORYA
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "who is shorya",
+                "about shorya",
+                "tell me about shorya",
+                "shorya"
+            ]
+        )
+    ) {
+
+        return (
+            "Shorya is an 11-year-old creator " +
+            "from Pune, PCMC, India. 🇮🇳\n\n" +
+            "He likes coding, gaming, websites " +
+            "and technology. 💻🎮🚀"
+        );
+    }
+
+
+    /* =====================
+       AGE
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "how old is shorya",
+                "shorya age",
+                "age of shorya",
+                "how old"
+            ]
+        )
+    ) {
+
+        return (
+            "Shorya is 11 years old. 🎂"
+        );
+    }
+
+
+    /* =====================
+       LOCATION
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "where is shorya",
+                "where is he from",
+                "where does shorya live",
+                "shorya location",
+                "where shorya"
+            ]
+        )
+    ) {
+
+        return (
+            "Shorya is from Pune, PCMC, India. 📍🇮🇳"
+        );
+    }
+
+
+    /* =====================
+       YOUTUBE
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "youtube",
+                "youtube channel",
+                "channel"
+            ]
+        )
+    ) {
+
+        return (
+            "You can find Shorya's YouTube " +
+            "channel in the Links section! ▶️"
+        );
+    }
+
+
+    /* =====================
+       ROBLOX
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "roblox",
+                "roblox profile"
+            ]
+        )
+    ) {
+
+        return (
+            "Shorya has a Roblox profile! 🎮 " +
+            "Check the Roblox button in the Links section."
+        );
+    }
+
+
+    /* =====================
+       CODING
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "coding",
+                "programming",
+                "code",
+                "coding projects"
+            ]
+        )
+    ) {
+
+        return (
+            "Shorya likes coding and building " +
+            "websites and technology projects. 💻🚀"
+        );
+    }
+
+
+    /* =====================
+       GAMING
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "gaming",
+                "games",
+                "game"
+            ]
+        )
+    ) {
+
+        return (
+            "Gaming is one of Shorya's interests! 🎮🔥"
+        );
+    }
+
+
+    /* =====================
+       WEBSITE
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "website",
+                "this site",
+                "this website",
+                "web site"
+            ]
+        )
+    ) {
+
+        return (
+            "You're currently exploring " +
+            "Shorya's personal website! 🌐✨"
+        );
+    }
+
+
+    /* =====================
+       JOKES
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "joke",
+                "make me laugh",
+                "funny"
+            ]
+        )
+    ) {
+
+        const jokes = [
+
+            "Why did the computer go to the doctor? 🤖 Because it had a virus! 😂",
+
+            "Why was the computer cold? 🥶 It left its Windows open! 😂",
+
+            "What do computers eat? 🍪 Microchips! 😂",
+
+            "Why did the programmer quit his job? 🤔 He didn't get arrays! 😂"
+
+        ];
+
+        return jokes[
+            Math.floor(
+                Math.random() *
+                jokes.length
+            )
+        ];
+    }
+
+
+    /* =====================
+       HOW ARE YOU
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "how are you",
+                "how r you",
+                "how you doing",
+                "how are u"
+            ]
+        )
+    ) {
+
+        return (
+            "I'm doing great! 🤖⚡ " +
+            "I'm running completely offline!"
+        );
+    }
+
+
+    /* =====================
+       THANKS
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "thank",
+                "thanks",
+                "thx"
+            ]
+        )
+    ) {
+
+        return (
+            "You're welcome! 😎🤖"
+        );
+    }
+
+
+    /* =====================
+       HELP
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "help",
+                "what can you do",
+                "what do you know"
+            ]
+        )
+    ) {
+
+        return (
+            "I can understand messy typing too! 😎\n\n" +
+            "Try asking me about:\n" +
+            "📅 Today's date\n" +
+            "📆 The day\n" +
+            "⏰ The time\n" +
+            "🎉 What's special today\n" +
+            "👦 Shorya\n" +
+            "▶️ YouTube\n" +
+            "🎮 Roblox\n" +
+            "😂 Jokes"
+        );
+    }
+
+
+    /* =====================
+       BYE
+    ===================== */
+
+    if (
+        hasAny(
+            q,
+            [
+                "bye",
+                "goodbye",
+                "see you"
+            ]
+        )
+    ) {
+
+        return (
+            "Byeeee! 👋😎"
+        );
+    }
+
+
+    /* =====================
+       DEFAULT
+    ===================== */
+
+    return (
+        "Hmmmm 🤔 I didn't understand that yet.\n\n" +
+        "Try typing something like:\n" +
+        "• whut iz todys dateeee\n" +
+        "• wht ur nammmmm\n" +
+        "• wat time iz it\n" +
+        "• who iz shorya\n" +
+        "• tell me a jokeeee 😂"
+    );
+}
+
+
+/* =====================================================
+   ADD MESSAGE
 ===================================================== */
 
 function addMessage(
@@ -2212,372 +2667,11 @@ function addMessage(
 
     messages.scrollTop =
         messages.scrollHeight;
-
 }
 
 
 /* =====================================================
-   AI BRAIN
-===================================================== */
-
-function getAIResponse(
-    question
-) {
-
-    const q =
-        question
-        .toLowerCase()
-        .trim();
-
-
-    const now =
-        new Date();
-
-
-    /* HELLO */
-
-    if (
-        q.includes("hello") ||
-        q === "hi" ||
-        q.includes("hey")
-    ) {
-
-        return "Hey! 👋 What's up?";
-
-    }
-
-
-    /* AI NAME */
-
-    if (
-        q.includes("your name") ||
-        q.includes("who are you")
-    ) {
-
-        return "I'm Shorya AI 🤖 — the assistant on this website!";
-
-    }
-
-
-    /* CREATOR */
-
-    if (
-        q.includes("who made you") ||
-        q.includes("who created you") ||
-        q.includes("who built you")
-    ) {
-
-        return "I was made for Shorya's personal website! 🚀";
-
-    }
-
-
-    /* DATE */
-
-    if (
-        q.includes("today's date") ||
-        q.includes("todays date") ||
-        q.includes("what is the date") ||
-        q.includes("what date is it") ||
-        q === "date"
-    ) {
-
-        return "Today's date is " +
-            now.toLocaleDateString(
-                "en-IN",
-                {
-                    weekday: "long",
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric"
-                }
-            ) +
-            " 📅";
-
-    }
-
-
-    /* DAY */
-
-    if (
-        q.includes("what day") ||
-        q.includes("which day") ||
-        q === "day"
-    ) {
-
-        return "Today is " +
-            now.toLocaleDateString(
-                "en-IN",
-                {
-                    weekday: "long"
-                }
-            ) +
-            " 📆";
-
-    }
-
-
-    /* TIME */
-
-    if (
-        q.includes("what time") ||
-        q.includes("current time") ||
-        q === "time"
-    ) {
-
-        return "The current time on your device is " +
-            now.toLocaleTimeString(
-                "en-IN",
-                {
-                    hour: "numeric",
-                    minute: "2-digit",
-                    second: "2-digit"
-                }
-            ) +
-            " ⏰";
-
-    }
-
-
-    /* YEAR */
-
-    if (
-        q.includes("what year") ||
-        q === "year"
-    ) {
-
-        return "It's " +
-            now.getFullYear() +
-            "! 🎉";
-
-    }
-
-
-    /* SPECIAL TODAY */
-
-    if (
-        q.includes("special today") ||
-        q.includes("what's special today") ||
-        q.includes("whats special today") ||
-        q.includes("special about today")
-    ) {
-
-        const month =
-            now.getMonth() + 1;
-
-        const day =
-            now.getDate();
-
-
-        if (
-            month === 1 &&
-            day === 1
-        ) {
-
-            return "Today is New Year's Day! 🎆 Happy New Year!";
-
-        }
-
-
-        if (
-            month === 2 &&
-            day === 14
-        ) {
-
-            return "Today is Valentine's Day! ❤️";
-
-        }
-
-
-        if (
-            month === 8 &&
-            day === 15
-        ) {
-
-            return "Today is India's Independence Day! 🇮🇳";
-
-        }
-
-
-        if (
-            month === 10 &&
-            day === 31
-        ) {
-
-            return "It's Halloween! 🎃";
-
-        }
-
-
-        if (
-            month === 12 &&
-            day === 25
-        ) {
-
-            return "Merry Christmas! 🎄🎅";
-
-        }
-
-
-        return "I don't have a special event programmed for today yet 😎";
-
-    }
-
-
-    /* SHORYA */
-
-    if (
-        q.includes("who is shorya") ||
-        q.includes("about shorya")
-    ) {
-
-        return "Shorya is an 11-year-old creator from Pune, PCMC, India. He likes coding, gaming, websites and technology. 💻🎮";
-
-    }
-
-
-    /* AGE */
-
-    if (
-        q.includes("shorya age") ||
-        q.includes("how old is shorya") ||
-        q.includes("how old")
-    ) {
-
-        return "Shorya is 11 years old. 🎂";
-
-    }
-
-
-    /* LOCATION */
-
-    if (
-        q.includes("where is shorya") ||
-        q.includes("where does shorya live") ||
-        q.includes("where is shorya from")
-    ) {
-
-        return "Shorya is from Pune, PCMC, India. 📍";
-
-    }
-
-
-    /* ROBLOX */
-
-    if (
-        q.includes("roblox")
-    ) {
-
-        return "Shorya has a Roblox profile! 🎮 You can find it in the Links section.";
-
-    }
-
-
-    /* YOUTUBE */
-
-    if (
-        q.includes("youtube") ||
-        q.includes("channel")
-    ) {
-
-        return "Shorya's YouTube channel is in the Links section! ▶️";
-
-    }
-
-
-    /* CODING */
-
-    if (
-        q.includes("coding") ||
-        q.includes("programming") ||
-        q.includes("code")
-    ) {
-
-        return "Shorya likes coding and building websites and technology projects. 💻🚀";
-
-    }
-
-
-    /* GAMING */
-
-    if (
-        q.includes("gaming") ||
-        q.includes("games")
-    ) {
-
-        return "Gaming is one of Shorya's interests! 🎮";
-
-    }
-
-
-    /* WEBSITE */
-
-    if (
-        q.includes("website") ||
-        q.includes("site")
-    ) {
-
-        return "You're currently exploring Shorya's personal website! 🌐";
-
-    }
-
-
-    /* JOKE */
-
-    if (
-        q.includes("joke") ||
-        q.includes("make me laugh")
-    ) {
-
-        return "Why did the computer go to the doctor? 🤖 Because it had a virus! 😂";
-
-    }
-
-
-    /* HELP */
-
-    if (
-        q === "help" ||
-        q.includes("what can you do")
-    ) {
-
-        return "I can tell you the date 📅, day 📆, time ⏰, special days 🎉, jokes 😂 and information about Shorya!";
-
-    }
-
-
-    /* THANKS */
-
-    if (
-        q.includes("thank")
-    ) {
-
-        return "You're welcome! 😎";
-
-    }
-
-
-    /* BYE */
-
-    if (
-        q === "bye" ||
-        q.includes("goodbye")
-    ) {
-
-        return "See you later! 👋";
-
-    }
-
-
-    /* DEFAULT */
-
-    return "Hmm 🤔 I don't know that yet. Try asking me about today's date, the time, Shorya, Roblox, YouTube, or ask for a joke!";
-
-}
-
-
-/* =====================================================
-   SEND AI MESSAGE
+   SEND AI
 ===================================================== */
 
 function sendAI() {
@@ -2595,9 +2689,7 @@ function sendAI() {
     if (
         question === ""
     ) {
-
         return;
-
     }
 
 
@@ -2613,26 +2705,45 @@ function sendAI() {
     setTimeout(
         function() {
 
-            const answer =
+            const response =
                 getAIResponse(
                     question
                 );
 
 
             addMessage(
-                answer,
+                response,
                 "bot"
             );
 
         },
-        400
+        300
     );
-
 }
 
 
 /* =====================================================
-   ENTER TO SEND
+   QUICK QUESTIONS
+===================================================== */
+
+function quickAsk(question) {
+
+    const input =
+        document.getElementById(
+            "aiInput"
+        );
+
+
+    input.value =
+        question;
+
+
+    sendAI();
+}
+
+
+/* =====================================================
+   ENTER = SEND
 ===================================================== */
 
 document
@@ -2654,7 +2765,7 @@ document
 
 
 /* =====================================================
-   ENTER TO LOGIN
+   ENTER = LOGIN
 ===================================================== */
 
 document
