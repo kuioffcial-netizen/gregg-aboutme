@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,9 +10,9 @@
 
 <style>
 
-/* =========================
+/* =====================================================
    GLOBAL
-========================= */
+===================================================== */
 
 * {
     margin: 0;
@@ -32,26 +33,24 @@ body {
 }
 
 
-/* =========================
+/* =====================================================
    HOLOGRAM BACKGROUND
-========================= */
+===================================================== */
 
 .holo-background {
     position: fixed;
     inset: 0;
     z-index: -10;
     overflow: hidden;
+
     background:
         radial-gradient(
             circle at 50% 50%,
-            rgba(90, 80, 255, .12),
+            rgba(90,80,255,.12),
             transparent 45%
         ),
         #030305;
 }
-
-
-/* Moving holographic glow */
 
 .holo-glow {
     position: absolute;
@@ -77,28 +76,25 @@ body {
         );
 
     filter: blur(100px);
-
     opacity: .18;
 
     transition:
         transform .15s ease-out;
 }
 
-
-/* Hologram grid */
-
 .holo-grid {
     position: absolute;
+
     inset: -50%;
 
     background-image:
         linear-gradient(
-            rgba(100, 150, 255, .12) 1px,
+            rgba(100,150,255,.12) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(100, 150, 255, .12) 1px,
+            rgba(100,150,255,.12) 1px,
             transparent 1px
         );
 
@@ -115,9 +111,6 @@ body {
         transform .25s ease-out;
 }
 
-
-/* Holographic scan lines */
-
 .scanlines {
     position: absolute;
     inset: 0;
@@ -133,9 +126,6 @@ body {
     pointer-events: none;
 }
 
-
-/* Cursor glow */
-
 .cursor-glow {
     position: fixed;
 
@@ -149,7 +139,7 @@ body {
     background:
         radial-gradient(
             circle,
-            rgba(0, 229, 255, .15),
+            rgba(0,229,255,.15),
             transparent 65%
         );
 
@@ -164,9 +154,18 @@ body {
 }
 
 
-/* =========================
+/* =====================================================
    PARTICLES
-========================= */
+===================================================== */
+
+#particles {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -4;
+}
 
 .particle {
     position: absolute;
@@ -181,24 +180,21 @@ body {
     opacity: .5;
 
     box-shadow:
-        0 0 10px #fff;
+        0 0 10px white;
 
     animation:
         particleFloat
         var(--time)
         infinite
-        alternate ease-in-out;
+        alternate
+        ease-in-out;
 }
 
 @keyframes particleFloat {
 
     from {
         transform:
-            translate3d(
-                0,
-                0,
-                0
-            );
+            translate3d(0,0,0);
     }
 
     to {
@@ -212,9 +208,9 @@ body {
 }
 
 
-/* =========================
-   LOGIN SCREEN
-========================= */
+/* =====================================================
+   LOGIN
+===================================================== */
 
 #loginScreen {
 
@@ -223,7 +219,6 @@ body {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     padding: 20px;
@@ -234,7 +229,7 @@ body {
 .login-card {
 
     width:
-        min(430px, 95vw);
+        min(430px,95vw);
 
     padding:
         45px 35px;
@@ -286,9 +281,6 @@ body {
     }
 }
 
-
-/* Logo */
-
 .logo {
 
     width: 75px;
@@ -307,7 +299,7 @@ body {
     background:
         linear-gradient(
             135deg,
-            #ffffff,
+            #fff,
             #777
         );
 
@@ -322,9 +314,6 @@ body {
         rgba(100,200,255,.25);
 }
 
-
-/* Login text */
-
 .login-card h1 {
 
     font-size: 34px;
@@ -338,9 +327,6 @@ body {
 
     margin-bottom: 32px;
 }
-
-
-/* Inputs */
 
 .input-box {
 
@@ -381,9 +367,6 @@ input:focus {
         rgba(0,229,255,.12);
 }
 
-
-/* Button */
-
 button {
 
     width: 100%;
@@ -419,8 +402,7 @@ button:hover {
 
 .error {
 
-    color:
-        #ff6b6b;
+    color: #ff6b6b;
 
     margin-top: 15px;
 
@@ -439,9 +421,9 @@ button:hover {
 }
 
 
-/* =========================
-   WEBSITE
-========================= */
+/* =====================================================
+   MAIN WEBSITE
+===================================================== */
 
 #website {
 
@@ -459,7 +441,6 @@ button:hover {
 @keyframes websiteIn {
 
     from {
-
         opacity: 0;
 
         transform:
@@ -467,7 +448,6 @@ button:hover {
     }
 
     to {
-
         opacity: 1;
 
         transform:
@@ -476,7 +456,9 @@ button:hover {
 }
 
 
-/* Navbar */
+/* =====================================================
+   NAVBAR
+===================================================== */
 
 .navbar {
 
@@ -506,9 +488,9 @@ button:hover {
 }
 
 
-/* =========================
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero {
 
@@ -573,7 +555,7 @@ button:hover {
 .hero > p {
 
     max-width:
-        650px;
+        700px;
 
     color: #aaa;
 
@@ -583,7 +565,9 @@ button:hover {
 }
 
 
-/* Cards */
+/* =====================================================
+   CARDS
+===================================================== */
 
 .cards {
 
@@ -644,9 +628,9 @@ button:hover {
 }
 
 
-/* =========================
+/* =====================================================
    ABOUT
-========================= */
+===================================================== */
 
 .about {
 
@@ -711,14 +695,16 @@ button:hover {
 }
 
 
-/* Info */
+/* =====================================================
+   INFO
+===================================================== */
 
 .info-grid {
 
     display: grid;
 
     grid-template-columns:
-        repeat(2, 1fr);
+        repeat(2,1fr);
 
     gap: 15px;
 
@@ -763,7 +749,9 @@ button:hover {
 }
 
 
-/* Likes */
+/* =====================================================
+   LIKES
+===================================================== */
 
 .likes-title {
 
@@ -811,9 +799,9 @@ button:hover {
 }
 
 
-/* =========================
+/* =====================================================
    SOCIALS
-========================= */
+===================================================== */
 
 .socials {
 
@@ -887,8 +875,7 @@ button:hover {
 
     border-radius: 15px;
 
-    background:
-        #181818;
+    background: #181818;
 
     font-size: 25px;
 }
@@ -918,28 +905,17 @@ button:hover {
     color: #777;
 }
 
-.coming {
 
-    cursor: default;
-}
-
-.coming:hover {
-
-    transform: none;
-}
-
-
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer {
 
     padding:
-        50px 0 20px;
+        50px 0 30px;
 
-    text-align:
-        center;
+    text-align: center;
 
     color: #555;
 
@@ -953,58 +929,333 @@ footer strong {
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =====================================================
+   AI BUTTON
+===================================================== */
 
-@media (max-width: 600px) {
+#aiButton {
+
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #777
+        );
+
+    color: black;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 0 30px
+        rgba(0,229,255,.3);
+
+    transition: .3s;
+}
+
+#aiButton:hover {
+
+    transform:
+        scale(1.12)
+        rotate(5deg);
+}
+
+
+/* =====================================================
+   AI WINDOW
+===================================================== */
+
+#aiBox {
+
+    position: fixed;
+
+    right: 25px;
+    bottom: 105px;
+
+    width: 350px;
+    max-width:
+        calc(100vw - 30px);
+
+    height: 500px;
+
+    display: none;
+
+    flex-direction: column;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    border-radius: 22px;
+
+    background:
+        rgba(8,8,15,.88);
+
+    backdrop-filter:
+        blur(25px);
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,.7);
+
+    overflow: hidden;
+
+    z-index: 9998;
+
+    animation:
+        aiOpen .3s ease;
+}
+
+@keyframes aiOpen {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+}
+
+
+/* AI HEADER */
+
+.aiHeader {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    padding: 18px;
+
+    border-bottom:
+        1px solid #222;
+}
+
+.aiHeader strong {
+
+    display: block;
+
+    font-size: 18px;
+}
+
+.aiHeader small {
+
+    color: #777;
+}
+
+.aiClose {
+
+    width: 35px !important;
+    height: 35px;
+
+    padding: 0 !important;
+
+    background: #222 !important;
+
+    color: white !important;
+
+    border-radius: 10px !important;
+
+    font-size: 22px !important;
+}
+
+
+/* AI MESSAGES */
+
+#aiMessages {
+
+    flex: 1;
+
+    padding: 18px;
+
+    overflow-y: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.aiMessage {
+
+    max-width: 85%;
+
+    padding:
+        12px 15px;
+
+    border-radius:
+        15px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.aiMessage.bot {
+
+    align-self:
+        flex-start;
+
+    background:
+        #181818;
+
+    color: #ddd;
+}
+
+.aiMessage.user {
+
+    align-self:
+        flex-end;
+
+    background:
+        white;
+
+    color: black;
+}
+
+
+/* AI INPUT */
+
+.aiInput {
+
+    display: flex;
+
+    gap: 8px;
+
+    padding: 12px;
+
+    border-top:
+        1px solid #222;
+}
+
+.aiInput input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 12px;
+
+    border:
+        1px solid #333;
+
+    border-radius:
+        12px;
+
+    background:
+        #111;
+
+    color: white;
+
+    outline: none;
+}
+
+.aiInput button {
+
+    width: 45px;
+
+    padding: 0;
+
+    border-radius:
+        12px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:600px) {
 
     #website {
-
         padding:
             30px 6%;
     }
 
     .navbar {
-
         margin-bottom:
             70px;
     }
 
     .info-grid {
-
         grid-template-columns:
             1fr;
     }
 
     .login-card {
-
         padding:
             35px 25px;
     }
 
     .hero > p {
-
         font-size: 17px;
     }
 
     .holo-grid {
-
         opacity: .08;
     }
 
+    #aiBox {
+        right: 15px;
+        bottom: 95px;
+        width:
+            calc(100vw - 30px);
+        height: 60vh;
+    }
+
+    #aiButton {
+        right: 15px;
+        bottom: 15px;
+    }
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
      HOLOGRAM
-========================= -->
+===================================================== -->
 
 <div class="holo-background">
 
@@ -1029,16 +1280,12 @@ footer strong {
 </div>
 
 
-
-<!-- PARTICLES -->
-
 <div id="particles"></div>
 
 
-
-<!-- =========================
+<!-- =====================================================
      LOGIN
-========================= -->
+===================================================== -->
 
 <div id="loginScreen">
 
@@ -1055,7 +1302,7 @@ footer strong {
         </h1>
 
         <p class="subtitle">
-            Enter your name to access my website
+            Enter your name to enter Shorya's world
         </p>
 
 
@@ -1104,9 +1351,9 @@ footer strong {
 
 
 
-<!-- =========================
+<!-- =====================================================
      WEBSITE
-========================= -->
+===================================================== -->
 
 <div id="website">
 
@@ -1157,7 +1404,7 @@ footer strong {
             from Pune, PCMC, India.
 
             I love computers, coding, gaming,
-            websites, and technology.
+            websites and technology.
 
         </p>
 
@@ -1216,14 +1463,15 @@ footer strong {
 
             </div>
 
-
         </div>
 
     </section>
 
 
 
-    <!-- ABOUT -->
+    <!-- =================================================
+         ABOUT
+    ================================================= -->
 
     <section class="about">
 
@@ -1249,21 +1497,17 @@ footer strong {
             Pune, PCMC, India.
 
             I'm interested in computers,
-            programming, websites, games,
+            programming, websites, games
             and technology.
 
             I enjoy experimenting with new
             ideas and turning them into projects.
 
             I'm always learning something new
-            and trying to make my projects
-            better. 🚀
+            and trying to make my projects better. 🚀
 
         </p>
 
-
-
-        <!-- INFO -->
 
         <div class="info-grid">
 
@@ -1323,9 +1567,6 @@ footer strong {
         </div>
 
 
-
-        <!-- LIKES -->
-
         <h3 class="likes-title">
             ⚡ Things I Like
         </h3>
@@ -1363,9 +1604,9 @@ footer strong {
 
 
 
-    <!-- =========================
-         SOCIAL LINKS
-    ========================= -->
+    <!-- =================================================
+         LINKS
+    ================================================= -->
 
     <section class="socials">
 
@@ -1460,7 +1701,7 @@ footer strong {
 
             <!-- DISCORD -->
 
-            <div class="social-card coming">
+            <div class="social-card">
 
                 <div class="icon">
                     💬
@@ -1493,7 +1734,9 @@ footer strong {
 
 
 
-    <!-- FOOTER -->
+    <!-- =================================================
+         FOOTER
+    ================================================= -->
 
     <footer>
 
@@ -1506,10 +1749,10 @@ footer strong {
 
         </p>
 
+        <br>
+
         <p>
-
             © 2026 Shorya
-
         </p>
 
     </footer>
@@ -1519,16 +1762,107 @@ footer strong {
 
 
 
+<!-- =====================================================
+     AI BUTTON
+===================================================== -->
+
+<div
+    id="aiButton"
+    onclick="toggleAI()">
+
+    🤖
+
+</div>
+
+
+
+<!-- =====================================================
+     AI CHAT
+===================================================== -->
+
+<div id="aiBox">
+
+
+    <div class="aiHeader">
+
+        <div>
+
+            <strong>
+                Shorya AI
+            </strong>
+
+            <small>
+                Basic Assistant 🤖
+            </small>
+
+        </div>
+
+
+        <button
+            class="aiClose"
+            onclick="toggleAI()">
+
+            ×
+
+        </button>
+
+    </div>
+
+
+    <div id="aiMessages">
+
+        <div class="aiMessage bot">
+
+            Hey! 👋 I'm Shorya AI.
+
+            Ask me things like:
+
+            "What's today's date?"
+
+            "What time is it?"
+
+            "What's special today?"
+
+            "What's your name?"
+
+        </div>
+
+    </div>
+
+
+    <div class="aiInput">
+
+        <input
+            id="aiInput"
+            type="text"
+            placeholder="Ask me something..."
+            autocomplete="off"
+        >
+
+        <button
+            onclick="sendAI()">
+
+            ➤
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
 <script>
 
-/* =========================
-   CREATE PARTICLES
-========================= */
+/* =====================================================
+   PARTICLES
+===================================================== */
 
 const particleContainer =
     document.getElementById(
         "particles"
     );
+
 
 for (
     let i = 0;
@@ -1572,9 +1906,9 @@ for (
 }
 
 
-/* =========================
+/* =====================================================
    MOUSE HOLOGRAM
-========================= */
+===================================================== */
 
 const holoGlow =
     document.getElementById(
@@ -1610,8 +1944,6 @@ document.addEventListener(
             window.innerHeight;
 
 
-        /* Cursor glow */
-
         cursorGlow.style.left =
             event.clientX + "px";
 
@@ -1619,42 +1951,36 @@ document.addEventListener(
             event.clientY + "px";
 
 
-        /* Holographic glow */
-
         holoGlow.style.transform =
             `
             translate(
-                calc(-50% + ${(x - .5) * 180}px),
-                calc(-50% + ${(y - .5) * 180}px)
+                calc(-50% + ${(x-.5)*180}px),
+                calc(-50% + ${(y-.5)*180}px)
             )
-            scale(${1 + x * .15})
+            scale(${1+x*.15})
             `;
 
-
-        /* Moving grid */
 
         holoGrid.style.transform =
             `
             perspective(500px)
-            rotateX(${65 + (y - .5) * 8}deg)
-            rotateY(${(x - .5) * 8}deg)
+            rotateX(${65+(y-.5)*8}deg)
+            rotateY(${(x-.5)*8}deg)
             translate(
-                ${(x - .5) * 45}px,
-                ${25 + (y - .5) * 30}%
+                ${(x-.5)*45}px,
+                ${25+(y-.5)*30}%
             )
             `;
 
 
-        /* Login card parallax */
-
         loginCard.style.transform =
             `
             perspective(900px)
-            rotateX(${(y - .5) * -5}deg)
-            rotateY(${(x - .5) * 5}deg)
+            rotateX(${(y-.5)*-5}deg)
+            rotateY(${(x-.5)*5}deg)
             translate(
-                ${(x - .5) * 5}px,
-                ${(y - .5) * 5}px
+                ${(x-.5)*5}px,
+                ${(y-.5)*5}px
             )
             `;
 
@@ -1662,9 +1988,9 @@ document.addEventListener(
 );
 
 
-/* =========================
+/* =====================================================
    LOGIN
-========================= */
+===================================================== */
 
 function login() {
 
@@ -1682,8 +2008,9 @@ function login() {
 
 
     const error =
-        document
-        .getElementById("error");
+        document.getElementById(
+            "error"
+        );
 
 
     const correctPassword =
@@ -1762,28 +2089,524 @@ function login() {
 }
 
 
-/* =========================
-   ENTER KEY
-========================= */
+/* =====================================================
+   BASIC AI
+===================================================== */
 
-document.addEventListener(
-    "keydown",
-    function(event) {
+function getAIResponse(question) {
+
+    const q =
+        question
+        .toLowerCase()
+        .trim();
+
+
+    const now =
+        new Date();
+
+
+    /* GREETING */
+
+    if (
+        q.includes("hello") ||
+        q === "hi" ||
+        q.includes("hey")
+    ) {
+
+        return "Hey! 👋 How are you doing?";
+
+    }
+
+
+    /* AI NAME */
+
+    if (
+        q.includes("your name") ||
+        q.includes("who are you")
+    ) {
+
+        return "I'm Shorya AI 🤖 — the assistant built into this website!";
+
+    }
+
+
+    /* CREATOR */
+
+    if (
+        q.includes("who made you") ||
+        q.includes("who created you") ||
+        q.includes("who built you")
+    ) {
+
+        return "I was made for Shorya's personal website! 🚀";
+
+    }
+
+
+    /* DATE */
+
+    if (
+        q.includes("today's date") ||
+        q.includes("todays date") ||
+        q.includes("what is the date") ||
+        q.includes("what date is it") ||
+        q === "date"
+    ) {
+
+        return "Today's date is " +
+            now.toLocaleDateString(
+                "en-IN",
+                {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric"
+                }
+            ) +
+            " 📅";
+
+    }
+
+
+    /* DAY */
+
+    if (
+        q.includes("what day") ||
+        q.includes("which day") ||
+        q === "day"
+    ) {
+
+        return "Today is " +
+            now.toLocaleDateString(
+                "en-IN",
+                {
+                    weekday: "long"
+                }
+            ) +
+            " 📆";
+
+    }
+
+
+    /* TIME */
+
+    if (
+        q.includes("what time") ||
+        q.includes("current time") ||
+        q === "time"
+    ) {
+
+        return "The current time on your device is " +
+            now.toLocaleTimeString(
+                "en-IN",
+                {
+                    hour: "numeric",
+                    minute: "2-digit",
+                    second: "2-digit"
+                }
+            ) +
+            " ⏰";
+
+    }
+
+
+    /* YEAR */
+
+    if (
+        q.includes("what year") ||
+        q === "year"
+    ) {
+
+        return "It's " +
+            now.getFullYear() +
+            "! 🎉";
+
+    }
+
+
+    /* SPECIAL TODAY */
+
+    if (
+        q.includes("special today") ||
+        q.includes("special about today") ||
+        q.includes("what's special today") ||
+        q.includes("whats special today")
+    ) {
+
+        const month =
+            now.getMonth() + 1;
+
+        const day =
+            now.getDate();
+
 
         if (
-            event.key ===
-            "Enter"
+            month === 1 &&
+            day === 1
         ) {
 
-            login();
+            return "Today is New Year's Day! 🎆 Happy New Year!";
 
         }
 
+
+        if (
+            month === 2 &&
+            day === 14
+        ) {
+
+            return "Today is Valentine's Day! ❤️";
+
+        }
+
+
+        if (
+            month === 8 &&
+            day === 15
+        ) {
+
+            return "Today is India's Independence Day! 🇮🇳";
+
+        }
+
+
+        if (
+            month === 8 &&
+            day === 30
+        ) {
+
+            return "Today is International Whale Shark Day! 🦈🌊 It's a day to raise awareness about whale sharks and ocean conservation.";
+
+        }
+
+
+        if (
+            month === 10 &&
+            day === 31
+        ) {
+
+            return "It's Halloween! 🎃";
+
+        }
+
+
+        if (
+            month === 12 &&
+            day === 25
+        ) {
+
+            return "Merry Christmas! 🎄🎅";
+
+        }
+
+
+        return "Nothing special is programmed for today yet 😎 But every day is a good day to build something awesome! 🚀";
+
     }
-);
+
+
+    /* WHO IS SHORYA */
+
+    if (
+        q.includes("who is shorya") ||
+        q.includes("about shorya")
+    ) {
+
+        return "Shorya is an 11-year-old creator from Pune, PCMC, India. He likes coding, gaming, websites and technology. 💻🎮";
+
+    }
+
+
+    /* AGE */
+
+    if (
+        q.includes("how old is shorya") ||
+        q.includes("shorya age") ||
+        q.includes("how old")
+    ) {
+
+        return "Shorya is 11 years old. 🎂";
+
+    }
+
+
+    /* LOCATION */
+
+    if (
+        q.includes("where does shorya live") ||
+        q.includes("where is shorya from") ||
+        q.includes("where does shorya stay")
+    ) {
+
+        return "Shorya is from Pune, PCMC, India. 📍";
+
+    }
+
+
+    /* ROBLOX */
+
+    if (
+        q.includes("roblox")
+    ) {
+
+        return "Shorya has a Roblox profile! 🎮 Check it out in the Links section.";
+
+    }
+
+
+    /* YOUTUBE */
+
+    if (
+        q.includes("youtube") ||
+        q.includes("channel")
+    ) {
+
+        return "You can find Shorya's YouTube channel in the Links section! ▶️";
+
+    }
+
+
+    /* CODING */
+
+    if (
+        q.includes("coding") ||
+        q.includes("programming") ||
+        q.includes("code")
+    ) {
+
+        return "Shorya likes coding and building websites and technology projects. 💻🚀";
+
+    }
+
+
+    /* GAMING */
+
+    if (
+        q.includes("gaming") ||
+        q.includes("games")
+    ) {
+
+        return "Gaming is one of Shorya's interests! 🎮";
+
+    }
+
+
+    /* WEBSITE */
+
+    if (
+        q.includes("website") ||
+        q.includes("site")
+    ) {
+
+        return "You're currently exploring Shorya's personal website! 🌐";
+
+    }
+
+
+    /* JOKE */
+
+    if (
+        q.includes("joke") ||
+        q.includes("make me laugh")
+    ) {
+
+        return "Why did the computer go to the doctor? 🤖 Because it had a virus! 😂";
+
+    }
+
+
+    /* HELP */
+
+    if (
+        q === "help" ||
+        q.includes("what can you do")
+    ) {
+
+        return "I can tell you the date 📅, day 📆, time ⏰, some special days 🎉, jokes 😂 and information about Shorya!";
+
+    }
+
+
+    /* THANKS */
+
+    if (
+        q.includes("thank")
+    ) {
+
+        return "You're welcome! 😎";
+
+    }
+
+
+    /* BYE */
+
+    if (
+        q === "bye" ||
+        q.includes("goodbye")
+    ) {
+
+        return "See you later! 👋";
+
+    }
+
+
+    /* DEFAULT */
+
+    return "Hmm 🤔 I don't know that one yet. Try asking: \"What's today's date?\", \"What time is it?\", \"What's special today?\", or \"What's your name?\"";
+
+}
+
+
+/* =====================================================
+   AI CHAT
+===================================================== */
+
+function addMessage(
+    text,
+    type
+) {
+
+    const messages =
+        document.getElementById(
+            "aiMessages"
+        );
+
+
+    const message =
+        document.createElement(
+            "div"
+        );
+
+
+    message.className =
+        "aiMessage " + type;
+
+
+    message.textContent =
+        text;
+
+
+    messages.appendChild(
+        message
+    );
+
+
+    messages.scrollTop =
+        messages.scrollHeight;
+
+}
+
+
+function sendAI() {
+
+    const input =
+        document.getElementById(
+            "aiInput"
+        );
+
+
+    const question =
+        input.value.trim();
+
+
+    if (
+        question === ""
+    ) {
+
+        return;
+
+    }
+
+
+    addMessage(
+        question,
+        "user"
+    );
+
+
+    input.value = "";
+
+
+    setTimeout(
+        function() {
+
+            const answer =
+                getAIResponse(
+                    question
+                );
+
+
+            addMessage(
+                answer,
+                "bot"
+            );
+
+        },
+        400
+    );
+
+}
+
+
+/* =====================================================
+   AI TOGGLE
+===================================================== */
+
+function toggleAI() {
+
+    const box =
+        document.getElementById(
+            "aiBox"
+        );
+
+
+    if (
+        box.style.display ===
+        "flex"
+    ) {
+
+        box.style.display =
+            "none";
+
+    } else {
+
+        box.style.display =
+            "flex";
+
+        document
+            .getElementById(
+                "aiInput"
+            )
+            .focus();
+
+    }
+
+}
+
+
+/* =====================================================
+   ENTER KEY
+===================================================== */
+
+document
+    .getElementById("aiInput")
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key ===
+                "Enter"
+            ) {
+
+                sendAI();
+
+            }
+
+        }
+    );
 
 </script>
-
 
 </body>
 </html>
