@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,69 +26,188 @@ html {
 body {
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
-    background: #050505;
+    background: #030305;
     color: white;
     overflow-x: hidden;
 }
 
 
 /* =========================
-   ANIMATED BACKGROUND
+   HOLOGRAM BACKGROUND
 ========================= */
 
-.background {
+.holo-background {
     position: fixed;
     inset: 0;
+    z-index: -10;
     overflow: hidden;
-    z-index: -1;
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(90, 80, 255, .12),
+            transparent 45%
+        ),
+        #030305;
+}
+
+
+/* Moving holographic glow */
+
+.holo-glow {
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            from 0deg,
+            #6c63ff,
+            #00e5ff,
+            #ff4fd8,
+            #6c63ff
+        );
+
+    filter: blur(100px);
+
+    opacity: .18;
+
+    transition:
+        transform .15s ease-out;
+}
+
+
+/* Hologram grid */
+
+.holo-grid {
+    position: absolute;
+    inset: -50%;
+
+    background-image:
+        linear-gradient(
+            rgba(100, 150, 255, .12) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(100, 150, 255, .12) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    transform:
+        perspective(500px)
+        rotateX(65deg)
+        translateY(25%);
+
+    opacity: .18;
+
+    transition:
+        transform .25s ease-out;
+}
+
+
+/* Holographic scan lines */
+
+.scanlines {
+    position: absolute;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 4px,
+            rgba(255,255,255,.025) 5px
+        );
+
+    pointer-events: none;
+}
+
+
+/* Cursor glow */
+
+.cursor-glow {
+    position: fixed;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
 
     background:
         radial-gradient(
-            circle at 20% 20%,
-            #252525 0%,
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 80%,
-            #181818 0%,
-            transparent 35%
-        ),
-        #050505;
+            circle,
+            rgba(0, 229, 255, .15),
+            transparent 65%
+        );
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: -5;
+
+    transition:
+        left .08s linear,
+        top .08s linear;
 }
 
-.orb {
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particle {
     position: absolute;
-    width: 300px;
-    height: 300px;
+
+    width: 3px;
+    height: 3px;
+
     border-radius: 50%;
-    filter: blur(90px);
-    opacity: .35;
+
+    background: white;
+
+    opacity: .5;
+
+    box-shadow:
+        0 0 10px #fff;
 
     animation:
-        float 10s infinite alternate ease-in-out;
+        particleFloat
+        var(--time)
+        infinite
+        alternate ease-in-out;
 }
 
-.orb.one {
-    background: #6c63ff;
-    left: -100px;
-    top: 10%;
-}
-
-.orb.two {
-    background: #00e5ff;
-    right: -100px;
-    bottom: 5%;
-    animation-delay: 2s;
-}
-
-@keyframes float {
+@keyframes particleFloat {
 
     from {
-        transform: translate(0, 0) scale(1);
+        transform:
+            translate3d(
+                0,
+                0,
+                0
+            );
     }
 
     to {
-        transform: translate(100px, -70px) scale(1.3);
+        transform:
+            translate3d(
+                var(--x),
+                var(--y),
+                0
+            );
     }
 }
 
@@ -102,7 +221,9 @@ body {
     min-height: 100vh;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     padding: 20px;
@@ -112,30 +233,45 @@ body {
 
 .login-card {
 
-    width: min(430px, 95vw);
+    width:
+        min(430px, 95vw);
 
-    padding: 45px 35px;
+    padding:
+        45px 35px;
 
-    border: 1px solid rgba(255,255,255,.15);
+    border:
+        1px solid
+        rgba(255,255,255,.18);
 
     border-radius: 28px;
 
-    background: rgba(20,20,20,.65);
+    background:
+        rgba(10,10,20,.58);
 
-    backdrop-filter: blur(20px);
+    backdrop-filter:
+        blur(25px);
 
     box-shadow:
-        0 30px 80px rgba(0,0,0,.6);
+        0 30px 100px
+        rgba(0,0,0,.7),
+
+        inset 0 0 30px
+        rgba(255,255,255,.03);
 
     text-align: center;
 
-    animation: cardIn 1s ease;
+    animation:
+        cardIn 1s ease;
+
+    transition:
+        transform .15s ease-out;
 }
 
 @keyframes cardIn {
 
     from {
         opacity: 0;
+
         transform:
             translateY(40px)
             scale(.95);
@@ -143,20 +279,26 @@ body {
 
     to {
         opacity: 1;
+
         transform:
             translateY(0)
             scale(1);
     }
 }
 
+
+/* Logo */
+
 .logo {
 
     width: 75px;
     height: 75px;
 
-    margin: 0 auto 20px;
+    margin:
+        0 auto 20px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -176,8 +318,12 @@ body {
     font-weight: 900;
 
     box-shadow:
-        0 0 35px rgba(255,255,255,.2);
+        0 0 40px
+        rgba(100,200,255,.25);
 }
+
+
+/* Login text */
 
 .login-card h1 {
 
@@ -193,9 +339,10 @@ body {
     margin-bottom: 32px;
 }
 
-.input-box {
 
-    position: relative;
+/* Inputs */
+
+.input-box {
 
     margin-bottom: 18px;
 }
@@ -204,9 +351,11 @@ input {
 
     width: 100%;
 
-    padding: 16px 18px;
+    padding:
+        16px 18px;
 
-    border: 1px solid #333;
+    border:
+        1px solid #333;
 
     border-radius: 14px;
 
@@ -224,11 +373,16 @@ input {
 
 input:focus {
 
-    border-color: #aaa;
+    border-color:
+        #00e5ff;
 
     box-shadow:
-        0 0 20px rgba(255,255,255,.08);
+        0 0 25px
+        rgba(0,229,255,.12);
 }
+
+
+/* Button */
 
 button {
 
@@ -259,13 +413,14 @@ button:hover {
         translateY(-3px);
 
     box-shadow:
-        0 12px 30px
-        rgba(255,255,255,.15);
+        0 12px 35px
+        rgba(255,255,255,.2);
 }
 
 .error {
 
-    color: #ff6b6b;
+    color:
+        #ff6b6b;
 
     margin-top: 15px;
 
@@ -285,7 +440,7 @@ button:hover {
 
 
 /* =========================
-   MAIN WEBSITE
+   WEBSITE
 ========================= */
 
 #website {
@@ -294,7 +449,8 @@ button:hover {
 
     min-height: 100vh;
 
-    padding: 40px 8%;
+    padding:
+        40px 8%;
 
     animation:
         websiteIn 1s ease;
@@ -320,9 +476,7 @@ button:hover {
 }
 
 
-/* =========================
-   NAVBAR
-========================= */
+/* Navbar */
 
 .navbar {
 
@@ -333,7 +487,8 @@ button:hover {
 
     align-items: center;
 
-    margin-bottom: 100px;
+    margin-bottom:
+        100px;
 }
 
 .brand {
@@ -359,7 +514,8 @@ button:hover {
 
     max-width: 900px;
 
-    padding-bottom: 100px;
+    padding-bottom:
+        100px;
 }
 
 .welcome {
@@ -374,7 +530,11 @@ button:hover {
 .hero h2 {
 
     font-size:
-        clamp(50px, 9vw, 110px);
+        clamp(
+            50px,
+            9vw,
+            110px
+        );
 
     line-height: .95;
 
@@ -393,7 +553,8 @@ button:hover {
 
     background-size: 200%;
 
-    -webkit-background-clip: text;
+    -webkit-background-clip:
+        text;
 
     color: transparent;
 
@@ -404,13 +565,15 @@ button:hover {
 @keyframes shine {
 
     to {
-        background-position: 200%;
+        background-position:
+            200%;
     }
 }
 
 .hero > p {
 
-    max-width: 650px;
+    max-width:
+        650px;
 
     color: #aaa;
 
@@ -420,9 +583,7 @@ button:hover {
 }
 
 
-/* =========================
-   QUICK CARDS
-========================= */
+/* Cards */
 
 .cards {
 
@@ -437,14 +598,20 @@ button:hover {
 
 .card {
 
-    padding: 20px 25px;
+    padding:
+        20px 25px;
 
-    border: 1px solid #222;
+    border:
+        1px solid #222;
 
-    border-radius: 18px;
+    border-radius:
+        18px;
 
     background:
         rgba(255,255,255,.04);
+
+    backdrop-filter:
+        blur(10px);
 
     transition: .3s;
 }
@@ -452,9 +619,14 @@ button:hover {
 .card:hover {
 
     transform:
-        translateY(-5px);
+        translateY(-6px);
 
-    border-color: #555;
+    border-color:
+        #555;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,229,255,.08);
 }
 
 .card strong {
@@ -502,7 +674,11 @@ button:hover {
 .socials h2 {
 
     font-size:
-        clamp(45px, 7vw, 75px);
+        clamp(
+            45px,
+            7vw,
+            75px
+        );
 
     margin-bottom: 25px;
 }
@@ -516,14 +692,16 @@ button:hover {
             #777
         );
 
-    -webkit-background-clip: text;
+    -webkit-background-clip:
+        text;
 
     color: transparent;
 }
 
 .about-text {
 
-    max-width: 800px;
+    max-width:
+        800px;
 
     color: #aaa;
 
@@ -533,9 +711,7 @@ button:hover {
 }
 
 
-/* =========================
-   INFO GRID
-========================= */
+/* Info */
 
 .info-grid {
 
@@ -561,6 +737,9 @@ button:hover {
     background:
         rgba(255,255,255,.04);
 
+    backdrop-filter:
+        blur(10px);
+
     transition: .3s;
 }
 
@@ -569,7 +748,8 @@ button:hover {
     transform:
         translateY(-5px);
 
-    border-color: #555;
+    border-color:
+        #555;
 }
 
 .info-card h3 {
@@ -583,15 +763,15 @@ button:hover {
 }
 
 
-/* =========================
-   THINGS I LIKE
-========================= */
+/* Likes */
 
 .likes-title {
 
-    margin-top: 55px;
+    margin-top:
+        55px;
 
-    margin-bottom: 20px;
+    margin-bottom:
+        20px;
 
     font-size: 28px;
 }
@@ -610,7 +790,8 @@ button:hover {
     padding:
         12px 18px;
 
-    border-radius: 30px;
+    border-radius:
+        30px;
 
     border:
         1px solid #292929;
@@ -625,7 +806,8 @@ button:hover {
     transform:
         scale(1.05);
 
-    background: #1c1c1c;
+    background:
+        #1c1c1c;
 }
 
 
@@ -644,7 +826,8 @@ button:hover {
 
 .social-grid {
 
-    max-width: 900px;
+    max-width:
+        900px;
 
     display: grid;
 
@@ -664,10 +847,14 @@ button:hover {
     border:
         1px solid #222;
 
-    border-radius: 20px;
+    border-radius:
+        20px;
 
     background:
         rgba(255,255,255,.04);
+
+    backdrop-filter:
+        blur(12px);
 
     color: white;
 
@@ -681,7 +868,8 @@ button:hover {
     transform:
         translateX(8px);
 
-    border-color: #555;
+    border-color:
+        #555;
 
     background:
         rgba(255,255,255,.07);
@@ -699,14 +887,16 @@ button:hover {
 
     border-radius: 15px;
 
-    background: #181818;
+    background:
+        #181818;
 
     font-size: 25px;
 }
 
 .social-card h3 {
 
-    margin-bottom: 5px;
+    margin-bottom:
+        5px;
 
     font-size: 20px;
 }
@@ -720,7 +910,8 @@ button:hover {
 
 .social-card b {
 
-    margin-left: auto;
+    margin-left:
+        auto;
 
     font-size: 25px;
 
@@ -747,7 +938,8 @@ footer {
     padding:
         50px 0 20px;
 
-    text-align: center;
+    text-align:
+        center;
 
     color: #555;
 
@@ -775,12 +967,14 @@ footer strong {
 
     .navbar {
 
-        margin-bottom: 70px;
+        margin-bottom:
+            70px;
     }
 
     .info-grid {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
     .login-card {
@@ -789,10 +983,16 @@ footer strong {
             35px 25px;
     }
 
-    .hero p {
+    .hero > p {
 
         font-size: 17px;
     }
+
+    .holo-grid {
+
+        opacity: .08;
+    }
+
 }
 
 </style>
@@ -803,16 +1003,37 @@ footer strong {
 
 
 <!-- =========================
-     BACKGROUND
+     HOLOGRAM
 ========================= -->
 
-<div class="background">
+<div class="holo-background">
 
-    <div class="orb one"></div>
+    <div
+        class="holo-glow"
+        id="holoGlow">
+    </div>
 
-    <div class="orb two"></div>
+    <div
+        class="holo-grid"
+        id="holoGrid">
+    </div>
+
+    <div class="scanlines"></div>
 
 </div>
+
+
+<div
+    class="cursor-glow"
+    id="cursorGlow">
+</div>
+
+
+
+<!-- PARTICLES -->
+
+<div id="particles"></div>
+
 
 
 <!-- =========================
@@ -821,7 +1042,9 @@ footer strong {
 
 <div id="loginScreen">
 
-    <div class="login-card">
+    <div
+        class="login-card"
+        id="loginCard">
 
         <div class="logo">
             S
@@ -872,10 +1095,7 @@ footer strong {
 
 
         <div class="security">
-
-            🔒 Personal website
-            • Access required
-
+            🔒 Personal website • Access required
         </div>
 
     </div>
@@ -934,8 +1154,10 @@ footer strong {
         <p>
 
             I'm Shorya — an 11-year-old creator
-            from Pune, PCMC, India. I love computers,
-            coding, gaming, websites, and technology.
+            from Pune, PCMC, India.
+
+            I love computers, coding, gaming,
+            websites, and technology.
 
         </p>
 
@@ -1013,6 +1235,7 @@ footer strong {
         <h2>
 
             Hey, I'm
+
             <span class="gradient-text">
                 Shorya.
             </span>
@@ -1140,7 +1363,9 @@ footer strong {
 
 
 
-    <!-- SOCIAL LINKS -->
+    <!-- =========================
+         SOCIAL LINKS
+    ========================= -->
 
     <section class="socials">
 
@@ -1152,6 +1377,7 @@ footer strong {
         <h2>
 
             My
+
             <span class="gradient-text">
                 Links 🌐
             </span>
@@ -1281,7 +1507,9 @@ footer strong {
         </p>
 
         <p>
-            © 2026 Shorya. All rights reserved.
+
+            © 2026 Shorya
+
         </p>
 
     </footer>
@@ -1291,11 +1519,152 @@ footer strong {
 
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
 <script>
+
+/* =========================
+   CREATE PARTICLES
+========================= */
+
+const particleContainer =
+    document.getElementById(
+        "particles"
+    );
+
+for (
+    let i = 0;
+    i < 55;
+    i++
+) {
+
+    const particle =
+        document.createElement(
+            "div"
+        );
+
+    particle.className =
+        "particle";
+
+    particle.style.left =
+        Math.random() * 100 + "%";
+
+    particle.style.top =
+        Math.random() * 100 + "%";
+
+    particle.style.setProperty(
+        "--x",
+        (Math.random() * 160 - 80) + "px"
+    );
+
+    particle.style.setProperty(
+        "--y",
+        (Math.random() * 160 - 80) + "px"
+    );
+
+    particle.style.setProperty(
+        "--time",
+        (4 + Math.random() * 8) + "s"
+    );
+
+    particleContainer.appendChild(
+        particle
+    );
+
+}
+
+
+/* =========================
+   MOUSE HOLOGRAM
+========================= */
+
+const holoGlow =
+    document.getElementById(
+        "holoGlow"
+    );
+
+const holoGrid =
+    document.getElementById(
+        "holoGrid"
+    );
+
+const cursorGlow =
+    document.getElementById(
+        "cursorGlow"
+    );
+
+const loginCard =
+    document.getElementById(
+        "loginCard"
+    );
+
+
+document.addEventListener(
+    "mousemove",
+    function(event) {
+
+        const x =
+            event.clientX /
+            window.innerWidth;
+
+        const y =
+            event.clientY /
+            window.innerHeight;
+
+
+        /* Cursor glow */
+
+        cursorGlow.style.left =
+            event.clientX + "px";
+
+        cursorGlow.style.top =
+            event.clientY + "px";
+
+
+        /* Holographic glow */
+
+        holoGlow.style.transform =
+            `
+            translate(
+                calc(-50% + ${(x - .5) * 180}px),
+                calc(-50% + ${(y - .5) * 180}px)
+            )
+            scale(${1 + x * .15})
+            `;
+
+
+        /* Moving grid */
+
+        holoGrid.style.transform =
+            `
+            perspective(500px)
+            rotateX(${65 + (y - .5) * 8}deg)
+            rotateY(${(x - .5) * 8}deg)
+            translate(
+                ${(x - .5) * 45}px,
+                ${25 + (y - .5) * 30}%
+            )
+            `;
+
+
+        /* Login card parallax */
+
+        loginCard.style.transform =
+            `
+            perspective(900px)
+            rotateX(${(y - .5) * -5}deg)
+            rotateY(${(x - .5) * 5}deg)
+            translate(
+                ${(x - .5) * 5}px,
+                ${(y - .5) * 5}px
+            )
+            `;
+
+    }
+);
+
+
+/* =========================
+   LOGIN
+========================= */
 
 function login() {
 
@@ -1317,17 +1686,9 @@ function login() {
         .getElementById("error");
 
 
-    /*
-       WEBSITE PASSWORD
-    */
-
     const correctPassword =
         "GAGISBEST";
 
-
-    /*
-       CHECK NAME
-    */
 
     if (name === "") {
 
@@ -1338,11 +1699,10 @@ function login() {
     }
 
 
-    /*
-       CHECK PASSWORD
-    */
-
-    if (password !== correctPassword) {
+    if (
+        password !==
+        correctPassword
+    ) {
 
         error.textContent =
             "❌ Wrong password. Try again.";
@@ -1351,51 +1711,69 @@ function login() {
     }
 
 
-    /*
-       SUCCESSFUL LOGIN
-    */
+    document
+        .getElementById(
+            "visitorName"
+        )
+        .textContent =
+        name;
+
 
     document
-        .getElementById("visitorName")
-        .textContent = name;
+        .getElementById(
+            "loginScreen"
+        )
+        .style.opacity =
+        "0";
 
 
-    document
-        .getElementById("loginScreen")
-        .style.opacity = "0";
+    setTimeout(
+        function() {
+
+            document
+                .getElementById(
+                    "loginScreen"
+                )
+                .style.display =
+                "none";
 
 
-    setTimeout(function() {
-
-        document
-            .getElementById("loginScreen")
-            .style.display = "none";
-
-
-        document
-            .getElementById("website")
-            .style.display = "block";
+            document
+                .getElementById(
+                    "website"
+                )
+                .style.display =
+                "block";
 
 
-        document.body.style.overflow = "auto";
+            document.body.style.overflow =
+                "auto";
 
 
-        window.scrollTo(0, 0);
+            window.scrollTo(
+                0,
+                0
+            );
 
-    }, 700);
+        },
+        700
+    );
 
 }
 
 
-/*
-   PRESS ENTER TO LOGIN
-*/
+/* =========================
+   ENTER KEY
+========================= */
 
 document.addEventListener(
     "keydown",
     function(event) {
 
-        if (event.key === "Enter") {
+        if (
+            event.key ===
+            "Enter"
+        ) {
 
             login();
 
@@ -1409,4 +1787,4 @@ document.addEventListener(
 
 </body>
 </html>
-
+```
