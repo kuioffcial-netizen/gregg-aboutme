@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,7 +11,7 @@
 <style>
 
 /* =====================================================
-   BASIC
+   RESET
 ===================================================== */
 
 * {
@@ -79,7 +80,6 @@ body {
         );
 
     filter: blur(110px);
-
     opacity: .18;
 
     transition: transform .15s ease-out;
@@ -87,7 +87,6 @@ body {
 
 .holo-grid {
     position: absolute;
-
     inset: -50%;
 
     background-image:
@@ -115,7 +114,6 @@ body {
 
 .scanlines {
     position: absolute;
-
     inset: 0;
 
     background:
@@ -158,11 +156,8 @@ body {
 
 #particles {
     position: fixed;
-
     inset: 0;
-
     pointer-events: none;
-
     z-index: -4;
 }
 
@@ -175,7 +170,6 @@ body {
     border-radius: 50%;
 
     background: white;
-
     opacity: .5;
 
     box-shadow: 0 0 10px white;
@@ -209,13 +203,10 @@ body {
 ===================================================== */
 
 #loginScreen {
-
     min-height: 100vh;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     padding: 20px;
@@ -224,12 +215,9 @@ body {
 }
 
 .login-card {
+    width: min(430px,95vw);
 
-    width:
-        min(430px,95vw);
-
-    padding:
-        45px 35px;
+    padding: 45px 35px;
 
     border:
         1px solid
@@ -240,8 +228,7 @@ body {
     background:
         rgba(10,10,20,.65);
 
-    backdrop-filter:
-        blur(25px);
+    backdrop-filter: blur(25px);
 
     box-shadow:
         0 30px 100px
@@ -252,8 +239,7 @@ body {
 
     text-align: center;
 
-    animation:
-        cardIn 1s ease;
+    animation: cardIn 1s ease;
 
     transition:
         transform .15s ease-out;
@@ -279,15 +265,12 @@ body {
 }
 
 .logo {
-
     width: 75px;
     height: 75px;
 
-    margin:
-        0 auto 20px;
+    margin: 0 auto 20px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -303,7 +286,6 @@ body {
     color: #000;
 
     font-size: 30px;
-
     font-weight: 900;
 
     box-shadow:
@@ -312,26 +294,20 @@ body {
 }
 
 .login-card h1 {
-
     font-size: 34px;
-
     margin-bottom: 8px;
 }
 
 .subtitle {
-
     color: #999;
-
     margin-bottom: 32px;
 }
 
 .input-box {
-
     margin-bottom: 18px;
 }
 
 input {
-
     width: 100%;
 
     padding:
@@ -355,9 +331,7 @@ input {
 }
 
 input:focus {
-
-    border-color:
-        #00e5ff;
+    border-color: #00e5ff;
 
     box-shadow:
         0 0 25px
@@ -365,7 +339,6 @@ input:focus {
 }
 
 .login-button {
-
     width: 100%;
 
     padding: 16px;
@@ -375,11 +348,9 @@ input:focus {
     border-radius: 14px;
 
     background: white;
-
     color: black;
 
     font-size: 17px;
-
     font-weight: bold;
 
     cursor: pointer;
@@ -388,9 +359,7 @@ input:focus {
 }
 
 .login-button:hover {
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
     box-shadow:
         0 12px 35px
@@ -398,9 +367,7 @@ input:focus {
 }
 
 .error {
-
-    color:
-        #ff6b6b;
+    color: #ff6b6b;
 
     margin-top: 15px;
 
@@ -410,7 +377,6 @@ input:focus {
 }
 
 .security {
-
     margin-top: 25px;
 
     color: #666;
@@ -424,7 +390,6 @@ input:focus {
 ===================================================== */
 
 #website {
-
     display: none;
 
     min-height: 100vh;
@@ -459,7 +424,6 @@ input:focus {
 ===================================================== */
 
 .navbar {
-
     display: flex;
 
     justify-content:
@@ -473,7 +437,6 @@ input:focus {
 }
 
 .brand {
-
     font-size: 24px;
 
     font-weight: 900;
@@ -482,16 +445,18 @@ input:focus {
 }
 
 .nav-right {
-
     display: flex;
 
     align-items: center;
 
-    gap: 20px;
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
 }
 
 .status {
-
     color: #aaa;
 
     font-size: 14px;
@@ -499,11 +464,56 @@ input:focus {
 
 
 /* =====================================================
-   AI TOGGLE
+   TOP BUTTONS
+===================================================== */
+
+.top-button {
+    width: auto;
+
+    padding:
+        10px 15px;
+
+    border:
+        1px solid #333;
+
+    border-radius:
+        30px;
+
+    background:
+        rgba(15,15,25,.85);
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    backdrop-filter:
+        blur(15px);
+
+    transition: .3s;
+}
+
+.top-button:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        #00e5ff;
+
+    box-shadow:
+        0 0 25px
+        rgba(0,229,255,.15);
+}
+
+
+/* =====================================================
+   AI BUTTON
 ===================================================== */
 
 .ai-toggle {
-
     width: auto !important;
 
     display: flex;
@@ -524,37 +534,35 @@ input:focus {
     background:
         rgba(15,15,25,.85) !important;
 
-    color: white !important;
+    color:
+        white !important;
 
-    font-size: 14px !important;
+    font-size:
+        13px !important;
 
-    font-weight: bold;
+    font-weight:
+        bold;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
     backdrop-filter:
         blur(15px);
 
-    transition: .3s;
+    transition:
+        .3s;
 }
 
 .ai-toggle:hover {
-
     transform:
         translateY(-2px);
 
     border-color:
         #00e5ff !important;
-
-    box-shadow:
-        0 0 25px
-        rgba(0,229,255,.15);
 }
 
 .toggle-switch {
-
     width: 40px;
-
     height: 22px;
 
     padding: 3px;
@@ -564,16 +572,13 @@ input:focus {
     background: #333;
 
     display: flex;
-
     align-items: center;
 
     transition: .3s;
 }
 
 .toggle-dot {
-
     width: 16px;
-
     height: 16px;
 
     border-radius: 50%;
@@ -589,25 +594,22 @@ input:focus {
 ===================================================== */
 
 .hero {
-
-    max-width:
-        950px;
+    max-width: 950px;
 
     padding-bottom:
         100px;
 }
 
 .welcome {
-
     color: #aaa;
 
     font-size: 18px;
 
-    margin-bottom: 12px;
+    margin-bottom:
+        12px;
 }
 
 .hero h2 {
-
     font-size:
         clamp(
             50px,
@@ -615,13 +617,14 @@ input:focus {
             110px
         );
 
-    line-height: .95;
+    line-height:
+        .95;
 
-    margin-bottom: 30px;
+    margin-bottom:
+        30px;
 }
 
 .hero h2 span {
-
     background:
         linear-gradient(
             90deg,
@@ -630,12 +633,14 @@ input:focus {
             white
         );
 
-    background-size: 200%;
+    background-size:
+        200%;
 
     -webkit-background-clip:
         text;
 
-    color: transparent;
+    color:
+        transparent;
 
     animation:
         shine 4s
@@ -651,15 +656,17 @@ input:focus {
 }
 
 .hero > p {
-
     max-width:
         700px;
 
-    color: #aaa;
+    color:
+        #aaa;
 
-    font-size: 19px;
+    font-size:
+        19px;
 
-    line-height: 1.7;
+    line-height:
+        1.7;
 }
 
 
@@ -668,18 +675,20 @@ input:focus {
 ===================================================== */
 
 .cards {
+    display:
+        flex;
 
-    display: flex;
+    gap:
+        15px;
 
-    gap: 15px;
+    margin-top:
+        45px;
 
-    margin-top: 45px;
-
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 }
 
 .card {
-
     padding:
         20px 25px;
 
@@ -695,11 +704,11 @@ input:focus {
     backdrop-filter:
         blur(10px);
 
-    transition: .3s;
+    transition:
+        .3s;
 }
 
 .card:hover {
-
     transform:
         translateY(-6px);
 
@@ -712,25 +721,30 @@ input:focus {
 }
 
 .card strong {
+    display:
+        block;
 
-    display: block;
+    font-size:
+        20px;
 
-    font-size: 20px;
-
-    margin-bottom: 5px;
+    margin-bottom:
+        5px;
 }
 
 .card small {
-
-    color: #777;
+    color:
+        #777;
 }
 
 
 /* =====================================================
-   ABOUT
+   SECTIONS
 ===================================================== */
 
-.about {
+.about,
+.inspiration,
+.featured-video,
+.socials {
 
     padding:
         100px 0;
@@ -741,18 +755,24 @@ input:focus {
 
 .section-tag {
 
-    color: #777;
+    color:
+        #777;
 
-    letter-spacing: 5px;
+    letter-spacing:
+        5px;
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    font-weight: bold;
+    font-weight:
+        bold;
 
-    margin-bottom: 15px;
+    margin-bottom:
+        15px;
 }
 
 .about h2,
+.inspiration h2,
 .socials h2,
 .featured-video h2 {
 
@@ -763,7 +783,8 @@ input:focus {
             75px
         );
 
-    margin-bottom: 25px;
+    margin-bottom:
+        25px;
 }
 
 .gradient-text {
@@ -778,46 +799,55 @@ input:focus {
     -webkit-background-clip:
         text;
 
-    color: transparent;
+    color:
+        transparent;
 }
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
 
 .about-text {
 
     max-width:
         800px;
 
-    color: #aaa;
+    color:
+        #aaa;
 
-    font-size: 18px;
+    font-size:
+        18px;
 
-    line-height: 1.8;
+    line-height:
+        1.8;
 }
-
-
-/* =====================================================
-   INFO
-===================================================== */
 
 .info-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(2,1fr);
 
-    gap: 15px;
+    gap:
+        15px;
 
-    margin-top: 45px;
+    margin-top:
+        45px;
 }
 
 .info-card {
 
-    padding: 25px;
+    padding:
+        25px;
 
     border:
         1px solid #222;
 
-    border-radius: 20px;
+    border-radius:
+        20px;
 
     background:
         rgba(255,255,255,.04);
@@ -825,7 +855,8 @@ input:focus {
     backdrop-filter:
         blur(10px);
 
-    transition: .3s;
+    transition:
+        .3s;
 }
 
 .info-card:hover {
@@ -839,12 +870,14 @@ input:focus {
 
 .info-card h3 {
 
-    margin-bottom: 8px;
+    margin-bottom:
+        8px;
 }
 
 .info-card p {
 
-    color: #888;
+    color:
+        #888;
 }
 
 
@@ -854,20 +887,26 @@ input:focus {
 
 .likes-title {
 
-    margin-top: 55px;
+    margin-top:
+        55px;
 
-    margin-bottom: 20px;
+    margin-bottom:
+        20px;
 
-    font-size: 28px;
+    font-size:
+        28px;
 }
 
 .likes {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    gap: 12px;
+    gap:
+        12px;
 }
 
 .likes span {
@@ -881,9 +920,11 @@ input:focus {
     border:
         1px solid #292929;
 
-    background: #111;
+    background:
+        #111;
 
-    transition: .3s;
+    transition:
+        .3s;
 }
 
 .likes span:hover {
@@ -897,24 +938,109 @@ input:focus {
 
 
 /* =====================================================
-   FEATURED VIDEO
+   INSPIRATION
 ===================================================== */
 
-.featured-video {
+.inspiration-text {
+
+    max-width:
+        800px;
+
+    color:
+        #aaa;
+
+    line-height:
+        1.8;
+
+    font-size:
+        18px;
+
+    margin-bottom:
+        35px;
+}
+
+.people-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        15px;
+}
+
+.person-card {
 
     padding:
-        100px 0;
+        30px;
 
-    border-top:
-        1px solid #171717;
+    border:
+        1px solid #222;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    transition:
+        .3s;
 }
+
+.person-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        #555;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,229,255,.07);
+}
+
+.person-icon {
+
+    font-size:
+        35px;
+
+    margin-bottom:
+        15px;
+}
+
+.person-card h3 {
+
+    font-size:
+        23px;
+
+    margin-bottom:
+        8px;
+}
+
+.person-card p {
+
+    color:
+        #888;
+
+    line-height:
+        1.6;
+}
+
+
+/* =====================================================
+   VIDEO
+===================================================== */
 
 .video-card {
 
     max-width:
         1000px;
 
-    padding: 15px;
+    padding:
+        15px;
 
     border:
         1px solid #252525;
@@ -932,7 +1058,8 @@ input:focus {
         0 25px 70px
         rgba(0,0,0,.35);
 
-    transition: .3s;
+    transition:
+        .3s;
 }
 
 .video-card:hover {
@@ -942,110 +1069,110 @@ input:focus {
 
     transform:
         translateY(-4px);
-
-    box-shadow:
-        0 30px 80px
-        rgba(0,229,255,.08);
 }
 
 .video-wrapper {
 
-    position: relative;
+    position:
+        relative;
 
-    width: 100%;
+    width:
+        100%;
 
     aspect-ratio:
         16 / 9;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     border-radius:
         17px;
 
-    background: #000;
+    background:
+        #000;
 }
 
 .video-wrapper iframe {
 
-    position: absolute;
+    position:
+        absolute;
 
-    inset: 0;
+    inset:
+        0;
 
-    width: 100%;
+    width:
+        100%;
 
-    height: 100%;
+    height:
+        100%;
 
-    border: 0;
+    border:
+        0;
 }
 
 .video-credit {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
     justify-content:
         space-between;
 
-    gap: 15px;
+    gap:
+        15px;
 
     padding:
         16px 5px 3px;
 
-    color: #777;
+    color:
+        #777;
 
-    font-size: 13px;
+    font-size:
+        13px;
 }
 
 .video-credit a {
 
-    color: #aaa;
+    color:
+        #aaa;
 
     text-decoration:
         none;
-
-    transition: .2s;
-}
-
-.video-credit a:hover {
-
-    color: white;
 }
 
 
 /* =====================================================
-   SOCIALS
+   SOCIAL LINKS
 ===================================================== */
-
-.socials {
-
-    padding:
-        100px 0;
-
-    border-top:
-        1px solid #171717;
-}
 
 .social-grid {
 
     max-width:
         900px;
 
-    display: grid;
+    display:
+        grid;
 
-    gap: 15px;
+    gap:
+        15px;
 }
 
 .social-card {
 
-    display: flex;
+    display:
+        flex;
 
     align-items:
         center;
 
-    gap: 20px;
+    gap:
+        20px;
 
-    padding: 22px;
+    padding:
+        22px;
 
     border:
         1px solid #222;
@@ -1059,12 +1186,14 @@ input:focus {
     backdrop-filter:
         blur(12px);
 
-    color: white;
+    color:
+        white;
 
     text-decoration:
         none;
 
-    transition: .3s;
+    transition:
+        .3s;
 }
 
 .social-card:hover {
@@ -1081,11 +1210,14 @@ input:focus {
 
 .social-card .icon {
 
-    width: 55px;
+    width:
+        55px;
 
-    height: 55px;
+    height:
+        55px;
 
-    display: flex;
+    display:
+        flex;
 
     align-items:
         center;
@@ -1099,30 +1231,38 @@ input:focus {
     background:
         #181818;
 
-    font-size: 25px;
+    font-size:
+        25px;
 }
 
 .social-card h3 {
 
-    margin-bottom: 5px;
+    margin-bottom:
+        5px;
 
-    font-size: 20px;
+    font-size:
+        20px;
 }
 
 .social-card p {
 
-    color: #777;
+    color:
+        #777;
 
-    margin: 0;
+    margin:
+        0;
 }
 
 .social-card b {
 
-    margin-left: auto;
+    margin-left:
+        auto;
 
-    font-size: 25px;
+    font-size:
+        25px;
 
-    color: #777;
+    color:
+        #777;
 }
 
 
@@ -1144,7 +1284,8 @@ input:focus {
 
 .credits {
 
-    display: flex;
+    display:
+        flex;
 
     justify-content:
         center;
@@ -1152,36 +1293,30 @@ input:focus {
     align-items:
         center;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    gap: 9px;
+    gap:
+        9px;
 
-    color: #555;
+    color:
+        #555;
 
-    font-size: 12px;
+    font-size:
+        12px;
 
-    line-height: 1.7;
+    line-height:
+        1.7;
 }
 
 .credits a {
 
-    color: #777;
+    color:
+        #777;
 
     text-decoration:
         none;
-
-    transition: .2s;
 }
-
-.credits a:hover {
-
-    color: white;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
 
 footer {
 
@@ -1191,28 +1326,14 @@ footer {
     text-align:
         center;
 
-    color: #555;
+    color:
+        #555;
 }
 
 footer strong {
 
-    color: #888;
-}
-
-
-/* =====================================================
-   HIDDEN SECOND VIDEO
-===================================================== */
-
-/*
-   The second YouTube video is intentionally invisible.
-   The source is still credited above.
-*/
-
-.hidden-media {
-
-    display: none;
-
+    color:
+        #888;
 }
 
 
@@ -1222,20 +1343,26 @@ footer strong {
 
 #aiBox {
 
-    position: fixed;
+    position:
+        fixed;
 
-    right: 25px;
+    right:
+        25px;
 
-    top: 95px;
+    top:
+        95px;
 
-    width: 390px;
+    width:
+        390px;
 
     max-width:
         calc(100vw - 30px);
 
-    height: 540px;
+    height:
+        540px;
 
-    display: none;
+    display:
+        none;
 
     flex-direction:
         column;
@@ -1255,43 +1382,19 @@ footer strong {
 
     box-shadow:
         0 25px 80px
-        rgba(0,0,0,.7),
+        rgba(0,0,0,.7);
 
-        0 0 40px
-        rgba(0,229,255,.06);
+    overflow:
+        hidden;
 
-    overflow: hidden;
-
-    z-index: 9998;
-
-    animation:
-        aiOpen .3s ease;
-}
-
-@keyframes aiOpen {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(-15px)
-            scale(.96);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
+    z-index:
+        9998;
 }
 
 .aiHeader {
 
-    display: flex;
+    display:
+        flex;
 
     align-items:
         center;
@@ -1299,7 +1402,8 @@ footer strong {
     justify-content:
         space-between;
 
-    padding: 18px;
+    padding:
+        18px;
 
     border-bottom:
         1px solid #222;
@@ -1307,58 +1411,71 @@ footer strong {
 
 .aiHeader strong {
 
-    display: block;
+    display:
+        block;
 
-    font-size: 18px;
+    font-size:
+        18px;
 }
 
 .aiHeader small {
 
-    color: #777;
+    color:
+        #777;
 }
 
 .aiClose {
 
-    width: 35px !important;
+    width:
+        35px !important;
 
-    height: 35px;
+    height:
+        35px;
 
-    padding: 0 !important;
+    padding:
+        0 !important;
 
-    border: none !important;
+    border:
+        none !important;
 
     background:
         #222 !important;
 
-    color: white !important;
+    color:
+        white !important;
 
     border-radius:
         10px !important;
 
-    font-size: 22px !important;
-
-    cursor: pointer;
+    font-size:
+        22px !important;
 }
 
 #aiMessages {
 
-    flex: 1;
+    flex:
+        1;
 
-    padding: 18px;
+    padding:
+        18px;
 
-    overflow-y: auto;
+    overflow-y:
+        auto;
 
-    display: flex;
+    display:
+        flex;
 
     flex-direction:
         column;
 
-    gap: 12px;
+    gap:
+        12px;
 }
 
 .aiMessage {
 
-    max-width: 88%;
+    max-width:
+        88%;
 
     padding:
         12px 15px;
@@ -1366,9 +1483,11 @@ footer strong {
     border-radius:
         15px;
 
-    font-size: 14px;
+    font-size:
+        14px;
 
-    line-height: 1.5;
+    line-height:
+        1.5;
 
     white-space:
         pre-line;
@@ -1382,7 +1501,8 @@ footer strong {
     background:
         #181818;
 
-    color: #ddd;
+    color:
+        #ddd;
 }
 
 .aiMessage.user {
@@ -1393,66 +1513,20 @@ footer strong {
     background:
         white;
 
-    color: black;
-}
-
-.aiInput {
-
-    display: flex;
-
-    gap: 8px;
-
-    padding: 12px;
-
-    border-top:
-        1px solid #222;
-}
-
-.aiInput input {
-
-    flex: 1;
-
-    min-width: 0;
-
-    padding: 12px;
-
-    border:
-        1px solid #333;
-
-    border-radius:
-        12px;
-
-    background:
-        #111;
-
-    color: white;
-
-    outline: none;
-}
-
-.aiSend {
-
-    width: 48px !important;
-
-    padding: 0 !important;
-
-    border-radius:
-        12px !important;
-
-    background:
-        white !important;
-
     color:
-        black !important;
+        black;
 }
 
 .quickQuestions {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    gap: 7px;
+    gap:
+        7px;
 
     padding:
         0 18px 12px;
@@ -1460,7 +1534,8 @@ footer strong {
 
 .quickQuestions button {
 
-    width: auto;
+    width:
+        auto;
 
     padding:
         7px 10px;
@@ -1477,19 +1552,68 @@ footer strong {
     color:
         #aaa;
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    cursor: pointer;
-
-    transition: .2s;
+    cursor:
+        pointer;
 }
 
-.quickQuestions button:hover {
+.aiInput {
 
-    color: white;
+    display:
+        flex;
 
-    border-color:
-        #00e5ff;
+    gap:
+        8px;
+
+    padding:
+        12px;
+
+    border-top:
+        1px solid #222;
+}
+
+.aiInput input {
+
+    flex:
+        1;
+
+    min-width:
+        0;
+
+    padding:
+        12px;
+
+    border:
+        1px solid #333;
+
+    border-radius:
+        12px;
+
+    background:
+        #111;
+
+    color:
+        white;
+}
+
+.aiSend {
+
+    width:
+        48px !important;
+
+    padding:
+        0 !important;
+
+    border-radius:
+        12px !important;
+
+    background:
+        white !important;
+
+    color:
+        black !important;
 }
 
 
@@ -1500,7 +1624,6 @@ footer strong {
 @media (max-width:600px) {
 
     #website {
-
         padding:
             30px 6%;
     }
@@ -1516,8 +1639,6 @@ footer strong {
 
     .nav-right {
 
-        gap: 8px;
-
         flex-direction:
             column;
 
@@ -1525,12 +1646,8 @@ footer strong {
             flex-end;
     }
 
-    .status {
-
-        font-size: 12px;
-    }
-
-    .info-grid {
+    .info-grid,
+    .people-grid {
 
         grid-template-columns:
             1fr;
@@ -1544,28 +1661,23 @@ footer strong {
 
     .hero > p {
 
-        font-size: 17px;
+        font-size:
+            17px;
     }
 
     #aiBox {
 
-        right: 15px;
+        right:
+            15px;
 
-        top: 85px;
+        top:
+            85px;
 
         width:
             calc(100vw - 30px);
 
         height:
             65vh;
-    }
-
-    .video-card {
-
-        padding: 10px;
-
-        border-radius:
-            20px;
     }
 
     .video-credit {
@@ -1579,14 +1691,14 @@ footer strong {
 }
 
 </style>
-</head>
 
+</head>
 
 <body>
 
 
 <!-- =====================================================
-     HOLOGRAM
+     HOLOGRAM BACKGROUND
 ===================================================== -->
 
 <div class="holo-background">
@@ -1605,16 +1717,34 @@ footer strong {
 
 </div>
 
+
 <div
     class="cursor-glow"
     id="cursorGlow">
 </div>
 
+
 <div id="particles"></div>
 
 
 <!-- =====================================================
-     LOGIN
+     BGM
+===================================================== -->
+
+<audio
+    id="bgm"
+    loop
+    preload="auto">
+
+    <source
+        src="music.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<!-- =====================================================
+     LOGIN SCREEN
 ===================================================== -->
 
 <div id="loginScreen">
@@ -1694,11 +1824,23 @@ footer strong {
             SHORYA.
         </div>
 
+
         <div class="nav-right">
 
             <div class="status">
                 ● ONLINE
             </div>
+
+
+            <button
+                class="top-button"
+                id="musicButton"
+                onclick="toggleMusic()">
+
+                🔇 BGM OFF
+
+            </button>
+
 
             <button
                 class="ai-toggle"
@@ -1735,6 +1877,7 @@ footer strong {
 
         </div>
 
+
         <h2>
 
             This is<br>
@@ -1745,18 +1888,23 @@ footer strong {
 
         </h2>
 
+
         <p>
 
             I'm Shorya — an 11-year-old creator
-            from Pune, PCMC, India.
+            from Pune, PCMC, India. 🇮🇳
 
             I love computers, coding, gaming,
             websites and technology.
+
+            I'm always learning, experimenting
+            and building something new. 🚀
 
         </p>
 
 
         <div class="cards">
+
 
             <div class="card">
 
@@ -1791,7 +1939,7 @@ footer strong {
                 </strong>
 
                 <small>
-                    Always creating something
+                    Always creating
                 </small>
 
             </div>
@@ -1804,10 +1952,11 @@ footer strong {
                 </strong>
 
                 <small>
-                    Exploring the internet
+                    Exploring technology
                 </small>
 
             </div>
+
 
         </div>
 
@@ -1824,6 +1973,7 @@ footer strong {
             ABOUT ME
         </div>
 
+
         <h2>
 
             Hey, I'm
@@ -1834,20 +1984,23 @@ footer strong {
 
         </h2>
 
+
         <p class="about-text">
 
             I'm an 11-year-old creator from
-            Pune, PCMC, India.
+            Pune, PCMC, India. 🇮🇳
 
-            I'm interested in computers,
-            programming, websites, games
-            and technology.
+            I enjoy computers, programming,
+            websites, games and technology.
 
-            I enjoy experimenting with new
-            ideas and turning them into projects.
+            I like experimenting with ideas
+            and turning them into real projects.
 
-            I'm always learning something new
-            and trying to make my projects better. 🚀
+            Every project teaches me something
+            new, and I'm always trying to improve.
+
+            This website is my little corner
+            of the internet. 🌐✨
 
         </p>
 
@@ -1906,6 +2059,7 @@ footer strong {
 
             </div>
 
+
         </div>
 
 
@@ -1940,6 +2094,101 @@ footer strong {
                 🎨 Creating
             </span>
 
+            <span>
+                🤖 AI
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PEOPLE WHO INSPIRED ME
+    ================================================== -->
+
+    <section class="inspiration">
+
+        <div class="section-tag">
+            MY INSPIRATION
+        </div>
+
+
+        <h2>
+
+            People who gave me
+
+            <span class="gradient-text">
+                confidence. ❤️
+            </span>
+
+        </h2>
+
+
+        <p class="inspiration-text">
+
+            Nobody builds alone.
+
+            I'm thankful to the people who
+            encourage me, help me learn and
+            give me confidence to keep creating.
+
+        </p>
+
+
+        <div class="people-grid">
+
+
+            <div class="person-card">
+
+                <div class="person-icon">
+                    👨‍🏫
+                </div>
+
+                <h3>
+                    Zeeshan Sir
+                </h3>
+
+                <p>
+
+                    From Dish Computers.
+
+                    Thank you for giving me
+                    confidence, encouraging me
+                    and helping me believe that
+                    I can learn and create cool
+                    technology projects.
+
+                </p>
+
+            </div>
+
+
+            <div class="person-card">
+
+                <div class="person-icon">
+                    ❤️
+                </div>
+
+                <h3>
+                    My Dad
+                </h3>
+
+                <p>
+
+                    My dad has supported me
+                    and encouraged me to keep
+                    learning and exploring
+                    technology.
+
+                    I'm grateful for the confidence
+                    and support he gives me.
+
+                </p>
+
+            </div>
+
+
         </div>
 
     </section>
@@ -1954,6 +2203,7 @@ footer strong {
         <div class="section-tag">
             FEATURED VIDEO
         </div>
+
 
         <h2>
 
@@ -1987,6 +2237,7 @@ footer strong {
                     🎬 Embedded from YouTube
                 </span>
 
+
                 <a
                     href="https://www.youtube.com/watch?v=uV13Myyoee0"
                     target="_blank"
@@ -2004,7 +2255,7 @@ footer strong {
 
 
     <!-- =================================================
-         SOCIAL LINKS
+         LINKS
     ================================================== -->
 
     <section class="socials">
@@ -2012,6 +2263,7 @@ footer strong {
         <div class="section-tag">
             FIND ME ONLINE
         </div>
+
 
         <h2>
 
@@ -2039,6 +2291,7 @@ footer strong {
                     ▶️
                 </div>
 
+
                 <div>
 
                     <h3>
@@ -2050,6 +2303,7 @@ footer strong {
                     </p>
 
                 </div>
+
 
                 <b>
                     →
@@ -2070,6 +2324,7 @@ footer strong {
                     🎮
                 </div>
 
+
                 <div>
 
                     <h3>
@@ -2082,6 +2337,7 @@ footer strong {
 
                 </div>
 
+
                 <b>
                     →
                 </b>
@@ -2091,29 +2347,35 @@ footer strong {
 
             <!-- DISCORD -->
 
-            <div class="social-card">
+            <a
+                href="https://discord.gg/YudH2UkTH"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-card">
 
                 <div class="icon">
                     💬
                 </div>
 
+
                 <div>
 
                     <h3>
-                        Discord
+                        🎮✨ 𝓇𝑜𝒷𝓁𝑜𝓍𝒾𝒶𝓃𝓈 ✨🎮
                     </h3>
 
                     <p>
-                        Coming soon...
+                        Join my Discord server
                     </p>
 
                 </div>
 
+
                 <b>
-                    ⌛
+                    →
                 </b>
 
-            </div>
+            </a>
 
 
         </div>
@@ -2138,16 +2400,17 @@ footer strong {
             </span>
 
             <span>
-                🎬 Video credit:
-                <a
-                    href="https://www.youtube.com/watch?v=ZvVAPboLLVM"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    Original YouTube video
-
-                </a>
+                🎬 Featured video:
             </span>
+
+            <a
+                href="https://www.youtube.com/watch?v=uV13Myyoee0"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                YouTube
+
+            </a>
 
             <span>
                 •
@@ -2161,25 +2424,6 @@ footer strong {
 
     </section>
 
-
-    <!-- =================================================
-         HIDDEN VIDEO
-    ================================================== -->
-
-    <section class="hidden-media">
-
-        <iframe
-            src="https://www.youtube.com/embed/ZvVAPboLLVM"
-            title="YouTube video">
-
-        </iframe>
-
-    </section>
-
-
-    <!-- =================================================
-         FOOTER
-    ================================================== -->
 
     <footer>
 
@@ -2206,7 +2450,7 @@ footer strong {
 
 
 <!-- =====================================================
-     AI WINDOW
+     OFFLINE MINI AI
 ===================================================== -->
 
 <div id="aiBox">
@@ -2245,7 +2489,8 @@ footer strong {
 
 Heyyy! 👋 I'm Shorya AI!
 
-You don't have to type perfectly.
+You can type normally OR with
+terrible keyboard spam 😂
 
 Try:
 
@@ -2253,11 +2498,11 @@ Try:
 
 "wht ur nammmmm"
 
-"heyyyyyyyy"
+"wat time iz it"
 
 "who iz shorya"
 
-"wat time iz it"
+"what is special today"
 
         </div>
 
@@ -2265,6 +2510,7 @@ Try:
 
 
     <div class="quickQuestions">
+
 
         <button
             onclick="quickAsk('what is today date')">
@@ -2299,11 +2545,20 @@ Try:
 
 
         <button
+            onclick="quickAsk('what is special today')">
+
+            🎉 Today
+
+        </button>
+
+
+        <button
             onclick="quickAsk('tell me a joke')">
 
             😂 Joke
 
         </button>
+
 
     </div>
 
@@ -2366,16 +2621,14 @@ for (
     particle.style.setProperty(
         "--x",
         (
-            Math.random() * 180 -
-            90
+            Math.random() * 180 - 90
         ) + "px"
     );
 
     particle.style.setProperty(
         "--y",
         (
-            Math.random() * 180 -
-            90
+            Math.random() * 180 - 90
         ) + "px"
     );
 
@@ -2394,7 +2647,7 @@ for (
 
 
 /* =====================================================
-   MOUSE HOLOGRAM
+   HOLOGRAM MOUSE EFFECT
 ===================================================== */
 
 const holoGlow =
@@ -2472,6 +2725,88 @@ document.addEventListener(
 
 
 /* =====================================================
+   MUSIC
+===================================================== */
+
+const bgm =
+    document.getElementById(
+        "bgm"
+    );
+
+const musicButton =
+    document.getElementById(
+        "musicButton"
+    );
+
+
+function startMusic() {
+
+    bgm.volume =
+        0.25;
+
+
+    bgm.play()
+        .then(
+            function() {
+
+                musicButton.textContent =
+                    "🔊 BGM ON";
+
+            }
+        )
+        .catch(
+            function() {
+
+                musicButton.textContent =
+                    "🔇 BGM OFF";
+
+            }
+        );
+}
+
+
+function toggleMusic() {
+
+    if (
+        bgm.paused
+    ) {
+
+        bgm.volume =
+            0.25;
+
+
+        bgm.play()
+            .then(
+                function() {
+
+                    musicButton.textContent =
+                        "🔊 BGM ON";
+
+                }
+            )
+            .catch(
+                function() {
+
+                    musicButton.textContent =
+                        "⚠️ ADD music.mp3";
+
+                }
+            );
+
+    }
+
+    else {
+
+        bgm.pause();
+
+        musicButton.textContent =
+            "🔇 BGM OFF";
+
+    }
+}
+
+
+/* =====================================================
    LOGIN
 ===================================================== */
 
@@ -2479,27 +2814,35 @@ function login() {
 
     const name =
         document
-            .getElementById("name")
+            .getElementById(
+                "name"
+            )
             .value
             .trim();
 
 
     const password =
         document
-            .getElementById("password")
+            .getElementById(
+                "password"
+            )
             .value;
 
 
     const error =
         document
-            .getElementById("error");
+            .getElementById(
+                "error"
+            );
 
 
     const correctPassword =
         "GAGISBEST";
 
 
-    if (name === "") {
+    if (
+        name === ""
+    ) {
 
         error.textContent =
             "⚠️ Please enter your name.";
@@ -2564,6 +2907,9 @@ function login() {
                 0
             );
 
+
+            startMusic();
+
         },
         700
     );
@@ -2625,7 +2971,7 @@ function toggleAI() {
 
 
 /* =====================================================
-   SMART TEXT NORMALIZER
+   AI NORMALIZER
 ===================================================== */
 
 function normalizeText(text) {
@@ -2638,66 +2984,91 @@ function normalizeText(text) {
 
     const replacements = {
 
-        "u": "you",
-        "ur": "your",
-        "r": "are",
-        "ya": "you",
+        "u":
+            "you",
 
-        "wat": "what",
-        "wht": "what",
-        "whut": "what",
-        "wot": "what",
+        "ur":
+            "your",
 
-        "iz": "is",
-        "iss": "is",
+        "r":
+            "are",
 
-        "da": "the",
-        "dat": "that",
+        "wat":
+            "what",
 
-        "todai": "today",
-        "tody": "today",
-        "tod": "today",
+        "wht":
+            "what",
 
-        "nam": "name",
-        "nme": "name",
+        "whut":
+            "what",
 
-        "abt": "about",
+        "wot":
+            "what",
 
-        "plz": "please",
-        "pls": "please",
+        "iz":
+            "is",
 
-        "hw": "how",
+        "iss":
+            "is",
 
-        "yr": "your",
+        "da":
+            "the",
 
-        "nd": "and",
+        "dat":
+            "that",
 
-        "cn": "can",
+        "todai":
+            "today",
 
-        "frm": "from",
+        "tody":
+            "today",
 
-        "hru": "how are you"
+        "tod":
+            "today",
+
+        "nam":
+            "name",
+
+        "nme":
+            "name",
+
+        "abt":
+            "about",
+
+        "plz":
+            "please",
+
+        "pls":
+            "please",
+
+        "hw":
+            "how",
+
+        "yr":
+            "your",
+
+        "nd":
+            "and",
+
+        "cn":
+            "can",
+
+        "frm":
+            "from"
 
     };
 
 
     t =
         t
-        .split(/\s+/)
-        .map(
-            word =>
-                replacements[word] ||
-                word
-        )
-        .join(" ");
+            .split(/\s+/)
+            .map(
+                word =>
+                    replacements[word] ||
+                    word
+            )
+            .join(" ");
 
-
-    /*
-       Remove extreme repeated letters.
-
-       heyyyyyyy -> hey
-       dateeeee -> date
-    */
 
     t =
         t.replace(
@@ -2726,7 +3097,7 @@ function normalizeText(text) {
 
 
 /* =====================================================
-   WORD CHECK
+   WORD MATCH
 ===================================================== */
 
 function hasAny(
@@ -2759,8 +3130,6 @@ function getAIResponse(
         new Date();
 
 
-    /* GREETING */
-
     if (
         hasAny(
             q,
@@ -2769,37 +3138,17 @@ function getAIResponse(
                 "hi",
                 "hey",
                 "yo",
-                "sup",
-                "hii",
-                "good morning",
-                "good evening",
-                "good afternoon"
+                "sup"
             ]
         )
     ) {
 
-        const greetings = [
-
-            "Heyyyy! 👋",
-
-            "Yo! 😎 What's up?",
-
-            "Hey! Welcome to Shorya AI 🤖",
-
-            "Helloooo 😂"
-
-        ];
-
-        return greetings[
-            Math.floor(
-                Math.random() *
-                greetings.length
-            )
-        ];
+        return (
+            "Heyyyy! 👋 " +
+            "Welcome to Shorya AI 🤖"
+        );
     }
 
-
-    /* NAME */
 
     if (
         hasAny(
@@ -2807,53 +3156,27 @@ function getAIResponse(
             [
                 "your name",
                 "who are you",
-                "what are you called",
-                "name"
+                "what are you called"
             ]
         )
     ) {
 
         return (
             "I'm Shorya AI 🤖 — " +
-            "the offline assistant on " +
-            "this website!"
+            "the offline assistant on this website!"
         );
     }
 
-
-    /* CREATOR */
 
     if (
         hasAny(
             q,
             [
-                "who made you",
-                "who created you",
-                "who built you",
-                "who made this ai"
-            ]
-        )
-    ) {
-
-        return (
-            "I'm the mini-AI built into " +
-            "Shorya's personal website! 🚀"
-        );
-    }
-
-
-    /* DATE */
-
-    if (
-        hasAny(
-            q,
-            [
-                "what is today date",
-                "what is the date",
-                "what date",
                 "today date",
-                "todays date",
                 "date today",
+                "todays date",
+                "what is the date",
+                "what is today date",
                 "date"
             ]
         )
@@ -2861,48 +3184,28 @@ function getAIResponse(
 
         return (
             "Today is " +
+
             now.toLocaleDateString(
                 "en-IN",
                 {
-                    weekday: "long",
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric"
+                    weekday:
+                        "long",
+
+                    day:
+                        "numeric",
+
+                    month:
+                        "long",
+
+                    year:
+                        "numeric"
                 }
             ) +
+
             " 📅"
         );
     }
 
-
-    /* DAY */
-
-    if (
-        hasAny(
-            q,
-            [
-                "what day",
-                "which day",
-                "day is it",
-                "today day"
-            ]
-        )
-    ) {
-
-        return (
-            "Today is " +
-            now.toLocaleDateString(
-                "en-IN",
-                {
-                    weekday: "long"
-                }
-            ) +
-            " 📆"
-        );
-    }
-
-
-    /* TIME */
 
     if (
         hasAny(
@@ -2919,20 +3222,25 @@ function getAIResponse(
 
         return (
             "The current time is " +
+
             now.toLocaleTimeString(
                 "en-IN",
                 {
-                    hour: "numeric",
-                    minute: "2-digit",
-                    second: "2-digit"
+                    hour:
+                        "numeric",
+
+                    minute:
+                        "2-digit",
+
+                    second:
+                        "2-digit"
                 }
             ) +
+
             " ⏰"
         );
     }
 
-
-    /* SPECIAL TODAY */
 
     if (
         hasAny(
@@ -2941,7 +3249,6 @@ function getAIResponse(
                 "special today",
                 "whats special",
                 "what is special",
-                "special about today",
                 "anything special today"
             ]
         )
@@ -2961,17 +3268,6 @@ function getAIResponse(
 
             return (
                 "It's New Year's Day! 🎆"
-            );
-        }
-
-
-        if (
-            month === 2 &&
-            day === 14
-        ) {
-
-            return (
-                "It's Valentine's Day! ❤️"
             );
         }
 
@@ -3016,8 +3312,6 @@ function getAIResponse(
     }
 
 
-    /* SHORYA */
-
     if (
         hasAny(
             q,
@@ -3033,21 +3327,20 @@ function getAIResponse(
         return (
             "Shorya is an 11-year-old creator " +
             "from Pune, PCMC, India. 🇮🇳\n\n" +
-            "He likes coding, gaming, websites " +
-            "and technology. 💻🎮🚀"
+
+            "He likes coding, gaming, websites, " +
+            "AI and technology. 💻🎮🤖🚀"
         );
     }
 
-
-    /* AGE */
 
     if (
         hasAny(
             q,
             [
-                "how old is shorya",
                 "shorya age",
                 "age of shorya",
+                "how old is shorya",
                 "how old"
             ]
         )
@@ -3059,17 +3352,13 @@ function getAIResponse(
     }
 
 
-    /* LOCATION */
-
     if (
         hasAny(
             q,
             [
                 "where is shorya",
-                "where is he from",
                 "where does shorya live",
-                "shorya location",
-                "where shorya"
+                "shorya location"
             ]
         )
     ) {
@@ -3080,27 +3369,58 @@ function getAIResponse(
     }
 
 
-    /* YOUTUBE */
+    if (
+        hasAny(
+            q,
+            [
+                "zeeshan",
+                "zeeshan sir"
+            ]
+        )
+    ) {
+
+        return (
+            "Zeeshan Sir from Dish Computers " +
+            "is one of the people who gave Shorya " +
+            "confidence and encouraged him. 👨‍🏫❤️"
+        );
+    }
+
+
+    if (
+        hasAny(
+            q,
+            [
+                "dad",
+                "father",
+                "my dad"
+            ]
+        )
+    ) {
+
+        return (
+            "Shorya's dad is one of the people " +
+            "who supports and encourages him. ❤️"
+        );
+    }
+
 
     if (
         hasAny(
             q,
             [
                 "youtube",
-                "youtube channel",
-                "channel"
+                "youtube channel"
             ]
         )
     ) {
 
         return (
-            "You can find Shorya's YouTube " +
-            "channel in the Links section! ▶️"
+            "Check the YouTube button in " +
+            "the Links section! ▶️"
         );
     }
 
-
-    /* ROBLOX */
 
     if (
         hasAny(
@@ -3114,12 +3434,27 @@ function getAIResponse(
 
         return (
             "Shorya has a Roblox profile! 🎮 " +
-            "Check the Roblox button in the Links section."
+            "Check the Roblox button below."
         );
     }
 
 
-    /* CODING */
+    if (
+        hasAny(
+            q,
+            [
+                "discord",
+                "discord server"
+            ]
+        )
+    ) {
+
+        return (
+            "You can join the Discord server " +
+            "using the Discord button in the Links section! 💬"
+        );
+    }
+
 
     if (
         hasAny(
@@ -3127,8 +3462,7 @@ function getAIResponse(
             [
                 "coding",
                 "programming",
-                "code",
-                "coding projects"
+                "code"
             ]
         )
     ) {
@@ -3139,8 +3473,6 @@ function getAIResponse(
         );
     }
 
-
-    /* GAMING */
 
     if (
         hasAny(
@@ -3159,29 +3491,6 @@ function getAIResponse(
     }
 
 
-    /* WEBSITE */
-
-    if (
-        hasAny(
-            q,
-            [
-                "website",
-                "this site",
-                "this website",
-                "web site"
-            ]
-        )
-    ) {
-
-        return (
-            "You're currently exploring " +
-            "Shorya's personal website! 🌐✨"
-        );
-    }
-
-
-    /* JOKES */
-
     if (
         hasAny(
             q,
@@ -3195,15 +3504,16 @@ function getAIResponse(
 
         const jokes = [
 
-            "Why did the computer go to the doctor? 🤖 Because it had a virus! 😂",
+            "Why did the computer go to the doctor? 🤖 It had a virus! 😂",
 
             "Why was the computer cold? 🥶 It left its Windows open! 😂",
 
             "What do computers eat? 🍪 Microchips! 😂",
 
-            "Why did the programmer quit his job? 🤔 He didn't get arrays! 😂"
+            "Why did the programmer quit? 🤔 He didn't get arrays! 😂"
 
         ];
+
 
         return jokes[
             Math.floor(
@@ -3214,15 +3524,12 @@ function getAIResponse(
     }
 
 
-    /* HOW ARE YOU */
-
     if (
         hasAny(
             q,
             [
                 "how are you",
-                "how you doing",
-                "how are u"
+                "how you doing"
             ]
         )
     ) {
@@ -3233,8 +3540,6 @@ function getAIResponse(
         );
     }
 
-
-    /* THANKS */
 
     if (
         hasAny(
@@ -3253,8 +3558,6 @@ function getAIResponse(
     }
 
 
-    /* HELP */
-
     if (
         hasAny(
             q,
@@ -3269,29 +3572,27 @@ function getAIResponse(
         return (
             "I can understand messy typing too! 😎\n\n" +
 
-            "Try asking me about:\n" +
+            "Try asking about:\n" +
 
             "📅 Today's date\n" +
-            "📆 The day\n" +
             "⏰ The time\n" +
             "🎉 What's special today\n" +
             "👦 Shorya\n" +
+            "👨‍🏫 Zeeshan Sir\n" +
             "▶️ YouTube\n" +
             "🎮 Roblox\n" +
+            "💬 Discord\n" +
             "😂 Jokes"
         );
     }
 
-
-    /* BYE */
 
     if (
         hasAny(
             q,
             [
                 "bye",
-                "goodbye",
-                "see you"
+                "goodbye"
             ]
         )
     ) {
@@ -3302,17 +3603,16 @@ function getAIResponse(
     }
 
 
-    /* DEFAULT */
-
     return (
-        "Hmmmm 🤔 I didn't understand that yet.\n\n" +
+        "Hmmmm 🤔 I don't know that one yet.\n\n" +
 
-        "Try typing something like:\n" +
+        "Try:\n" +
 
         "• whut iz todys dateeee\n" +
         "• wht ur nammmmm\n" +
         "• wat time iz it\n" +
         "• who iz shorya\n" +
+        "• what iz special today\n" +
         "• tell me a jokeeee 😂"
     );
 }
@@ -3388,7 +3688,8 @@ function sendAI() {
     );
 
 
-    input.value = "";
+    input.value =
+        "";
 
 
     setTimeout(
@@ -3434,7 +3735,7 @@ function quickAsk(
 
 
 /* =====================================================
-   ENTER = SEND AI
+   KEYBOARD SHORTCUTS
 ===================================================== */
 
 document
@@ -3454,10 +3755,6 @@ document
         }
     );
 
-
-/* =====================================================
-   ENTER = LOGIN
-===================================================== */
 
 document
     .getElementById("password")
